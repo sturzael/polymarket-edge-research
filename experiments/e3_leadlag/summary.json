@@ -1,0 +1,34 @@
+[
+  {
+    "bin_ms": 100,
+    "n_binance_bins": 2400,
+    "n_coinbase_bins": 2389,
+    "peak_lag_ms": 100,
+    "peak_corr": 0.23070443346923672,
+    "zero_lag_corr": 0.21896186373889348
+  },
+  {
+    "bin_ms": 250,
+    "n_binance_bins": 960,
+    "n_coinbase_bins": 956,
+    "peak_lag_ms": 0,
+    "peak_corr": 0.36814014701885195,
+    "zero_lag_corr": 0.36814014701885195
+  },
+  {
+    "bin_ms": 500,
+    "n_binance_bins": 480,
+    "n_coinbase_bins": 478,
+    "peak_lag_ms": 0,
+    "peak_corr": 0.4348552903865499,
+    "zero_lag_corr": 0.4348552903865499
+  },
+  {
+    "bin_ms": 1000,
+    "n_binance_bins": 240,
+    "n_coinbase_bins": 239,
+    "peak_lag_ms": 0,
+    "peak_corr": 0.3843628976945051,
+    "zero_lag_corr": 0.3843628976945051
+  }
+]

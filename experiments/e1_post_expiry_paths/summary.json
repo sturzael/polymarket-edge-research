@@ -1,0 +1,25 @@
+{
+  "n_markets": 20,
+  "shape_counts": {
+    "snap": 16,
+    "drift": 1,
+    "slow": 0,
+    "no-data": 3
+  },
+  "post_trades_mean": 50.2,
+  "post_trades_median": 17.0,
+  "sample_per_market_keys": [
+    "slug",
+    "underlying",
+    "outcome",
+    "trades_total",
+    "pre_trades_60s",
+    "post_trades_0_400s",
+    "first_price_post_T",
+    "price_at_T0",
+    "mean_first_30s",
+    "mean_around_60s",
+    "shape",
+    "target"
+  ]
+}

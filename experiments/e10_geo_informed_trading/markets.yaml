@@ -1,0 +1,385 @@
+generated_at: '2026-04-18'
+generated_from: gamma-api /markets top-500 by volume24hr
+note: Hand-curated. Add or remove entries and re-run the watcher; it upserts on market_id.
+markets:
+- slug: will-china-invade-taiwan-before-2027
+  market_id: '0xd9fb1184af0064e5e34b129f5b79afa5a17b7e32f2953ab05efed82315fee6d4'
+  question: Will China invade Taiwan by end of 2026?
+  theme: china-taiwan
+  keywords:
+  - china
+  - taiwan
+  - invade
+  - invasion
+  - xi
+  - pla
+  - military
+  end_date: '2026-12-31T00:00:00Z'
+  volume_24hr_at_discovery: 290498
+  is_control: false
+- slug: trump-announces-us-x-iran-ceasefire-end-by-april-18-2026
+  market_id: '0xd81f611670339738cb6ac259b94a54b5b08e372f19c063a8ad6fb2a8c7fe3ed8'
+  question: Trump announces US x Iran ceasefire end by April 18, 2026?
+  theme: iran-ceasefire
+  keywords:
+  - trump
+  - iran
+  - ceasefire
+  - end
+  - announces
+  end_date: '2026-04-18T00:00:00Z'
+  volume_24hr_at_discovery: 445053
+  is_control: false
+- slug: trump-announces-end-of-military-operations-against-iran-by-april-21st
+  market_id: '0x1507c50c86fb307e4f1acd9d740b2be66d98773f90d161e94907d8ef2c5699b3'
+  question: Trump announces end of military operations against Iran by April 21st?
+  theme: iran-ceasefire
+  keywords:
+  - trump
+  - iran
+  - military
+  - operations
+  - end
+  - announces
+  end_date: '2026-04-21T23:55:00Z'
+  volume_24hr_at_discovery: 277932
+  is_control: false
+- slug: us-x-iran-permanent-peace-deal-by-april-22-2026
+  market_id: '0xbbc6689d0f6d57ea42168836712237c7308b3e0118c8914d31b6126d0f3254c5'
+  question: US x Iran permanent peace deal by April 22, 2026?
+  theme: iran-ceasefire
+  keywords:
+  - iran
+  - peace
+  - deal
+  - ceasefire
+  - agreement
+  - talks
+  - negotiation
+  end_date: '2026-04-22T00:00:00Z'
+  volume_24hr_at_discovery: 1304384
+  is_control: false
+- slug: us-x-iran-permanent-peace-deal-by-april-30-2026
+  market_id: '0xceb6dfaa2cf5abc9d47ebc867b984a7715104944249274e8a483a2e17473e5f5'
+  question: US x Iran permanent peace deal by April 30, 2026?
+  theme: iran-ceasefire
+  keywords:
+  - iran
+  - peace
+  - deal
+  - ceasefire
+  - agreement
+  - talks
+  - negotiation
+  end_date: '2026-04-30T00:00:00Z'
+  volume_24hr_at_discovery: 512052
+  is_control: false
+- slug: us-x-iran-permanent-peace-deal-by-may-31-2026
+  market_id: '0x0e4a0c937b8934c2475613b6322b3f8edc8dedc24762e01e42b0e6f87424a089'
+  question: US x Iran permanent peace deal by May 31, 2026?
+  theme: iran-ceasefire
+  keywords:
+  - iran
+  - peace
+  - deal
+  - ceasefire
+  - agreement
+  - talks
+  - negotiation
+  end_date: '2026-05-31T00:00:00Z'
+  volume_24hr_at_discovery: 206465
+  is_control: false
+- slug: strait-of-hormuz-traffic-returns-to-normal-by-april-30
+  market_id: '0x924a2942747dd75703321a7c8d809c68f6a514c3b0f2a2e64274e02310634669'
+  question: Strait of Hormuz traffic returns to normal by end of April?
+  theme: iran-military
+  keywords:
+  - hormuz
+  - strait
+  - traffic
+  - iran
+  - normal
+  - shipping
+  - oil
+  end_date: '2026-04-30T00:00:00Z'
+  volume_24hr_at_discovery: 2699847
+  is_control: false
+- slug: kharg-island-no-longer-under-iranian-control-by-april-30-912
+  market_id: '0xa78ecba9c4273564cce4b810db46bb36cc35db9cd52fc4e067c77f85af1c1048'
+  question: Kharg Island no longer under Iranian control by April 30?
+  theme: iran-military
+  keywords:
+  - kharg
+  - iran
+  - control
+  - island
+  - strike
+  - capture
+  end_date: '2026-04-30T23:55:00Z'
+  volume_24hr_at_discovery: 786745
+  is_control: false
+- slug: iran-agrees-to-surrender-enriched-uranium-stockpile-by-april-30-2026
+  market_id: '0x5d37825716832a4a54f89450932e89510f26cf4be59aeec3149d2c49e5fdf44d'
+  question: Iran agrees to surrender enriched uranium stockpile by April 30, 2026?
+  theme: iran-nuclear
+  keywords:
+  - iran
+  - uranium
+  - enriched
+  - nuclear
+  - stockpile
+  - surrender
+  - agree
+  end_date: '2026-04-30T00:00:00Z'
+  volume_24hr_at_discovery: 204038
+  is_control: false
+- slug: us-obtains-iranian-enriched-uranium-by-april-30
+  market_id: '0xd87a0ee5367e38072ac013e99035672125fee3a3f4446f0389fe806e42e3e42e'
+  question: US obtains Iranian enriched uranium by April 30?
+  theme: iran-nuclear
+  keywords:
+  - iran
+  - uranium
+  - enriched
+  - nuclear
+  - stockpile
+  - obtain
+  - surrender
+  end_date: '2026-04-30T00:00:00Z'
+  volume_24hr_at_discovery: 193640
+  is_control: false
+- slug: us-obtains-iranian-enriched-uranium-by-may-31-396
+  market_id: '0xbcacd5a055f5a9ced6f69f122216c073dd6987d08253fc07bbcc168fa5b81d55'
+  question: US obtains Iranian enriched uranium by May 31?
+  theme: iran-nuclear
+  keywords:
+  - iran
+  - uranium
+  - enriched
+  - nuclear
+  - stockpile
+  - obtain
+  - surrender
+  end_date: '2026-05-31T00:00:00Z'
+  volume_24hr_at_discovery: 371142
+  is_control: false
+- slug: will-the-iranian-regime-fall-by-april-30
+  market_id: '0xe443dab97ad8b7f58558cc7a6a3932d156031e962a451e0461e9a4578d78fe84'
+  question: Will the Iranian regime fall by April 30?
+  theme: iran-regime
+  keywords:
+  - iran
+  - regime
+  - khamenei
+  - ayatollah
+  - coup
+  - overthrow
+  - fall
+  end_date: '2026-04-30T00:00:00Z'
+  volume_24hr_at_discovery: 1435096
+  is_control: false
+- slug: will-the-iranian-regime-fall-by-may-31
+  market_id: '0x789c947a9415600d30d56a4aae88d4111996679b0caed166d0c96242fdce92a2'
+  question: Will the Iranian regime fall by May 31?
+  theme: iran-regime
+  keywords:
+  - iran
+  - regime
+  - khamenei
+  - ayatollah
+  - coup
+  - overthrow
+  - fall
+  end_date: '2026-05-31T00:00:00Z'
+  volume_24hr_at_discovery: 501817
+  is_control: false
+- slug: will-the-iranian-regime-fall-by-june-30
+  market_id: '0x9352c559e9648ab4cab236087b64ca85c5b7123a4c7d9d7d4efde4a39c18056f'
+  question: Will the Iranian regime fall by June 30?
+  theme: iran-regime
+  keywords:
+  - iran
+  - regime
+  - khamenei
+  - ayatollah
+  - coup
+  - overthrow
+  - fall
+  end_date: '2026-06-30T00:00:00Z'
+  volume_24hr_at_discovery: 321936
+  is_control: false
+- slug: will-the-us-invade-iran-before-2027
+  market_id: '0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846'
+  question: Will the U.S. invade Iran before 2027?
+  theme: iran-us
+  keywords:
+  - iran
+  - usa
+  - us
+  - invade
+  - strike
+  - attack
+  - war
+  end_date: '2026-12-31T00:00:00Z'
+  volume_24hr_at_discovery: 582788
+  is_control: false
+- slug: israel-x-hezbollah-ceasefire-by-april-18-2026
+  market_id: '0x9823d715687a0a82d2a03731792e83bf58a0409f10def1379e00e4d67a95ba69'
+  question: Israel x Hezbollah ceasefire by April 18, 2026?
+  theme: israel-lebanon
+  keywords:
+  - israel
+  - hezbollah
+  - lebanon
+  - ceasefire
+  - agreement
+  end_date: '2026-04-15T00:00:00Z'
+  volume_24hr_at_discovery: 14148115
+  is_control: false
+- slug: russia-x-ukraine-ceasefire-before-2027
+  market_id: '0xaeea5f917fc5746387b5f9c0a4263dba035dbb3f0ac6ad72bf92183d21e26739'
+  question: Russia x Ukraine ceasefire by end of 2026?
+  theme: russia-ukraine
+  keywords:
+  - russia
+  - ukraine
+  - ceasefire
+  - putin
+  - zelensky
+  - zelenskyy
+  - peace
+  end_date: '2026-12-31T00:00:00Z'
+  volume_24hr_at_discovery: 163912
+  is_control: false
+- slug: starmer-out-by-april-30-2026
+  market_id: '0xc6158282b574047044e504aabb1bc1f86ed28097e62d69425cb4403847767945'
+  question: Starmer out by April 30, 2026?
+  theme: uk-politics
+  keywords:
+  - starmer
+  - resign
+  - labour
+  - uk
+  - prime minister
+  - downing street
+  end_date: '2026-06-30T12:00:00Z'
+  volume_24hr_at_discovery: 575060
+  is_control: false
+- slug: will-the-us-confirm-that-aliens-exist-before-2027-789
+  market_id: '0x747dc809fb79e1b05be09c42d6179459a58de2ef3e40f02484a4e1260f741f75'
+  question: Will the US confirm that aliens exist before 2027?
+  theme: control-aliens
+  keywords:
+  - alien
+  - aliens
+  - ufo
+  - extraterrestrial
+  - disclosure
+  end_date: '2026-12-31T00:00:00Z'
+  volume_24hr_at_discovery: 565434
+  is_control: true
+- slug: will-albania-win-eurovision-2026
+  market_id: '0x1ba55cf8a3b8ffa3a8646a68c13e345ed1f5e3a33381a823ad132a4920054a82'
+  question: Will Albania win Eurovision 2026?
+  theme: control-eurovision
+  keywords:
+  - albania
+  - eurovision
+  end_date: '2026-05-16T00:00:00Z'
+  volume_24hr_at_discovery: 460636
+  is_control: true
+- slug: will-joao-fonseca-win-the-2026-mens-french-open
+  market_id: '0x24e67fb509df7efecc1840008153634d4852c0d2725d0a6c13f2e60beb2f2e2f'
+  question: Will Joao Fonseca win the 2026 Men's French Open?
+  theme: control-tennis
+  keywords:
+  - fonseca
+  - french open
+  - tennis
+  end_date: '2026-06-07T00:00:00Z'
+  volume_24hr_at_discovery: 576218
+  is_control: true
+- slug: will-lorenzo-musetti-win-the-2026-mens-french-open
+  market_id: '0x99783ea5344cd6535f671ed6642006a66157cd8a2398aca295f1ab99aaf50e34'
+  question: Will Lorenzo Musetti win the 2026 Men's French Open?
+  theme: control-tennis
+  keywords:
+  - musetti
+  - french open
+  - tennis
+  end_date: '2026-06-07T00:00:00Z'
+  volume_24hr_at_discovery: 417416
+  is_control: true
+- slug: will-jon-stewart-win-the-2028-democratic-presidential-nomination-518
+  market_id: '0xfee07be730188c94cd3644ed6f107fa3ea2dfab9989ce8d39aeeae064766abe3'
+  question: Will Jon Stewart win the 2028 Democratic presidential nomination?
+  theme: control-us2028
+  keywords:
+  - jon stewart
+  - stewart
+  end_date: '2028-11-07T00:00:00Z'
+  volume_24hr_at_discovery: 2731974
+  is_control: true
+- slug: will-oprah-winfrey-win-the-2028-democratic-presidential-nomination
+  market_id: '0xe06a7e94cf2fa8dc2085b7610fe16e9be1cde6654f34d365c13da1149b276c61'
+  question: Will Oprah Winfrey win the 2028 Democratic presidential nomination?
+  theme: control-us2028
+  keywords:
+  - oprah
+  - winfrey
+  end_date: '2028-11-07T00:00:00Z'
+  volume_24hr_at_discovery: 2061452
+  is_control: true
+- slug: will-mark-cuban-win-the-2028-democratic-presidential-nomination-329
+  market_id: '0x9d4f94f82de9d13ff1d3318639ab9000ee2533949e525343156f374fb00bd9b1'
+  question: Will Mark Cuban win the 2028 Democratic presidential nomination?
+  theme: control-us2028
+  keywords:
+  - mark cuban
+  - cuban
+  end_date: '2028-11-07T00:00:00Z'
+  volume_24hr_at_discovery: 429892
+  is_control: true
+- slug: will-kim-kardashian-win-the-2028-us-presidential-election
+  market_id: '0x7f695758278e6d4d9e63df862afa88d664d3402a3d26e4d32ae05121cdbddba6'
+  question: Will Kim Kardashian win the 2028 US Presidential Election?
+  theme: control-us2028
+  keywords:
+  - kardashian
+  - kim
+  end_date: '2028-11-07T00:00:00Z'
+  volume_24hr_at_discovery: 210237
+  is_control: true
+- slug: will-france-win-the-2026-fifa-world-cup-924
+  market_id: '0x9b6fef249040fd17e9c107955b37ac2c3e923509b6b0ff01cc463a331ddeb894'
+  question: Will France win the 2026 FIFA World Cup?
+  theme: control-worldcup
+  keywords:
+  - france
+  - fifa
+  - world cup
+  end_date: '2026-07-20T00:00:00Z'
+  volume_24hr_at_discovery: 1471803
+  is_control: true
+- slug: will-spain-win-the-2026-fifa-world-cup-963
+  market_id: '0x7976b8dbacf9077eb1453a62bcefd6ab2df199acd28aad276ff0d920d6992892'
+  question: Will Spain win the 2026 FIFA World Cup?
+  theme: control-worldcup
+  keywords:
+  - spain
+  - fifa
+  - world cup
+  end_date: '2026-07-20T00:00:00Z'
+  volume_24hr_at_discovery: 861945
+  is_control: true
+- slug: will-mexico-win-the-2026-fifa-world-cup-529
+  market_id: '0x5ccfe1b69a582d2985db08a8481a0d74c314b1fce9b4711ae2efb2c6467fe6aa'
+  question: Will Mexico win the 2026 FIFA World Cup?
+  theme: control-worldcup
+  keywords:
+  - mexico
+  - fifa
+  - world cup
+  end_date: '2026-07-20T00:00:00Z'
+  volume_24hr_at_discovery: 729942
+  is_control: true

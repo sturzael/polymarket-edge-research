@@ -1,0 +1,4 @@
+BTC: 930 option contracts written to experiments/e2_deribit_iv/btc_book_summary_1776480011.json
+  expiries seen (top 6): [('26JUN26', 114), ('25SEP26', 114), ('25DEC26', 108), ('24APR26', 96), ('29MAY26', 92), ('26MAR27', 88)]
+ETH: 786 option contracts written to experiments/e2_deribit_iv/eth_book_summary_1776480011.json
+  expiries seen (top 6): [('25SEP26', 116), ('26JUN26', 114), ('25DEC26', 86), ('24APR26', 76), ('26MAR27', 70), ('29MAY26', 70)]

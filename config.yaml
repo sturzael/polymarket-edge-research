@@ -1,0 +1,105 @@
+# Event-Impact MVP configuration
+# Edit tickers, feeds, and Polymarket markets before first run.
+
+database:
+  path: data/mvp.db
+
+# --- Crypto (Binance via ccxt) ---
+crypto:
+  exchange: binance
+  poll_interval_s: 1.0
+  tickers:
+    # Majors
+    - BTC/USDT
+    - ETH/USDT
+    - SOL/USDT
+    - BNB/USDT
+    # Mid-caps (event-sensitive)
+    - XRP/USDT
+    - DOGE/USDT
+    - AVAX/USDT
+    - LINK/USDT
+
+# --- Polymarket ---
+# Fast event mode: hand-picked non-expiry markets. Replace slugs with currently-active ones.
+# Format per entry: slug (used for asset key), condition_id or market_id (for API lookup).
+polymarket:
+  clob_base_url: https://clob.polymarket.com
+  gamma_base_url: https://gamma-api.polymarket.com
+  fast_event_poll_interval_s: 3.0
+  expiry_poll_interval_s: 1.0          # intensive sampler rate during final 60s
+  # Hand-picked markets for the fast-event-mode stream (optional - can be empty).
+  # Populate via `scripts/list_markets.py` (written later) or pick from polymarket.com.
+  fast_event_markets: []
+    # - slug: example-market-slug
+    #   condition_id: "0xabcdef..."
+
+  # Expiry mode discovery preferences.
+  expiry_mode:
+    enabled: true
+    # Duration preference order. First duration with live markets wins.
+    duration_preference_s: [300, 900, 3600, 86400]  # 5m, 15m, 1h, daily
+    # How often to refresh the discovery of upcoming expiries.
+    discovery_interval_s: 30
+    # How long before expiry to start the intensive 1Hz sampler.
+    sampling_window_s: 60
+    # Retry budget for fetching resolved outcome after expiry.
+    resolution_retry_interval_s: 10
+    resolution_retry_max_s: 120
+    # Underlying tickers we care about (map Poly market underlying -> our ccxt ticker).
+    underlying_map:
+      BTC: BTC/USDT
+      ETH: ETH/USDT
+      SOL: SOL/USDT
+
+# --- RSS news + cross-language ---
+sources:
+  poll_interval_s: 45
+  english_feeds:
+    - name: reuters-business
+      url: https://feeds.reuters.com/reuters/businessNews
+    - name: reuters-markets
+      url: https://feeds.reuters.com/news/wealth
+    - name: coindesk
+      url: https://www.coindesk.com/arc/outboundfeeds/rss/
+    - name: cointelegraph
+      url: https://cointelegraph.com/rss
+    - name: theblock
+      url: https://www.theblock.co/rss.xml
+    - name: bbc-business
+      url: http://feeds.bbci.co.uk/news/business/rss.xml
+    - name: fed-press
+      url: https://www.federalreserve.gov/feeds/press_all.xml
+    - name: cryptopanic
+      url: https://cryptopanic.com/news/rss/
+  foreign_feeds:
+    - name: caixin
+      lang: zh
+      url: http://english.caixin.com/rss/english.xml  # English mirror - swap for zh if you want raw
+    - name: yonhap-economy
+      lang: ko
+      url: https://en.yna.co.kr/RSS/economy.xml       # English mirror - swap for ko for raw
+  # Translation is only invoked when lang != 'en'.
+  translation:
+    model: claude-haiku-4-5-20251001
+    max_tokens: 300
+
+# --- Fast event mode thresholds ---
+fast_event:
+  vol_window_minutes: 60
+  horizons_s: [30, 60, 300]  # T+30s, T+1m, T+5m
+  baseline_lookback_s: 30    # T-30s
+  z_thresholds:
+    low: 1.0
+    medium: 2.5
+
+# --- Expiry analysis thresholds ---
+expiry_analysis:
+  summary_every_n_resolutions: 10
+  mispricing_error_threshold: 0.15
+  actionable_error_threshold: 0.20
+  actionable_spot_z_threshold: 1.0
+
+# --- Logging ---
+logging:
+  level: INFO

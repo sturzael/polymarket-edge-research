@@ -1,0 +1,252 @@
+{
+  "tails": [
+    {
+      "slug": "ethereum-above-2335-on-april-18-2026-5pm-et",
+      "category": "crypto_ladder",
+      "hrs": 0.5279567583333333,
+      "tail": {
+        "side": "YES",
+        "best": 0.988,
+        "c95": 0,
+        "c98": 0,
+        "c99": 21,
+        "prof99": 0.26
+      }
+    },
+    {
+      "slug": "will-30-39-ships-transit-the-strait-of-hormuz-between-april-13-april-19",
+      "category": "other",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.983,
+        "c95": 0,
+        "c98": 0,
+        "c99": 316,
+        "prof99": 4.56
+      }
+    },
+    {
+      "slug": "us-x-iran-diplomatic-meeting-by-april-19-2026",
+      "category": "geopolitics",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.978,
+        "c95": 0,
+        "c98": 290,
+        "c99": 6286,
+        "prof99": 109.14
+      }
+    },
+    {
+      "slug": "will-no-kit-be-said-during-the-cs-iem-rio-2026-grand-final",
+      "category": "other",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "YES",
+        "best": 0.97,
+        "c95": 0,
+        "c98": 434,
+        "c99": 1126,
+        "prof99": 27.54
+      }
+    },
+    {
+      "slug": "will-gerb-udf-gerb-sds-finish-third-in-the-2026-bulgarian-parliamentary-election",
+      "category": "politics",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.971,
+        "c95": 0,
+        "c98": 2762,
+        "c99": 3275,
+        "prof99": 88.29
+      }
+    },
+    {
+      "slug": "will-we-continue-the-change-democratic-bulgaria-ppdb-finish-second-in-the-2026-bulgarian-parliamentary-election",
+      "category": "politics",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.969,
+        "c95": 0,
+        "c98": 1720,
+        "c99": 3357,
+        "prof99": 67.66
+      }
+    },
+    {
+      "slug": "will-trump-say-gay-for-palestine-this-week-april-19",
+      "category": "politics",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.979,
+        "c95": 0,
+        "c98": 139,
+        "c99": 876,
+        "prof99": 18.03
+      }
+    },
+    {
+      "slug": "will-awp-be-said-10-times-during-the-cs-iem-rio-2026-grand-final",
+      "category": "other",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "YES",
+        "best": 0.969,
+        "c95": 0,
+        "c98": 3192,
+        "c99": 3877,
+        "prof99": 90.1
+      }
+    },
+    {
+      "slug": "will-the-7-day-moving-average-of-strait-of-hormuz-transits-be-between-16-and-19-on-april-19-2026",
+      "category": "other",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.987,
+        "c95": 0,
+        "c98": 0,
+        "c99": 169,
+        "prof99": 2.09
+      }
+    },
+    {
+      "slug": "will-there-be-exactly-2-earthquakes-of-magnitude-6pt5-or-higher-worldwide-from-april-13-19",
+      "category": "other",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.984,
+        "c95": 0,
+        "c98": 0,
+        "c99": 1391,
+        "prof99": 18.08
+      }
+    },
+    {
+      "slug": "will-progressive-bulgaria-pb-win-fewer-than-75-seats-in-the-2026-bulgarian-parliamentary-election",
+      "category": "politics",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.969,
+        "c95": 0,
+        "c98": 202,
+        "c99": 221,
+        "prof99": 6.46
+      }
+    },
+    {
+      "slug": "will-monster-be-said-during-the-cs-iem-rio-2026-grand-final",
+      "category": "other",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "YES",
+        "best": 0.77,
+        "c95": 27,
+        "c98": 332,
+        "c99": 983,
+        "prof99": 30.32
+      }
+    },
+    {
+      "slug": "will-trump-say-central-casting-this-week-april-19",
+      "category": "politics",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "YES",
+        "best": 0.1,
+        "c95": 410,
+        "c98": 435,
+        "c99": 1153,
+        "prof99": 92.66
+      }
+    },
+    {
+      "slug": "will-20-29-ships-transit-the-strait-of-hormuz-between-april-13-april-19-yzbu",
+      "category": "other",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.987,
+        "c95": 0,
+        "c98": 0,
+        "c99": 69,
+        "prof99": 0.91
+      }
+    },
+    {
+      "slug": "will-alliance-for-rights-and-freedoms-aps-win-at-least-one-seat-in-the-2026-bulgarian-parliamentary-election",
+      "category": "politics",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.984,
+        "c95": 0,
+        "c98": 0,
+        "c99": 1103,
+        "prof99": 14.65
+      }
+    },
+    {
+      "slug": "will-trump-say-taco-or-trump-always-chickens-out-this-week-april-19",
+      "category": "politics",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.98,
+        "c95": 0,
+        "c98": 0,
+        "c99": 83,
+        "prof99": 1.08
+      }
+    },
+    {
+      "slug": "will-ace-be-said-during-the-cs-iem-rio-2026-grand-final",
+      "category": "other",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "YES",
+        "best": 0.95,
+        "c95": 0,
+        "c98": 623,
+        "c99": 1288,
+        "prof99": 37.15
+      }
+    },
+    {
+      "slug": "will-progressive-bulgaria-pb-win-between-80-84-seats-in-the-2026-bulgarian-parliamentary-election",
+      "category": "politics",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "NO",
+        "best": 0.985,
+        "c95": 0,
+        "c98": 0,
+        "c99": 6514,
+        "prof99": 80.46
+      }
+    },
+    {
+      "slug": "will-gerb-udf-gerb-sds-finish-second-in-the-2026-bulgarian-parliamentary-election",
+      "category": "politics",
+      "hrs": 3.527956758333333,
+      "tail": {
+        "side": "YES",
+        "best": 0.965,
+        "c95": 0,
+        "c98": 378,
+        "c99": 1125,
+        "prof99": 26.08
+      }
+    }
+  ],
+  "pairs": []
+}

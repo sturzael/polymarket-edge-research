@@ -1,0 +1,46 @@
+[
+  {
+    "target": "gamma-api",
+    "samples": 10,
+    "interval_s": 1.0,
+    "statuses": {
+      "200": 10
+    },
+    "latency_ms_mean": 121.1,
+    "latency_ms_median": 50.2,
+    "latency_ms_p90": 90.7
+  },
+  {
+    "target": "clob-markets",
+    "samples": 10,
+    "interval_s": 1.0,
+    "statuses": {
+      "200": 10
+    },
+    "latency_ms_mean": 267.3,
+    "latency_ms_median": 201.0,
+    "latency_ms_p90": 417.3
+  },
+  {
+    "target": "clob-by-id",
+    "samples": 10,
+    "interval_s": 1.0,
+    "statuses": {
+      "404": 10
+    },
+    "latency_ms_mean": null,
+    "latency_ms_median": null,
+    "latency_ms_p90": null
+  },
+  {
+    "target": "data-api-trades",
+    "samples": 10,
+    "interval_s": 1.0,
+    "statuses": {
+      "200": 10
+    },
+    "latency_ms_mean": 100.4,
+    "latency_ms_median": 47.0,
+    "latency_ms_p90": 87.3
+  }
+]

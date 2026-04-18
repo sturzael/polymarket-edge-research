@@ -1,0 +1,41 @@
+[
+  {
+    "bucket": "mid-life",
+    "tte_s": 144.366,
+    "underlying": "DOGE",
+    "slug": "doge-updown-5m-1776480900",
+    "bid": 0.01,
+    "ask": 0.99,
+    "spread": 0.98,
+    "bid_levels": 64,
+    "ask_levels": 27,
+    "bid_notional": 430.0,
+    "ask_notional": 6782.0
+  },
+  {
+    "bucket": "mid-life",
+    "tte_s": 144.366,
+    "underlying": "BTC",
+    "slug": "btc-updown-5m-1776480900",
+    "bid": 0.01,
+    "ask": 0.99,
+    "spread": 0.98,
+    "bid_levels": 63,
+    "ask_levels": 36,
+    "bid_notional": 5880.0,
+    "ask_notional": 42512.0
+  },
+  {
+    "bucket": "mid-life",
+    "tte_s": 144.366,
+    "underlying": "ETH",
+    "slug": "eth-updown-5m-1776480900",
+    "bid": 0.01,
+    "ask": 0.99,
+    "spread": 0.98,
+    "bid_levels": 43,
+    "ask_levels": 56,
+    "bid_notional": 689.0,
+    "ask_notional": 10781.0
+  }
+]

@@ -1,0 +1,47 @@
+gamma closed=true page: 20 markets
+crypto up/down closed: 0
+broader crypto closed: 0
+params={'closed': 'true', 'archived': 'true', 'limit': '50', 'order': 'endDate', 'ascending': 'false'} -> 50 total, 0 updown
+params={'closed': 'true', 'limit': '100', 'order': 'endDate', 'ascending': 'false'} -> 100 total, 0 updown
+params={'archived': 'true', 'limit': '50'} -> 50 total, 0 updown
+
+--- our freshly-resolved markets via CLOB ---
+  eth-updown-5m-1776478800  closed=True  winner=Down
+  bnb-updown-5m-1776478800  closed=True  winner=Up
+  btc-updown-5m-1776478800  closed=True  winner=Down
+
+--- hunting for old crypto markets via gamma ---
+  offset 0: 100 total, 0 5m-updown
+  offset 500: 100 total, 0 5m-updown
+  offset 1000: 100 total, 0 5m-updown
+  offset 2000: 100 total, 0 5m-updown
+CLOB /markets top-level keys: ['data', 'next_cursor', 'limit', 'count']
+markets returned: 1000
+next_cursor: MTAwMA==
+updown: 0  closed_updown: 0
+
+--- page 2 with cursor=MTAwMA==... ---
+updown: 0  closed_updown: 0
+scanned 10000 markets across pages; updown=0  closed_total=8682
+first 5 updown slugs: []
+events params={'closed': 'true', 'limit': '20', 'order': 'endDate', 'ascending': 'false'}:
+  returned 20 events
+  events containing updown markets: 0
+events params={'tag': 'crypto', 'limit': '20'}:
+  returned 20 events
+  events containing updown markets: 0
+events params={'slug': 'btc-updown'}: no data or error: []
+https://data-api.polymarket.com/trades?limit=5  status=200
+  body preview: [{"proxyWallet":"0x1e0f489abc86c4b7f15d06af509e0282ea483cd7","side":"BUY","asset":"18374706988989648780382709680372446713380072598519705991845672516972873020093","conditionId":"0x2d6b5bf846be3af487f00
+https://data-api.polymarket.com/markets?limit=5  status=404
+https://data-api.polymarket.com/conditions?limit=5  status=404
+https://data-api.polymarket.com/events?limit=5  status=404
+
+--- trades for a freshly-resolved market (retention test) ---
+cid=0x04bd20bcb7818c2425 tokens[0]=101005103504339769535333353774714411498544271090247510318504969443612117286927
+data-api trades: status=200  count=10
+  earliest: ts=1776479384  price=0.9799999922935774  size=23.323511
+  latest:   ts=1776479562   price=0.999  size=1.89
+age= 17.8min  our=DOWN  clob=Down  trades=648  range=1776478150..1776479182  eth-updown-5m-1776478800
+age= 17.8min  our=UP  clob=Up  trades=652  range=1776478732..1776479106  bnb-updown-5m-1776478800
+age= 17.8min  our=DOWN  clob=Down  trades=1000  range=1776479068..1776479206  btc-updown-5m-1776478800

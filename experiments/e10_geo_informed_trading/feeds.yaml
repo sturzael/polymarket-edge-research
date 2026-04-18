@@ -1,0 +1,48 @@
+# RSS feeds for e10. All URLs verified returning XML 2026-04-18.
+# poll_interval_s staggered 45..120s across feeds to avoid request bursts.
+#
+# `themes` is the theme-relevance map used by analyze.py when computing
+# per-event feed health. For a flagged event on a market with theme T, a feed F
+# counts as "relevant" if F's themes include theme-group(T) OR include 'global'.
+# theme-group mapping lives in analyze.py::theme_group().
+#
+# Dropped during verification (do not re-add without re-verifying):
+#   - feeds.reuters.com/reuters/worldNews (connection refused)
+#   - reuters.com/world/rss (401)
+#   - rsshub.app/apnews/... (403)
+#   - haaretz.com/srv/htz---all-headlines (404)
+#   - kyivindependent.com/feed (404)
+
+feeds:
+  - name: bbc-world
+    url: https://feeds.bbci.co.uk/news/world/rss.xml
+    poll_interval_s: 45
+    themes: [global]
+  - name: al-jazeera
+    url: https://www.aljazeera.com/xml/rss/all.xml
+    poll_interval_s: 60
+    themes: [middle-east, global]
+  - name: times-of-israel
+    url: https://www.timesofisrael.com/feed/
+    poll_interval_s: 60
+    themes: [middle-east]
+  - name: kyiv-post
+    url: https://www.kyivpost.com/feed
+    poll_interval_s: 90
+    themes: [ukraine]
+  - name: scmp
+    url: https://www.scmp.com/rss/91/feed
+    poll_interval_s: 90
+    themes: [asia]
+  - name: nyt-world
+    url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+    poll_interval_s: 75
+    themes: [global]
+  - name: guardian-world
+    url: https://www.theguardian.com/world/rss
+    poll_interval_s: 75
+    themes: [global, uk]
+  - name: abc-international
+    url: https://abcnews.go.com/abcnews/internationalheadlines
+    poll_interval_s: 120
+    themes: [global]

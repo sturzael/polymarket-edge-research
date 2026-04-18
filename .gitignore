@@ -1,0 +1,50 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Investigation dumps (large JSONL/CSV, regenerable)
+experiments/e9_wallet_competitor_intel/data/
+experiments/e10_geo_informed_trading/data/
+experiments/e10_geo_informed_trading/e10.db
+experiments/e10_geo_informed_trading/e10.db-*
+experiments/e10_geo_informed_trading/watcher.log
+
+# Probe artifacts (regenerable from probe/)
+probe/probe.db
+probe/probe.db-*
+probe/probe.log
+probe/smoke.db
+probe/smoke.db-*
+probe/REPORT.md
+probe/SMOKE_REPORT.md
+
+# Experiment data artifacts
+experiments/e1_post_expiry_paths/per_market.csv
+experiments/e1_post_expiry_paths/summary.json
+experiments/e2_deribit_iv/*.json
+experiments/e3_leadlag/leadlag.db
+experiments/e3_leadlag/leadlag.db-*
+experiments/e3_leadlag/collect.log
+experiments/e3_leadlag/analyze.log
+experiments/e3_leadlag/xcorr_fine.csv
+experiments/e4_book_depth/snapshot_results.json
+experiments/e5_historical_backfill/spike.txt
+experiments/e6_rate_limits/*.json
+experiments/e6_rate_limits/*.log
+experiments/e7_resolution_sources/raw.txt
+experiments/e10_regime_stratified_backtest/data.db
+experiments/e10_regime_stratified_backtest/data.db-*
+experiments/e11_full_scan/scan_*.json
+experiments/e11_full_scan/baseline_*.json
+experiments/e11_full_scan/recurring.log
+experiments/e9_live_arb_scan/runs.jsonl
+
+# MVP runtime data (if any recreated)
+data/

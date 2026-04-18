@@ -1,0 +1,20 @@
+total crypto markets: 958
+
+resolution_source distinct:
+   141  'https://data.chain.link/streams/eth-usd'
+   141  'https://data.chain.link/streams/bnb-usd'
+   141  'https://data.chain.link/streams/btc-usd'
+   141  'https://data.chain.link/streams/doge-usd'
+   141  'https://data.chain.link/streams/sol-usd'
+   141  'https://data.chain.link/streams/xrp-usd'
+    60  'NULL'
+     9  'https://www.binance.com/en/trade/BTC_USDT'
+     9  'https://www.binance.com/en/trade/BNB_USDT'
+     8  'https://www.binance.com/en/trade/ETH_USDT'
+     8  'https://www.binance.com/en/trade/SOL_USDT'
+     8  'https://www.binance.com/en/trade/XRP_USDT'
+     8  'https://www.binance.com/en/trade/DOGE_USDT'
+     2  'https://liquipedia.net/mobilelegends/Main_Page'
+
+umaResolutionStatus distinct:
+   958  'NULL'
