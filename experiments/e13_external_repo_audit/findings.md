@@ -92,25 +92,30 @@ The likely cause: when a crypto market trades at 0.97 with <2h to expiry, spot i
 
 **Decision:** **DROP crypto_barrier from e12 entirely**, OR redesign with a much stricter entry filter (e.g. only enter when spot is >5% from strike — needs external BTC/ETH spot overlay, which the e13 plan flagged as an unmet dependency for `04`).
 
-### 1e. H1 wallet diversity — `05_sii_wallet_diversity.py` ⚠️ low-confidence
+### 1e. H1 wallet diversity — `05_sii_wallet_diversity.py` (initial) + `08_wallet_diversity_at_scale.py` (settled)
 
-n=336 rows / 121 wallets / 41 markets (sample-limited):
+**Initial probe (05) was a sample-size artifact.** The n=121 / 41-markets sample showed top-10=68%, suggesting H1 was wrong. Re-run at scale settles the question.
 
-| Metric | Value |
-|---|---|
-| Distinct wallets | 121 |
-| Total volume | $116,577 |
-| Top-1 wallet share | 22.95% |
-| **Top-10 wallet share** | **68.19%** |
-| Top-50 share | 96.83% |
-| Gini (volume) | 0.83 |
-| Verdict: H1 "flow-diffuse" | **FALSE** (top10 ≥ 50%) |
+**At-scale rerun (08): n=861,964 rows / 33,130 wallets / 11,345 markets, RG coverage 42.6%, no price filter:**
 
-**Caveat:** sample is small. The original H1 saw 411 wallets across 5 markets ≈ 82 wallets/market. We saw 3 wallets/market in our sample. The discrepancy is real but our sample bias is large. Worth a deeper rerun (see "open questions").
+| Metric | Initial (05, n=121) | At scale (08, n=33,130) |
+|---|---|---|
+| Distinct wallets | 121 | **33,130** |
+| Distinct markets | 41 | **11,345** |
+| Wallets / market avg | 3 | **21.9** |
+| Wallets / market p95 | — | 112 |
+| Top-1 share | 22.95% | **4.11%** |
+| **Top-10 share** | **68.19%** | **21.51%** |
+| Top-50 share | 96.83% | 51.31% |
+| Top-100 share | — | 65.66% |
+| Gini (volume) | 0.83 | 0.98 |
+| Verdict H1 "flow-diffuse" | FALSE (artifact) | **TRUE** ✅ |
 
-**If true:** sports_lag is fighting against pros (top 10 wallets eat 68% of post-resolution flow). Realistic capture for a NZ-laptop operator drops from "5–15%" (docs estimate) to "1–5%". This rescales the monthly-net estimate downward by 3–5x but does NOT kill the strategy.
+**Conclusion:** H1 holds at scale. Sports post-resolution arb is retail-paced, not pro-dominated. The original docs claim of "411 wallets across 5 markets, flow-diffuse" stands directionally. Realistic-capture estimate of 5–15% for a NZ-laptop operator stands without rescaling.
 
-**Decision:** **insufficient evidence to act.** Worth re-running with higher row-group cap and looser price/window filters to actually reproduce H1's measurement. Don't change e12 yet.
+**Caveat:** the at-scale measurement is across the full ±30min post-resolution window. The narrow "ask ≤ 0.97 + post-game" sub-window inside that may have different concentration. Watch this during paper trade: if realized fills are dominated by a small set of recurring wallets, the at-scale finding may not hold inside the actual entry sub-window.
+
+**Decision:** H1 confirmed; no risk-rescaling needed. Plan's "Known Limitations" section updated.
 
 ---
 

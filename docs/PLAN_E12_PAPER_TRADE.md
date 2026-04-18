@@ -34,7 +34,13 @@ The current state after those audits:
 - UMA resolution: 2h liveness, $750 bond each side. Sports dispute rate inferred <0.5% post-MOOV2 (platform-wide ~2%).
 
 **Known operators:**
-- `LlamaEnjoyer` (0x9b97…e12) demonstrably trades UFC post-event
+- `LlamaEnjoyer` (full wallet `0x9b979a065641e8cfde3022a30ed2d9415cf55e12`, pseudonym Digital-Shelf, Twitter @Verrissimus). Pulled 500 trades over 125 days from polymarket data-api in `experiments/e13_external_repo_audit/data/llamaenjoyer/`:
+  - Portfolio value: $101,504. Total bought: $2.21M (399 trades). Total sold: $885k (101 trades). Net deployed: $1.32M.
+  - Median entry price: 0.981. Distribution: **41% of buys at price ≥ 0.99**, 26% at 0.95–0.99, 33% at < 0.95.
+  - Slug mix: 45% sports, 6% Fed/politics, 3% geopolitics, 1% crypto, 44% other.
+  - Recent textbook sports-lag entries: UFC Reyes @ 0.999 size 34,425 ($34k), La Liga Atletico-NO @ 0.999 size 151,305 ($151k), Arsenal-NO @ 0.999 size 20,000.
+  - Fed-rate "100% loss" positions are negative-risk hedge structures (buy all 3 outcomes summing < $1.00; one pays $1), not actual losses.
+  - **Strategic divergence from this plan's operating point:** he operates at 0.99–0.999 with $34k–$151k size; per-trade edge ~0.1%; profitable absolutely because of position scale. e12 plan targets 0.95–0.97 with $100–$300 size; per-trade edge ~3–4%; relies on edge magnitude rather than scale. The 0.95–0.97 zone may have far less depth because operators like LlamaEnjoyer (and the bots Saguillo describes) take it before it gets there. **Open question:** should e12 add a 0.99 cap variant to measure whether the volume-rich zone has any edge left for a small operator? See "Known limitations" → "Operating-point gap."
 - Top-3 arb wallets captured $4.2M across 10,200 bets over 12 months (category split not published)
 - `@defiance_cr` open-sourced and shut down his MM bot: "no longer profitable"
 - Retail is the seller side of the post-resolution window (behavioral, persistent)
@@ -106,16 +112,25 @@ FILL_RECHECK_DELAY_S = 1     # for fill-confirmation; not used in v1 since pm-tr
 SAMPLE_TARGET_TRADES = 75
 MAX_RUN_HOURS = 168
 
-# Account setup (sports_lag only; crypto_barrier dropped per e13)
+# Account setup — 2 size models × 2 entry caps = 4 cells (2x2 grid)
+# The two entry caps run in parallel; tells us whether edge concentrates at
+# the tighter price (where most opportunities have moved on) or persists at
+# the looser one (where fills are more frequent). Free information vs single-cap.
 SEED_BALANCE = 10_000
+ENTRY_TARGET_CAPS = [0.95, 0.97]   # tested in parallel
 ACCOUNTS = [
-    ("sports_lag", "fixed_100"),
-    ("sports_lag", "depth_scaled"),
+    ("sports_lag", "fixed_100",   0.95),
+    ("sports_lag", "fixed_100",   0.97),
+    ("sports_lag", "depth_scaled", 0.95),
+    ("sports_lag", "depth_scaled", 0.97),
 ]
+# Account-name convention: sports_lag__fixed_100__cap95, ...__cap97, etc.
 
 # Entry sizing
-ENTRY_TARGET_CAP = 0.97
 DEPTH_SCALED_FRAC = 0.25
+# Note: ENTRY_TARGET_CAP is now per-cell (see ACCOUNTS); each cell uses its
+# own cap to filter detections. Detection scan uses max(ENTRY_TARGET_CAPS)=0.97
+# so both cells can evaluate the same detection.
 
 # Risk gates (Octagon-derived, per e13 Investigation 2)
 MAX_DRAWDOWN_PER_CELL = 0.20      # kill cell at 20% drawdown
@@ -146,7 +161,12 @@ Buy a $5 position in a recently-resolved sports market (winning side at ~0.97). 
 - If `fee > 0` → pm-trader's model disagrees with on-chain reality. **Halt.** Three paths:
   a. Reconcile: check whether pm-trader's `bps` parameter is configurable; set to 0
   b. Investigate: pull the live market's `getClobMarketInfo(conditionID).info.fd.r` to see the actual feeRate override
-  c. Accept: if pm-trader insists on charging published rate, run with that as a more conservative assumption and note the discrepancy in every report
+  c. **MANDATORY backtest re-validation** (replaces the prior "accept conservative assumption" option). If reconciliation (a) and investigation (b) both confirm the live exchange charges the non-zero rate:
+     1. Re-run `experiments/e13_external_repo_audit/03_sii_sports_lag_backtest.py` with `DEFAULT_FEE_BPS = <verified live rate>`.
+     2. If historical net edge at the live rate falls below the **ambiguous-zone floor (1.5%, see decision criterion below)** → halt the project and re-evaluate the strategy. Do not paper-trade a thesis whose historical edge dies at the realistic fee.
+     3. If historical net edge at the live rate stays ≥ 1.5% → proceed, but lock the live rate as the new `FEE_BPS` default and re-run `slug_audit.py` and `pre_run.py` with it before unpausing.
+
+  Rationale: a "more conservative assumption" is still an assumption. The historical backtest is the only check against picking a strategy that survives at fee=0 but dies at fee=published-rate.
 
 ### 0c. V2 readiness check
 - Confirm pm-trader's installed version. Check its GitHub/PyPI for V2 migration notes.
@@ -284,17 +304,22 @@ def maybe_place(c):
 
 ## V2 cutover plan (`v2_migration.py`)
 
-The 2026-04-22 cutover is during our expected run window. Protocol:
+The 2026-04-22 cutover happens **before** the daemon starts (per the verification order: HARD WAIT until 2026-04-25). `v2_migration.py` is a one-shot pre-start verification script, not a mid-run pause.
 
-1. **Pre-cutover (2026-04-22 ~10:00 UTC):** daemon logs current state snapshot; pauses order placement ~30 min before scheduled cutover time
-2. **Cutover:** Polymarket brings V2 live (~1h downtime expected)
-3. **Post-cutover verification:**
-   - `polymarket-apis` response shape unchanged for `/markets` and `/events`? (if library hasn't been updated, patch or hold)
-   - `getClobMarketInfo(conditionID).info.fd.r` still returns the fee rate? Fee rate unchanged?
-   - pm-trader's next simulated buy completes without error and bills expected fee
-   - Slug patterns still apply (V2 shouldn't change market slugs, but verify)
-4. **Resume:** daemon restarts; logs `v2_migrated: true` on all subsequent detections/positions
-5. **If verification fails:** pin pre-cutover library versions, keep daemon paused until library fixes ship
+1. **2026-04-22 ~09:30 UTC (pre-cutover):** run `v2_migration.py snapshot` to capture:
+   - `markets.parquet` schema + 50 sampled rows
+   - `getClobMarketInfo(conditionID).info.fd.r` for 5 active sports markets
+   - `polymarket-apis` Pydantic model field set
+   Persist to `data/v2_pre_snapshot.json`.
+2. **2026-04-22 ~10:00 UTC:** Polymarket brings V2 live (~1h downtime expected). Don't poll during this window.
+3. **2026-04-23 (V2 + 24h):** run `v2_migration.py verify`:
+   - Re-pull the same surfaces; diff against `v2_pre_snapshot.json`
+   - **Schema drift:** any added/removed field in the gamma `Market` model that `polymarket-apis` doesn't yet handle → patch the library or pin to a fork
+   - **Fee schedule:** if fee rate is now non-zero, apply Phase 0b's mandatory backtest re-validation rule (re-run `e13/03` with the new rate; halt if historical edge falls below 1.5% ambiguous-zone floor)
+   - **CLOB tokens:** `PolymarketReadOnlyClobClient.get_market` returns populated tokens on active sports markets (the e13 Investigation 3 unverified item)
+4. **2026-04-23 / 24:** re-run `shakedown.py` (0a + 0b) end-to-end against V2-live exchange. If anything fails, do not advance to step 5 below.
+5. **2026-04-25 00:00 UTC (earliest):** start daemon (verification step 6 in the run order). Sidecar logs `v2_migrated: true` on every position.
+6. **If verification fails at any point:** keep daemon offline; track library / exchange fixes; re-attempt verification daily until clean.
 
 ## Resolver (`resolver.py`)
 
@@ -334,7 +359,15 @@ sports_lag × fixed_100  (fee_bps = 0)
 
 Re-run at `fee_bps = 0, 100, 300` for sensitivity (validates e13's fee-robustness finding on live data).
 
-**Decision criterion:** kill a size_model cell if net edge < 0.5% OR total net PnL negative, at `fee_bps = 0`. Keep otherwise.
+**Decision criterion** (pre-committed before the run; do NOT modify after seeing results):
+
+| Net edge at `fee_bps = 0` (or actual live rate per Phase 0b) | Action |
+|---|---|
+| < 0.5% OR total PnL negative | **KILL** the cell |
+| 0.5% ≤ net edge < 1.5% | **AMBIGUOUS** — do NOT proceed to capital. Extend sample by another 75 trades (or 7-day cap, whichever first), then re-evaluate. If still ambiguous → kill. |
+| ≥ 1.5% | **PROCEED** to capital-deployment decision |
+
+Rationale: pre-commit prevents observed-edge magnitude from biasing the bar. Sample-thin "barely positive" results historically translate to negative real-money runs after fees, slippage, and the operator-skill gap (Akey 2026: <30% of Polymarket traders profitable; Della Vedova 2026: bots take 2.52¢ per contract from casual traders).
 
 ## Verification (execution order)
 
@@ -342,13 +375,18 @@ Re-run at `fee_bps = 0, 100, 300` for sensitivity (validates e13's fee-robustnes
 2. Run `shakedown.py` (0a + 0b + 0c). **Halt on zero-fee assertion failure.**
 3. Run `slug_audit.py`. Commit corrected pattern list + CLOB-tokens verification.
 4. Run `pre_run.py` for 1 hour. Confirm 75-trade target reachable in ≤ 7 days.
-5. Start daemon in tmux: `uv run python -m experiments.e12_paper_trade.daemon`.
-6. After 30 min: smoke-test `report.py`. Confirm positions opening on both paths, risk gates logging, no exceptions.
-7. Spot-check 3–5 resolved positions against real gamma-api trade tape. >20% fill-model mismatch → pause and debug.
-8. **On 2026-04-22:** follow V2 cutover plan.
+5. **HARD WAIT until 2026-04-25 00:00 UTC** (V2 cutover 2026-04-22 + 48–72h stabilization). Daemon does NOT start before this. Use the wait window to:
+   - Monitor `pm-trader` and `polymarket-apis` GitHub repos for V2-compatibility patches; pin known-good versions
+   - On 2026-04-22 ~10:00 UTC: take a pre-cutover snapshot of `markets.parquet` schema + a sampled `getClobMarketInfo` response for diff against post-cutover
+   - On 2026-04-22 +24h: confirm gamma-api response shapes still match `polymarket-apis` Pydantic models; patch or downgrade if not
+   - On 2026-04-23 / 24: re-run `shakedown.py` (0a + 0b) against the V2-live exchange
+   - **If V2 zero-fee finding does NOT replicate post-cutover:** apply Phase 0b's mandatory backtest re-validation rule before any further progress. Possible halt.
+6. Start daemon in tmux: `uv run python -m experiments.e12_paper_trade.daemon`.
+7. After 30 min: smoke-test `report.py`. Confirm positions opening on both paths, risk gates logging, no exceptions.
+8. Spot-check 3–5 resolved positions against real gamma-api trade tape. >20% fill-model mismatch → pause and debug.
 9. Run until `SAMPLE_TARGET_TRADES = 75` hit (or 7-day cap).
 10. Final `report.py` at `fee_bps = 0, 100, 300`.
-11. Apply decision criterion per size_model cell.
+11. Apply decision criterion per size_model cell (see "Decision criterion" section for ambiguous-zone handling).
 
 ## Known limitations in v3
 

@@ -39,7 +39,7 @@ DATA_DIR = Path(__file__).parent / "data"
 PROBE_JSON = DATA_DIR / "01_probe.json"
 OUT_JSON = DATA_DIR / "09_llamaenjoyer_pnl.json"
 
-ADDR_PREFIX = "9b97"   # without 0x
+ADDR_PREFIX = "0x9b97"
 ADDR_SUFFIX = "e12"
 LOOKBACK_DAYS = 30
 DATASET_CUTOFF_TS = pd.Timestamp("2026-03-31", tz="UTC").timestamp()
