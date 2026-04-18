@@ -45,6 +45,8 @@ experiments/e11_full_scan/scan_*.json
 experiments/e11_full_scan/baseline_*.json
 experiments/e11_full_scan/recurring.log
 experiments/e9_live_arb_scan/runs.jsonl
+experiments/e13_external_repo_audit/data/
+experiments/e13_external_repo_audit/*.log
 
 # MVP runtime data (if any recreated)
 data/

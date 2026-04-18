@@ -352,3 +352,112 @@ Survives so far section: sports settlement-lag arb, pending H3+H5 live tests at 
 
 Both falsifications followed the same shape: confident number → user requests sense-check → data pull produces negative result → prior writeup gets invalidated. The pattern is documented in the bottom of `NULL_RESULTS.md`. Operational rule going forward: any pitch with a revenue number gets a data-pull sense-check *before* being written up, not after.
 
+---
+
+## Session 2026-04-19 — paper-trade plan + external audits
+
+Project re-opened to design a paper-trade harness for the surviving theses. What started as "wire up pm-trader and start polling" turned into a four-front audit that materially reshaped the plan. All findings below are concrete numbers pulled in this session, not carried forward from earlier sessions.
+
+### External-repo sweep (evaluated for integration into e12)
+
+**Integrated:**
+- [`agent-next/polymarket-paper-trader`](https://github.com/agent-next/polymarket-paper-trader) (253⭐, PyPI) — book-walking fills, exact Polymarket fee formula, multi-account. Execution layer for e12.
+- `polymarket-apis` (PyPI, v0.5.7) — typed Pydantic Gamma/CLOB client. Drop-in for hand-rolled aiohttp.
+- Sports-result feeds: [`pseudo-r/Public-ESPN-API`](https://github.com/pseudo-r/Public-ESPN-API) (454⭐), [`swar/nba_api`](https://github.com/swar/nba_api) (3.5k⭐), [`toddrob99/MLB-StatsAPI`](https://github.com/toddrob99/MLB-StatsAPI) (783⭐).
+- `httpx + PyrateLimiter` for async rate-limit.
+
+**Independent confirmations of kills:**
+- [`warproxxx/poly-maker`](https://github.com/warproxxx/poly-maker) (1k⭐) — author: "not profitable in today's market, will lose money." Re-confirms the hourly-ladder MM kill (e11).
+- `@defiance_cr` open-sourced and shut down his MM bot for the same reason.
+
+**Deferred / parked:**
+- [`Jon-Becker/prediction-market-analysis`](https://github.com/Jon-Becker/prediction-market-analysis) (3k⭐) — 36 GiB historical parquet. Fallback dataset if SII fails.
+- [`warproxxx/poly_data`](https://github.com/warproxxx/poly_data) (1.3k⭐) — Goldsky subgraph for v2 hot-market flagging.
+- [`sstklen/trump-code`](https://github.com/sstklen/trump-code) (735⭐) — Polymarket↔Kalshi cross-platform arb. Separate future plan.
+- [`evan-kolberg/prediction-market-backtesting`](https://github.com/evan-kolberg/prediction-market-backtesting) (628⭐) — originally Phase 0 fee cross-check; obsoleted by SII on-chain fee truth.
+
+### Polymarket protocol docs sweep (direct from docs.polymarket.com)
+
+Several assumptions treated as empirical unknowns are actually documented:
+
+- **Fee formula:** `fee = shares × feeRate × p × (1−p)`. Peaks at p=0.5. Prior plan had `min(p, 1−p)` — a 2× shape error.
+- **Per-category published rates:** Crypto 7.2 bps, Sports 3 bps, Finance/Politics/Tech 4 bps. See e13 SII finding below — empirical on-chain is zero.
+- **Rate limits:** Gamma general 4000/10s, `/markets` 300/10s. Prior plan's 5/s guess was 60× conservative.
+- **CLOB priority:** price-time (not pro-rata). Tick sizes 0.1/0.01/0.001/0.0001 per-market.
+- **UMA resolution:** 2h liveness, $750 pUSD bond per side. Auto-proposer posts within minutes → ~2–2.5h total settlement undisputed.
+- **🚨 V2 cutover: 2026-04-22** — CTF Exchange V2 + CLOB V2 with no V1 backward compat. Paper trading mostly insulated (not on-chain), but gamma shapes and fees may drift. e12 plan pauses/verifies/resumes.
+- **Cancel-before-match latency:** NOT publicly documented. Remains empirical unknown.
+
+Saved to memory at `~/.claude/projects/.../polymarket_protocol_facts.md`.
+
+### Academic literature sweep
+
+- **Della Vedova 2026** (SSRN 6191618, "Execution, not Information") — EXACT thesis match. 222M trades. Bots pay 2.52¢ less per contract than casual traders. Execution skill drives PnL, not prediction. No paper has isolated the specific post-resolution sports window — e12 fills that gap.
+- **Becker 2026** "Microstructure of Wealth Transfer" — Sports has one of the smallest maker-taker gaps (2.23pp). Closer to efficient than entertainment/world-events.
+- **Akey, Grégoire, Harvie, Martineau 2026** (SSRN 6443103) — Top 1% = 84% of gains. Market-making is the only strategy class with predicted positive returns. Yellow flag for sports_lag (taker strategy).
+- **Saguillo et al. 2508.03474** — Arb opportunity duration collapsed **12.3s (2024) → 2.7s (2025)**. 73% of arb profits captured by sub-100ms bots. Our 14.4 min sports_lag window is 300× longer — currently insulated, compression trend to watch.
+
+### UMA disputes + operator wallets
+
+- Platform dispute rate ~2% (217 / 11,093 settled markets, UMA blog). Sports inferred **<0.5%** post-MOOV2.
+- Known sports-arb operator: `LlamaEnjoyer` (0x9b97…e12) — demonstrably trades UFC post-event ($67k gain in the UFC Fortune/Tybura blunder case).
+- Top-3 arb wallets across all categories: $4.2M over 12 months on 10,200 bets.
+- Retail is the seller side at 0.95–0.99 post-resolution — behavioral, persistent counterparty (QuantVPS blog confirms "retail impatient exits at 0.997–0.999").
+
+### e13 external-repo audit — concrete numbers from SII-WANGZJ/Polymarket_data
+
+Parallel investigation against 954M on-chain rows (19-day fresh). Full report at `experiments/e13_external_repo_audit/findings.md`.
+
+**Investigation 1b — realized fees (n=143 sports post-resolution trades):**
+- taker_fee_bps median / p95: **0.0 / 0.0**
+- maker_fee_bps median / p95: **0.0 / 0.0**
+- Zero across all price bands (0.95–0.99)
+- **Interpretation:** H3 fee gate empirically resolved. Takers pay zero on-chain for sports post-resolution trades in the SII sample. Published docs rates (Sports 3 bps) may be ceiling / legacy / per-market-override capable. Phase 0b shakedown verifies pm-trader agrees on live sports buys.
+- **Caveat:** n=143. Fees may differ for non-sports, large notional, or post-dataset-cutoff.
+
+**Investigation 1c — sports_lag historical edge (n=47 entries):**
+- Gross edge: **+3.99% notional-weighted**
+- Net edge at 100 bps: +3.95%; 300 bps: +3.87%; realized 0 bps: **+3.99%**
+- Avg hold: 14.4 min (matches the OPPORTUNITY doc's 11.7 min median claim)
+- Thesis directionally confirmed. Robust to any fee assumption 0–300 bps.
+- **Caveat:** n=47 plateaued at row group 41/76. Deeper rerun with `MAX_TRADE_ROW_GROUPS=300` queued in e13.
+
+**Investigation 1d — crypto_barrier historical edge (n=5,220 entries):**
+- Hit rate: 62.66%. **Crash rate: 37.34%**
+- Gross edge (notional-weighted): **−63.44%**
+- Net at 100 bps: −63.47%; 300 bps: −63.53%. Notional: $890k
+- **Killed.** Fees are noise vs crash losses. The ~1% net EV estimate in `e9_live_arb_scan/README.md` was wildly optimistic. Added to NULL_RESULTS.md.
+- Possible salvage: tighter spot-distance filter (≥5% from strike) — needs external BTC/ETH minute-bar overlay, separate investigation.
+
+**Investigation 1e — H1 wallet-diversity re-derivation (n=121 wallets, 41 markets):**
+- Top-10 wallet share: **68.19%** (vs original H1's "411 wallets, flow-diffuse")
+- Gini 0.83. **Verdict: H1 FALSE at this sample size.**
+- **Caveat:** n=336 rows is 3 wallets/market vs H1's 82 wallets/market. Deeper rerun needed. If confirmed, realistic capture rescales 3–5× down; doesn't kill strategy.
+
+**Investigation 2 — Octagon risk-gate patterns:**
+- Recommended: `MAX_DRAWDOWN_PER_CELL = 0.20`, `MAX_OPEN_PER_EVENT = 3`. Integrated into e12.
+- Skipped: half-Kelly, daily loss limit, JSON envelope, Kalshi cross-venue.
+
+**Investigation 3 — `polymarket-apis` (PyPI v0.5.7):**
+- `PolymarketGammaClient.get_markets()` works (10 typed markets in 0.41s). Integrated.
+- `PolymarketReadOnlyClobClient.get_market()` reachable but returned 0 tokens on sampled market — retest queued in e12 slug_audit.
+
+### Net effect on e12 plan
+
+The findings converged on a much tighter scope:
+
+- **Dropped:** crypto_barrier entirely. FEE_BPS=100 placeholder. Nautilus Phase 0 cross-check.
+- **Added:** FEE_BPS=0 default + Phase 0b zero-fee assertion. Octagon risk gates (drawdown, event concentration). V2 cutover pause/verify/resume on 2026-04-22. `polymarket-apis` gamma client. Poll cadence revised 20s → 2s.
+- **Preserved:** sports-result feeds + book-poll dual-path detection, two size models, sample-size-driven termination, time-weighted return reporting, pm-trader as execution layer.
+
+Full revised plan at `docs/PLAN_E12_PAPER_TRADE.md`.
+
+### Open questions queued for future passes
+
+1. Sports_lag sample plateau — rerun e13's `03_sii_sports_lag_backtest.py` with higher row-group cap.
+2. H1 wallet-diversity at scale — rerun e13's `05_sii_wallet_diversity.py` with `MAX_USER_ROW_GROUPS=400+` and looser filters.
+3. crypto_barrier salvage — overlay Binance minute bars; recompute crash rate by spot-distance bucket.
+4. CLOB token retrieval — verify `PolymarketReadOnlyClobClient.get_market` returns populated tokens on active sports markets.
+5. Fee-structure recency — Phase 0b shakedown assertion is the continuous check as V2 cutover approaches.
+6. Cancel-before-match latency — undocumented; would need on-chain observe-only probe.
+

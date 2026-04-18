@@ -192,3 +192,51 @@ Operational burden:
 Once we measure fees and latency, the estimate will shrink again. The honest realistic range is probably **$500-5,000/month at $5-20k capital** for a NZ-based laptop operator. At the low end it's barely worth the operational burden; at the high end it's a decent part-time revenue stream.
 
 If H3 fails (fees > 2%) or H5 fails (latency makes us lose most fills) → **kill**.
+
+---
+
+## UPDATE — 2026-04-19: H3 resolved empirically, paper-trade plan scoped
+
+Two audits ran in parallel (e13 historical backtest against the SII 954M-row dataset, plus a live Polymarket docs + academic lit sweep). Net effect on this thesis:
+
+### ✅ H3 (fees) — resolved without the $10 live test
+
+e13 joined 143 sports post-resolution trades to on-chain `taker_fee` and `maker_fee` event-log fields. **Both zero across all price bands (0.95–0.96 / 0.96–0.97 / 0.97–0.98 / 0.98–0.99).** Fraction-zero = 100%. Sample was 2026-03 data, 18–19 days fresh at the time of probe.
+
+Published Polymarket docs rate for Sports is 3 bps, not zero. The discrepancy likely reflects a per-market `feeRate` override set to zero, or a maker-only fee schedule that the SII snapshot captured. Either way: **sports_lag is fee-free empirically**. The e12 paper-trade plan defaults `FEE_BPS = 0` with a Phase 0 shakedown assertion that halts if pm-trader's live fee model disagrees.
+
+### ✅ H1 (flow-diffuse vs pro-dominated) — partial retest, low confidence
+
+e13's wallet-diversity probe sampled 121 wallets across 41 sports markets: **top-10 wallet share = 68.19%, Gini = 0.83**. This contradicts the original "411 wallets, flow-diffuse" finding. But sample is 336 rows (3 wallets/market) vs the original's 82 wallets/market — too thin to confidently reverse H1. Queued for a deeper rerun.
+
+If confirmed, the strategy is fighting pros, not retail. Realistic capture rescales ~3–5× downward; doesn't kill the strategy but re-bounds the upside.
+
+### ⚠️ H5 (latency) — still unresolved but re-framed
+
+Paper trading doesn't need this closed out. The e12 plan simulates VPS-grade execution (~30ms RTT, well-located). The real H5 test happens post-paper-trade if the strategy passes, as part of live deployment.
+
+However, Saguillo 2508.03474 measured general-arb duration collapsing **12.3s (2024) → 2.7s (2025)** with **73% bot-captured**. Our sports_lag median hold is 14.4 min (confirmed by e13) — 300× longer than Saguillo's general-arb window, so currently insulated. Treat as a caveat to watch during paper trading: if fills consistently lose to the same handful of wallets, the compression is reaching us.
+
+### 📊 Historical edge confirmed (sample-thin)
+
+e13's 03_sii_sports_lag_backtest: **n=47 entries, +3.99% net edge notional-weighted at realized 0 bps fees, +3.87% at 300 bps fees**. Avg hold 14.4 min matches the 11.7 min claim above. Edge robust to fee assumption.
+
+Sample is thin — the backtest plateaued at row group 41/76, likely due to trades.parquet ordering. Queued: rerun with `MAX_TRADE_ROW_GROUPS=300` for confidence. Directionally the thesis is confirmed.
+
+### ❌ crypto_barrier — killed by same audit
+
+Previously paired with sports_lag in the e12 paper-trade plan as a second strategy. e13 backtest: **n=5,220 entries, −63.44% notional-weighted net edge, 37.34% crash rate**. The ~1% net EV estimate in `e9_live_arb_scan/README.md` was wildly optimistic. Dropped from e12. See `NULL_RESULTS.md` entry #6.
+
+### 🚨 V2 cutover 2026-04-22
+
+Polymarket migrates to CTF Exchange V2 + CLOB V2 on 2026-04-22 with no V1 backward compat. Paper trading doesn't submit on-chain so is mostly insulated, but gamma-api response shapes and fee schedule may drift. The e12 plan pauses the daemon across cutover, verifies `polymarket-apis` and pm-trader still work, and resumes.
+
+### Current state
+
+Thesis remains alive and now has empirical tailwinds (zero fees, +3.99% edge confirmed historically) balanced against an empirical headwind (H1 wallet-diffuse may be false; top-10 = 68% on low sample).
+
+**No capital deployed yet.** Next step is the e12 paper-trade harness, documented at `docs/PLAN_E12_PAPER_TRADE.md`. Decision criterion: net edge ≥ 0.5% at `fee_bps=0` across 50–100 paper trades → survives; otherwise killed.
+
+Known sports-lag operator identified: `LlamaEnjoyer` (0x9b97…e12), demonstrably trades UFC post-event. Reference for competitive landscape. QuantVPS blog ("retail impatient exits at 0.997–0.999") confirms the seller-side flow is behavioral retail, supporting strategy persistence.
+
+Updated revenue estimate (honest, many-times-revised): **$100–$1,500/month at $5–20k capital** for a VPS-operated solo trader. Low end if H1 fails (fighting pros with small capture); mid if it holds and fills land reliably; high if sports-feed Path A gives a meaningful edge over book-polling. These are still assumption-dependent and will be replaced by paper-trade realized numbers.

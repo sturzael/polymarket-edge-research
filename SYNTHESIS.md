@@ -180,3 +180,47 @@ Total code: ~4,500 lines of Python. Total data (regenerable): ~800MB SQLite. Tot
 ---
 
 *End of synthesis. The research is complete. The two remaining tests, if run, close out the last live thesis. Otherwise the project lands here.*
+
+---
+
+## Post-synthesis update (2026-04-19): paper-trade phase started
+
+This synthesis was written as a capstone. It has since been partially superseded by a new phase — the project re-opened to design and (pending approval) run a continuous paper-trade harness on the surviving theses. What changed:
+
+### Sports settlement-lag arb: alive and better-characterized
+
+The "provisionally alive" sports-lag thesis is now partially empirically validated:
+- **H3 (fees) is resolved.** e13 historical backtest against the SII-WANGZJ on-chain Polymarket dataset (954M rows) measured taker fees across 143 sports post-resolution trades: zero across all price bands. The $10 live-test H3 gate is no longer blocking.
+- **Historical edge confirmed (sample-thin).** Same e13 audit measured +3.99% notional-weighted net edge across 47 entries, 14.4 min avg hold. Directionally matches the earlier in-repo observations.
+- **H1 (wallet-diffuse) partially contradicted.** A re-derivation at 121 wallets / 41 markets found top-10 = 68% of volume, contradicting the original "411 wallets" claim. Sample is too thin to reverse H1 confidently; deferred pending deeper rerun.
+
+### Crypto-barrier tail-scalp: killed
+
+Previously categorized as "residual arb opportunity" in `e9_live_arb_scan`, which proposed ~1% net EV held to resolution. Same e13 audit: **n=5,220, −63.44% notional-weighted net edge, 37.34% crash rate**. Crypto realized volatility of 1–2%/hour flips 37% of these markets before resolution. Added to NULL_RESULTS.md as falsification #6.
+
+### Austere-Heavy tail-insurance: unchanged status
+
+The Austere-Heavy style barrier-market tail-insurance strategy is distinct from the killed crypto-barrier residual arb above (different entry triggers, different holding logic). The two cheap tests described earlier in this synthesis remain outstanding. Not part of the e12 paper-trade scope.
+
+### Paper-trade harness (e12)
+
+Plan documented at `docs/PLAN_E12_PAPER_TRADE.md`. Single strategy (sports_lag), two size models, continuous daemon, restart-safe SQLite. Uses `polymarket-paper-trader` (book-walking fills against live Polymarket order books), `polymarket-apis` (typed Gamma client), sports-result feeds (ESPN + nba_api + MLB-StatsAPI) for earlier detection than book-polling alone. Risk gates from Octagon pattern review (20% drawdown cell breaker, max 3 concurrent per event). V2 cutover on 2026-04-22 forces an explicit pause/verify/resume protocol mid-run.
+
+Decision criterion: keep the strategy if net edge ≥ 0.5% at `fee_bps=0` across 50–100 paper trades; kill otherwise. Sensitivity analysis at fee_bps = 0, 100, 300 for robustness to the fee-is-zero finding.
+
+### Updated posture on LLM-assisted research
+
+Two additional failure modes surfaced this session worth noting:
+1. **Protocol-docs gap.** Several assumptions the earlier sessions had treated as empirical unknowns (fee formula, rate limits, UMA resolution latency, V2 cutover date) were published at docs.polymarket.com the whole time. Not checking docs first cost real plan iteration.
+2. **Sample-size inflation.** The e13 historical backtest returned concrete numbers (+3.99% edge, −63% crash) with wildly different sample sizes (47 vs 5,220). The smaller sample was preserved as actionable without the sample-size caveat initially; the user flagged this explicitly. Rule: always pair a result with its sample size and a note on whether the sample warrants action.
+
+Both align with the broader posture already in this synthesis: the LLM is a research assistant, not an analyst. Polish is not accuracy. Verify before acting.
+
+### Current project state
+
+- Plan approved, harness not yet built
+- e13 audit complete with concrete numbers
+- No capital deployed, no live trades
+- Next step: Phase 0 shakedown + slug_audit + pre_run before the main daemon
+
+The research is not complete. The synthesis above captures the Stage 1 arc (exploration → falsification → one survivor). Stage 2 (paper-trade validation) is now in progress and will either promote sports_lag to live-deployment candidate or add it to NULL_RESULTS.md.

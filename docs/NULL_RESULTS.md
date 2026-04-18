@@ -66,11 +66,27 @@ The original v2 plan used this as its core metric. User flagged that its expecte
 
 ---
 
+## 6. Polymarket crypto-barrier residual arb (falsified 2026-04-19)
+
+**The claim:** buy the near-certain side of intraday BTC/ETH barrier markets (e.g. `bitcoin-above-76k-on-april-18`) at 0.95–0.98 when spot is already well past the strike. `experiments/e9_live_arb_scan/README.md` identified $18.3k capturable depth across 4 markets on 2026-04-18 and proposed holding to resolution for ~1% net EV. Strategy was slated for inclusion in the e12 paper-trade harness as a second account pair alongside sports_lag.
+
+**The test:** e13's `04_sii_crypto_barrier_backtest.py` ran the exact entry rule (`last_trade_price > 0.95`, `hoursToResolution < 2`, ask ≤ 0.98) against the SII-WANGZJ on-chain Polymarket dataset (954M rows, 19-day fresh). Joined entries to realized outcomes.
+
+**The result:** **n=5,220 entries. Notional-weighted net edge −63.44% at any fee assumption (fees are noise relative to crash losses). Crash rate 37.34%.** Notional sampled $890,716. Median hours-to-end 1.09.
+
+The mechanism: when a crypto market trades at 0.97 with <2h to expiry, spot is necessarily close enough to the barrier that price isn't at 0.99. Crypto's realized 1–2% hourly volatility is sufficient to flip ~37% of these markets before resolution. The 3-cent "spread above 1.00" is the crash-risk premium, not edge.
+
+**Full write-up:** `experiments/e13_external_repo_audit/findings.md` — Investigation 1d.
+
+**Implication:** the strategy as designed destroys capital at −63% notional-weighted. The `e9_live_arb_scan/README.md` ~1% net EV figure was wildly optimistic. **Dropped from e12 paper-trade plan entirely.** Possible salvage: a much stricter entry filter (only enter when spot is ≥5% from strike, measured against external Binance spot bars) might rescue a subset of these markets. Requires external spot overlay and separate investigation — not on e12's critical path.
+
+---
+
 ## Survives so far (as of 2026-04-19)
 
 Not yet falsified; also not yet validated. Lower bar for inclusion than a null result, higher bar than a pitch.
 
-- **Sports settlement-lag arb on Polymarket.** Identified in `docs/OPPORTUNITY_SPORTS_EVENT_LAG_ARB.md`. Prior wallet analysis (411 wallets / 5 markets, flow-diffuse, no cartel) actually *favors* the edge surviving at laptop scale. `FINDINGS.md:243` notes that H3 (fees) + H5 (NZ latency) live tests at $5-10 cost on a funded Polymarket wallet are prerequisites. Neither has been executed. Until they are, the thesis is alive but not validated.
+- **Sports settlement-lag arb on Polymarket.** Identified in `docs/OPPORTUNITY_SPORTS_EVENT_LAG_ARB.md`. H3 (fees) empirically resolved: e13 measured zero on-chain taker fees across 143 sports post-resolution trades. Historical backtest (e13, n=47) shows +3.99% notional-weighted net edge, 14.4 min avg hold — directionally confirmed but sample-thin. H1 (flow-diffuse) partially contradicted at low sample (top-10 = 68%); deferred pending deeper rerun. Paper-trade validation via the e12 harness is the next gate; live capital deployment is conditional on positive paper results. See `docs/PLAN_E12_PAPER_TRADE.md`.
 
 - **Stablecoin lending / DeFi-native T-bill-adjacent yield.** 4-8% APY at low operational complexity. Not an alpha strategy — just an alternative to cash. Worth knowing as a default baseline for comparing every other idea against.
 
