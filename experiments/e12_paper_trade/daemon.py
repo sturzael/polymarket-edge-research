@@ -81,7 +81,7 @@ async def _record_fill(det_id: int, cell: str, c: detector.Candidate,
         latency_ms=latency_ms, slippage_bps=slippage_bps,
     )
     sidecar.insert_position_context(
-        pm_trade_id=str(tr.trade.id), account=cell,
+        pm_trade_id=f"{cell}::{tr.trade.id}", account=cell,
         strategy="sports_lag", size_model=size_model, entry_cap=entry_cap,
         detection_path=c.detection_path, market_slug=c.market_slug,
         event_id=c.event_id, side=c.side,
