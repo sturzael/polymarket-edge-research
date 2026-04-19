@@ -2,18 +2,21 @@
 
 A structured research project investigating whether a solo operator could find tradeable edge on Polymarket using an LLM-assisted research workflow (Claude Code + conversational review).
 
-**TL;DR:** Ten trading theses investigated. Nine falsified (including crypto-barrier residual arb, killed on 2026-04-19 by a historical backtest showing −63% net edge / 37% crash rate across n=5,220). One survives (sports settlement-lag arb) with the fee gate now empirically resolved (zero on-chain taker fees across 143 sports post-resolution trades) and a sample-thin +3.99% historical net edge confirmed. A paper-trade harness is planned; decision pends 50–100 paper trades. Honest upside estimate: **$100–$1,500/month at $5–20k capital** for a VPS-operated solo trader, assumption-dependent.
+**TL;DR — project closed 2026-04-19.** Ten thesis classes investigated. All ten dead at $1k-bankroll laptop scale. Sports settlement-lag arb's +3.99% historical edge did not survive contact with live market reality (the 0.95-0.97 entry zone is empty in real time; only futures populate it). Negative-risk multi-leg arb was the late-stage candidate; Q3 retrospective showed 2.2% frequency × 5% edge × $19k median depth = ~$400-900/year best case at $1k bankroll, eaten by execution risk. The empirical record is consistent: **a $1k laptop operator from NZ cannot extract systematic edge from Polymarket using any strategy class we identified.**
 
-The more durable output is methodological — two rules (÷5 on revenue estimates, counter-memo before action) that repeatedly caught estimation drift, plus new rules from this session (measure raw first, parameterize fees, sample-size drives window).
+The durable output is methodological (six falsification rules) and instrumental (paper-trade harness, retrospective analysis framework, neg-risk arb scanner). At higher capital ($10k+) or with VPS/atomic-multi-leg infrastructure, the conclusion changes; specific reopen conditions are documented.
 
-👉 **[Read the full synthesis](SYNTHESIS.md)** — methodology, findings, what worked and what didn't. For the current paper-trade plan, see [`docs/PLAN_E12_PAPER_TRADE.md`](docs/PLAN_E12_PAPER_TRADE.md).
+👉 **[Read the project postscript](docs/PROJECT_POSTSCRIPT.md)** — final synthesis, what was tested, why each strategy died, what survives as durable tooling, conditions for reopening.
+
+For the original synthesis (pre-postscript), see [`SYNTHESIS.md`](SYNTHESIS.md). The paper-trade harness plan and earlier portfolio plan are preserved at [`docs/PLAN_E12_PAPER_TRADE.md`](docs/PLAN_E12_PAPER_TRADE.md) and [`docs/PLAN_E14_PORTFOLIO_BUILDOUT.md`](docs/PLAN_E14_PORTFOLIO_BUILDOUT.md).
 
 ## Repository structure
 
-- [`SYNTHESIS.md`](SYNTHESIS.md) — the main writeup; start here
+- [`docs/PROJECT_POSTSCRIPT.md`](docs/PROJECT_POSTSCRIPT.md) — final endpoint; start here
+- [`SYNTHESIS.md`](SYNTHESIS.md) — pre-postscript synthesis (still useful for methodology + microstructure findings)
 - [`docs/`](docs/) — chronological findings, plan history, individual opportunity writeups, counter-memos
 - [`probe/`](probe/) — 24h Polymarket market-structure reconnaissance probe
-- [`experiments/e1`](experiments/e1_post_expiry_paths/) – [`e11`](experiments/e11_full_scan/) — individual thesis investigations
+- [`experiments/e1`](experiments/e1_post_expiry_paths/) – [`e15`](experiments/e15_neg_risk_arb/) — individual thesis investigations
 - [`src/`](src/) — scaffolding from an earlier plan iteration (not used in final synthesis)
 
 Raw data artifacts (SQLite DBs, trade-history JSONL) are gitignored for size and privacy reasons. All code is included and the data is regenerable by re-running the collectors.
@@ -43,6 +46,14 @@ Two rules accumulated during the project and proved load-bearing. Apply to any s
 **Rule 1 — Divide monthly revenue estimates by 5 before acting on them.** Initial estimates in this project were systematically 3–10× too high across every thesis. Applying ÷5 produced numbers that subsequent analysis validated as roughly correct.
 
 **Rule 2 — Write the counter-memo from the same data.** Before acting on a "this works" finding, write the companion "here's why this doesn't work" memo using the same dataset. Identifies silent-failure modes — ways the strategy generates ≤$0 without a loud signal anything's wrong. Killed two theses in this project.
+
+**Rule 3 (added late-project) — Measure raw before parameterizing.** Pull the actual data first, then apply fee / latency / capture-rate models. Establishes the empirical floor before optimism kicks in.
+
+**Rule 4 — Sample-size drives the window, not vice-versa.** Decision criteria (e.g., "75 trades / cell, kill if net edge < 0.5%") must be set BEFORE seeing results. Pre-commit ambiguous zones to prevent observed-edge from biasing the bar.
+
+**Rule 5 — Distinguish "pattern exists historically" from "pattern is capturable now."** Sports_lag had +3.99% historical edge but zero live opportunities at the original entry zone. Backtest is necessary but not sufficient; live observation must close the loop.
+
+**Rule 6 — Phantom edge = market correctly pricing tail risk you didn't model.** Nobel +42% / Apple CEO +37% looked like arb; were the market pricing P(unlisted winner). Always check whether the "edge" is the implied probability of an outcome you missed.
 
 ## Reproducing the work
 

@@ -461,3 +461,27 @@ Full revised plan at `docs/PLAN_E12_PAPER_TRADE.md`.
 5. Fee-structure recency — Phase 0b shakedown assertion is the continuous check as V2 cutover approaches.
 6. Cancel-before-match latency — undocumented; would need on-chain observe-only probe.
 
+---
+
+## Geopolitical informed-trading probe (e10) — stopped early 2026-04-19 02:52 UTC
+
+48h run halted at **6.79h of snapshot span** after the 6h analysis gate revealed two calibration bugs that would have poisoned any 48h verdict. Headline: **null result at 1.12× candidate/control ratio** — framing rule triggered correctly, control comparison blocked a tempting false positive on the Iran-ceasefire cluster.
+
+**What worked:**
+- Pre-committed ratio→verdict table prevented narrative creep: 3 Iran-ceasefire markets moved in lockstep with $9–13k volume deltas at 20:40 UTC; reviewer-brain would have circled these as suspicious. Report correctly labeled them theme co-movement (`nearby=2`) and the overall ratio verdict as null.
+- Control markets flagged at 80.90/kmh vs candidate 90.64/kmh — near-parity is the entire reason the ratio is honest.
+- Infrastructure clean: 10,266 snapshots on exact 60s cadence, 404 news items from 8 feeds, 627 news-market match rows, 165+ discovery candidates logged without auto-add.
+
+**What broke:**
+- **`low_confidence` threshold** (60min feed silence) too tight for feeds that naturally publish every 10–20 min. 17/17 events flagged ⚠️. The mark became meaningless. Post-mortem fix: use `feed_health` polling-silence rather than publishing-silence, or move threshold to 120–180min.
+- **Baseline σ estimator** unstable at 6.79h — illiquid markets produced z=6+ on Δprice=±0.003. Ratio stayed honest (noise is symmetric across candidate/control) but absolute flag count is overstated. Post-mortem fix: require ≥24h span before running detection, or shrinkage toward cross-market prior.
+- **Kyiv-post feed dead at launch and stayed dead** (last pub 5h before launch, 12h before stop). Russia-Ukraine theme hard-excluded the entire run — zero coverage on that theme.
+
+**Interesting observation, not a signal:** `will-the-us-confirm-that-aliens-exist-before-2027` flagged twice with 0 matching news items across all 8 feeds. It's a control market, z=4.42 on ±0.010, and one event had $102k single-order volume — almost certainly a whale bet, not informed flow. Noted as the profile the detector was built to find; if it can't distinguish this from a real leak, it isn't a leak detector.
+
+**Decision gate: not met.** Ratio 1.12× is nowhere near the 3× threshold. **E11 (wallet-level forensics) is NOT unlocked.** Kill the direction as currently scoped. If revisited: needs threshold fixes + baseline ≥24h + Truth Social feed (via `trumpstruth.org` mirror) because several tracked markets are literally Trump-announcement markets where his post *is* the news event.
+
+**Consolation prize:** 10k snapshots + 627 matched news rows are a usable dataset for a different, weaker question — "does news volume on a market's keywords predict next-hour volatility?" — if the feed infra is worth recycling.
+
+Full retrospective: `experiments/e10_geo_informed_trading/FINDINGS.md`.
+

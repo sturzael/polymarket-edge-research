@@ -109,6 +109,18 @@ Raised during the 48h run: should Trump's Truth Social be tied into the feed set
 
 If added later, the cheap path is `trumpstruth.org`'s RSS mirror (not scraping Truth Social directly — TOS friction, rate limits).
 
+## Epilogue — stopped early 2026-04-19 02:52 UTC
+
+Run halted via SIGINT after **6.79h of snapshot span** (10,266 snapshots, 404 news items, 627 matches, 17 flagged events). Reason: at the 6h analysis gate the `low_confidence` threshold proved too tight to be informative (17/17 events ⚠️) and baseline σ was statistically thin enough to inflate absolute flag counts. Continuing to 48h without fixing those would have accumulated more data under a broken report generator; cheaper to stop.
+
+**Headline verdict:** ratio 1.12× → *null result — no signal distinguishable from control noise.* Decision gate (≥3× ratio + ≥3 manual-verdict events) not met. **E11 wallet forensics is NOT unlocked.** Direction killed as currently scoped.
+
+The framing rule + control comparison worked exactly as intended: top-3 flagged events were Iran-ceasefire lockstep movers that a fatigued reviewer would have circled as suspicious — report correctly labeled them theme co-movement and refused the spicy verdict. The infrastructure was the win; the hypothesis was honestly a null.
+
+If the direction is ever revisited, the three post-mortem fixes are in `FINDINGS.md`: (a) silence threshold should measure *polling* silence from `feed_health`, not publishing silence; (b) require ≥24h span before running detection; (c) drop kyiv-post from russia-ukraine relevance or swap in a working Ukraine feed. Also: Truth Social integration for `trump-announces-*` markets is the biggest potential accuracy gain, still deferred.
+
+Full retrospective: `FINDINGS.md`.
+
 ## Cross-references
 
 - Top-level plan: local-only (Claude plans file, not in repo)
