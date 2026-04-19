@@ -51,6 +51,8 @@ experiments/e12_paper_trade/cells/
 experiments/e12_paper_trade/sidecar.db
 experiments/e12_paper_trade/sidecar.db-*
 experiments/e12_paper_trade/*.log
+experiments/e15_neg_risk_arb/data/
+experiments/e15_neg_risk_arb/logs/
 
 # MVP runtime data (if any recreated)
 data/
