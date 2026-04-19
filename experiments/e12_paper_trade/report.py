@@ -45,10 +45,8 @@ def _decision_verdict(net_edge: float | None, total_pnl: float, n: int) -> str:
 
 
 def report_cell(cell: str, fee_bps: float) -> dict:
-    eng = trader_client.engine_for(cell)
-    bal = eng.get_balance()
-    history = eng.get_history()
-    portfolio = eng.get_portfolio()
+    bal = trader_client.get_balance_sync(cell)
+    history = trader_client.get_history_sync(cell)
 
     with sidecar.conn() as c:
         ctx_rows = list(c.execute(

@@ -15,11 +15,11 @@ def _db() -> sqlite3.Connection:
 
 def cell_drawdown(cell: str) -> float:
     """Return drawdown as a negative fraction of seed (e.g. -0.15 = down 15%)."""
-    bal = trader_client.engine_for(cell).get_balance()
+    bal = trader_client.get_balance_sync(cell)
     if not bal:
         return 0.0
     cash = float(bal.get("cash", 0))
-    portfolio_value = float(bal.get("portfolio_value", cash))
+    portfolio_value = float(bal.get("total_value", bal.get("portfolio_value", cash)))
     seed = config.SEED_BALANCE
     return (portfolio_value - seed) / seed if seed > 0 else 0.0
 
@@ -66,7 +66,7 @@ def early_killed(cell: str) -> bool:
     if not row or row["resolved"] < config.EARLY_KILL_AFTER_TRADES:
         return False
     # Pull realized PnL from pm-trader history for this cell
-    history = trader_client.engine_for(cell).get_history()
+    history = trader_client.get_history_sync(cell)
     if not history:
         return False
     realized_pnl = sum(getattr(t, "realized_pnl", 0) or 0 for t in history)
