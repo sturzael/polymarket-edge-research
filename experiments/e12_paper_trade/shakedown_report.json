@@ -1,0 +1,45 @@
+{
+  "started_at": "2026-04-18T23:58:02.293866+00:00",
+  "0a": {
+    "ok": true,
+    "outcome_used": "YES",
+    "fill_price": 0.147,
+    "fill_shares": 340.13605442176873,
+    "fee_rate_bps": 0,
+    "fee_usd": 0.0,
+    "slippage": 68.49315068493158,
+    "is_partial": false,
+    "levels_filled": 1,
+    "balance_before_cash": 1000.0,
+    "balance_after_cash": 950.0,
+    "fill_walks_book": true,
+    "expected_fee_published": 0.0,
+    "fee_matches_published_formula": true
+  },
+  "0b": {
+    "fill_price": 0.963,
+    "fill_shares": 5.192107995846314,
+    "fee_rate_bps": 0,
+    "fee_usd": 0.0,
+    "slippage": 10.395010395010404,
+    "ok": true,
+    "verdict": "ZERO_FEE_CONFIRMED \u2014 pm-trader bills $0; matches e13 on-chain finding",
+    "market": {
+      "slug": "will-shai-gilgeous-alexander-win-the-20252026-nba-mvp",
+      "condition_id": "0x281565cae359040475640be8bc20f4efe15245fe0251805fd338fb1a3e45ffae",
+      "best_ask": 0.963,
+      "last_trade": 0.962,
+      "vol_24h": 0.0
+    }
+  },
+  "0c": {
+    "pm_trader_version": "unknown",
+    "polymarket_apis_version": "0.5.7",
+    "days_to_v2_cutover": 3.4,
+    "cutover_at": "2026-04-22T09:30:00+00:00",
+    "v2_status": "OK \u2014 cutover not imminent",
+    "ok": true
+  },
+  "all_ok": true,
+  "finished_at": "2026-04-18T23:58:15.907810+00:00"
+}

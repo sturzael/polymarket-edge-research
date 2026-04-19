@@ -234,9 +234,10 @@ Skipped detections still land in the `detections` table for analysis.
 ```sql
 CREATE TABLE position_context (
   pm_trade_id TEXT PRIMARY KEY,
-  account TEXT NOT NULL,              -- 'sports_lag__fixed_100' etc.
+  account TEXT NOT NULL,              -- 'sports_lag__fixed_100__cap95' etc.
   strategy TEXT NOT NULL,             -- always 'sports_lag' in v3
   size_model TEXT NOT NULL,
+  entry_cap REAL NOT NULL,            -- 0.95 or 0.97 (per 2x2 grid)
   detection_path TEXT NOT NULL,       -- 'feed' | 'book_poll'
   market_slug TEXT NOT NULL,
   event_id TEXT,                      -- for per-event concentration cap
@@ -245,6 +246,7 @@ CREATE TABLE position_context (
   entry_ask REAL NOT NULL,
   entry_bid REAL,
   ask_size_at_entry REAL NOT NULL,
+  protocol_version TEXT NOT NULL,     -- 'v1' | 'v2' — set at insertion based on V2 cutover state
   market_context JSON,
   resolved_at TEXT,
   resolution_price REAL,
@@ -261,23 +263,64 @@ CREATE TABLE detections (
   last_trade REAL,
   best_ask REAL,
   ask_size REAL,
-  skipped_reason TEXT                 -- null if placed; else 'already_open' | 'no_depth' | 'zombie' | 'drawdown_breaker' | 'event_concentration_cap'
+  -- skipped at evaluation time:
+  skipped_reason TEXT,                -- null if placed; else 'already_open' | 'no_depth' | 'zombie'
+                                      --                       | 'drawdown_breaker' | 'event_concentration_cap'
+                                      --                       | 'cap_too_tight'  -- detection above this cell's entry cap
+                                      --                       | 'early_killed'   -- cell already killed by 20-trade rule
+  -- fill-side instrumentation (populated when we attempt + receive a fill):
+  fill_attempted_at TEXT,             -- when pm-trader market_buy was called
+  fill_completed_at TEXT,             -- when fill came back
+  fill_price REAL,                    -- actual fill price (vs best_ask at detection)
+  fill_qty REAL,                      -- vs ask_size at detection (partial fills surface here)
+  latency_ms INTEGER,                 -- detection_ts → fill_completed_at, ms
+  slippage_bps REAL                   -- (fill_price - best_ask) / best_ask × 10000
+);
+
+-- Distinguishes "no edge exists" from "edge exists but I'm too slow."
+-- Without this, a null result is ambiguous; with it, we know whether to
+-- abandon the strategy or move to WebSockets / co-location.
+CREATE TABLE missed_opportunities (
+  id INTEGER PRIMARY KEY,
+  market_slug TEXT NOT NULL,
+  event_id TEXT,
+  detected_via TEXT NOT NULL,         -- 'post_facto_scan' | 'partial_fill_residual'
+  arb_window_start_ts TEXT NOT NULL,
+  arb_window_end_ts TEXT NOT NULL,
+  best_price_observed REAL,           -- best ask seen during the window
+  total_capturable_usd REAL,          -- sum of ask depth × price under our cap
+  reason_we_missed TEXT NOT NULL,     -- 'no_detection' | 'detected_too_late'
+                                      --   | 'attempted_no_fill' | 'partial_fill'
+                                      --   | 'cap_too_tight'
+  our_detection_id INTEGER,           -- FK to detections.id if we did detect
+  our_fill_id TEXT                    -- FK to position_context.pm_trade_id if partial
 );
 ```
+
+**`missed_scanner.py`** (new daemon worker, runs every 5 min):
+For every sports market that resolved in the last 60 min, pull its trade tape from gamma-api during the post-resolution window. Compute `total_capturable_usd` at our `max(ENTRY_TARGET_CAPS)=0.97`. Cross-reference against `detections` and `position_context`. Categorize:
+- We **never detected** it → `reason_we_missed='no_detection'` (slow-poll problem; suggests WebSockets)
+- We **detected but didn't attempt** → `reason_we_missed='cap_too_tight'` (best_ask was above all cell caps)
+- We **attempted but no fill** → `reason_we_missed='attempted_no_fill'` (latency / contention)
+- We **got partial fill** → `reason_we_missed='partial_fill'` (insufficient depth)
 
 ## Daemon loop (`daemon.py`)
 
 ```
 ensure_accounts_exist()
 start_task(sports_feeds.listen, on_event=handle_game_end)
+start_task(missed_scanner.run_periodic, interval_s=300)
 while not reached_sample_target() and not past(MAX_RUN_HOURS):
-    if v2_cutover_window():           # 2026-04-22 ±30 min
-        sleep_until(v2_migration.ready())
-        v2_migration.verify()
+    if v2_cutover_pause_active():        # paused via cron at 2026-04-22 ~09:30 UTC
+        sleep_until(v2_migration.verified_clean())
+        # if not verified within 72h, daemon stays paused; operator decides
+        # whether to accept V1-only sample or extend further
+
+    protocol_version = current_protocol_version()  # 'v1' before cutover, 'v2' after verified
 
     for c in detector.find_entries_book_poll():
         log_detection(c)
-        maybe_place(c)
+        maybe_place(c, protocol_version)
 
     resolver.check_open_positions()
     sleep(POLL_INTERVAL_S)
@@ -286,40 +329,49 @@ def handle_game_end(evt):
     c = detector.check_entry_from_feed(evt)
     if c:
         log_detection(c)
-        maybe_place(c)
+        maybe_place(c, current_protocol_version())
 
-def maybe_place(c):
+def maybe_place(c, protocol_version):
     if already_open_position(c.slug, c.side, c.account):
         log_detection(c, skipped_reason='already_open'); return
-    for size_model in ['fixed_100', 'depth_scaled']:
-        account = f"sports_lag__{size_model}"
+    for (strategy, size_model, entry_cap) in ACCOUNTS:    # 2x2 grid
+        account = f"{strategy}__{size_model}__cap{int(entry_cap*100):02d}"
+        if c.best_ask > entry_cap:
+            log_detection(c, account, skipped_reason='cap_too_tight'); continue
         if risk.cell_drawdown_exceeded(account):
-            log_detection(c, skipped_reason='drawdown_breaker'); continue
+            log_detection(c, account, skipped_reason='drawdown_breaker'); continue
         if risk.event_concentration_exceeded(account, c.event_id):
-            log_detection(c, skipped_reason='event_concentration_cap'); continue
+            log_detection(c, account, skipped_reason='event_concentration_cap'); continue
+        if early_killed(account):                          # 20-trade early kill
+            log_detection(c, account, skipped_reason='early_killed'); continue
         size_usd = compute_size(size_model, c)
-        pm_trade = trader_client.market_buy(account, c.slug, c.side, size_usd)
-        insert_position_context(pm_trade, c, size_model)
+        det_id = log_detection(c, account, fill_attempted_at=now())
+        pm_trade = trader_client.market_buy(account, c.slug, c.side,
+                                            size_usd, target_price=entry_cap)
+        update_detection_fill(det_id, pm_trade)            # populates fill_price, latency_ms, etc.
+        insert_position_context(pm_trade, c, size_model, entry_cap, protocol_version)
 ```
 
 ## V2 cutover plan (`v2_migration.py`)
 
-The 2026-04-22 cutover happens **before** the daemon starts (per the verification order: HARD WAIT until 2026-04-25). `v2_migration.py` is a one-shot pre-start verification script, not a mid-run pause.
+The 2026-04-22 cutover happens during the run window. Daemon runs on V1 from now until cutover, pauses through it, and resumes on V2 after verification. Every position is tagged `protocol_version` ('v1' | 'v2') so the report can stratify.
 
-1. **2026-04-22 ~09:30 UTC (pre-cutover):** run `v2_migration.py snapshot` to capture:
+1. **2026-04-22 ~09:30 UTC (pre-cutover):** daemon receives a `pause` signal (cron-triggered). Logs current state snapshot + runs `v2_migration.py snapshot`:
    - `markets.parquet` schema + 50 sampled rows
    - `getClobMarketInfo(conditionID).info.fd.r` for 5 active sports markets
    - `polymarket-apis` Pydantic model field set
-   Persist to `data/v2_pre_snapshot.json`.
-2. **2026-04-22 ~10:00 UTC:** Polymarket brings V2 live (~1h downtime expected). Don't poll during this window.
-3. **2026-04-23 (V2 + 24h):** run `v2_migration.py verify`:
+   - Persist to `data/v2_pre_snapshot.json`
+   - Stop placing new orders ~30 min before scheduled cutover time. Existing positions resolve naturally.
+2. **2026-04-22 ~10:00 UTC:** Polymarket brings V2 live (~1h downtime expected). Daemon stays paused.
+3. **2026-04-22 +24h (or until library patches land):** run `v2_migration.py verify`:
    - Re-pull the same surfaces; diff against `v2_pre_snapshot.json`
-   - **Schema drift:** any added/removed field in the gamma `Market` model that `polymarket-apis` doesn't yet handle → patch the library or pin to a fork
+   - **Schema drift:** any added/removed field in the gamma `Market` model that `polymarket-apis` doesn't yet handle → patch the library or pin to a fork; daemon stays paused
    - **Fee schedule:** if fee rate is now non-zero, apply Phase 0b's mandatory backtest re-validation rule (re-run `e13/03` with the new rate; halt if historical edge falls below 1.5% ambiguous-zone floor)
-   - **CLOB tokens:** `PolymarketReadOnlyClobClient.get_market` returns populated tokens on active sports markets (the e13 Investigation 3 unverified item)
-4. **2026-04-23 / 24:** re-run `shakedown.py` (0a + 0b) end-to-end against V2-live exchange. If anything fails, do not advance to step 5 below.
-5. **2026-04-25 00:00 UTC (earliest):** start daemon (verification step 6 in the run order). Sidecar logs `v2_migrated: true` on every position.
-6. **If verification fails at any point:** keep daemon offline; track library / exchange fixes; re-attempt verification daily until clean.
+   - **CLOB tokens:** `PolymarketReadOnlyClobClient.get_market` returns populated tokens on active sports markets
+   - Re-run `shakedown.py` (0a + 0b) against V2-live exchange
+4. **Pre-committed: don't mingle V1 and V2 data if V2 broke something.** If verification reveals breaking semantic changes (fee schedule moves, matching priority changes, slug patterns shift), the report.py should treat V1 and V2 cells as separate datasets, not a continuous run. Specifically: if any of {fee_bps changes by ≥ 50, slug pattern coverage drops by ≥ 20%, observed best_ask distribution shifts by ≥ 10%} → discard V2-tagged positions from the v1-vs-v2 comparison; treat the V1-only sample as the canonical edge measurement.
+5. **Resume:** daemon restarts after verify passes; subsequent detections/positions sidecar-tagged `protocol_version='v2'`. Earlier positions are tagged `v1`.
+6. **If verification fails persistently (e.g. > 72h):** keep daemon offline; treat the V1-only sample as the canonical dataset; report at full sample using V1 data only.
 
 ## Resolver (`resolver.py`)
 
@@ -361,13 +413,30 @@ Re-run at `fee_bps = 0, 100, 300` for sensitivity (validates e13's fee-robustnes
 
 **Decision criterion** (pre-committed before the run; do NOT modify after seeing results):
 
+**Final criterion at full sample (75 trades / cell):**
+
 | Net edge at `fee_bps = 0` (or actual live rate per Phase 0b) | Action |
 |---|---|
 | < 0.5% OR total PnL negative | **KILL** the cell |
 | 0.5% ≤ net edge < 1.5% | **AMBIGUOUS** — do NOT proceed to capital. Extend sample by another 75 trades (or 7-day cap, whichever first), then re-evaluate. If still ambiguous → kill. |
 | ≥ 1.5% | **PROCEED** to capital-deployment decision |
 
-Rationale: pre-commit prevents observed-edge magnitude from biasing the bar. Sample-thin "barely positive" results historically translate to negative real-money runs after fees, slippage, and the operator-skill gap (Akey 2026: <30% of Polymarket traders profitable; Della Vedova 2026: bots take 2.52¢ per contract from casual traders).
+**Early-kill criterion (per cell, after 20 completed trades):**
+- If notional-weighted net edge < 0% AND total realized PnL < 0 → **KILL the cell early.** Don't burn 3-5 days of attention on a cell that's clearly negative at n=20.
+- Otherwise continue to 75. (The 20-trade gate is asymmetric — it can kill but not promote; positive-but-small cells must reach 75 to be evaluated against the bands above.)
+
+Rationale: pre-commit prevents observed-edge magnitude from biasing the bar. Sample-thin "barely positive" results historically translate to negative real-money runs after fees, slippage, and the operator-skill gap (Akey 2026: <30% of Polymarket traders profitable; Della Vedova 2026: bots take 2.52¢ per contract from casual traders). The 20-trade early kill is a separate motivated-reasoning safeguard: "keep grinding because maybe it'll turn around" is a worse failure mode than killing 1-2 cells unnecessarily.
+
+**Per-cell missed-opportunity diagnostic** (from `missed_opportunities` table):
+
+| `reason_we_missed` distribution | Interpretation |
+|---|---|
+| `no_detection` dominates | We're polling too slowly. Move to WebSockets / lower `POLL_INTERVAL_S`. |
+| `cap_too_tight` dominates | Edge exists at higher prices than our caps allow. Loosen `ENTRY_TARGET_CAPS`. |
+| `attempted_no_fill` dominates | Latency / contention. NZ-laptop is the bottleneck; consider VPS. |
+| `partial_fill` dominates | Our size model is too aggressive vs available depth. Reduce `DEPTH_SCALED_FRAC`. |
+
+**Critical:** a null result (low fill rate, low PnL) without this diagnostic is ambiguous — abandon strategy, or move to WebSockets / co-location? With the table populated, the answer is unambiguous.
 
 ## Verification (execution order)
 
@@ -375,24 +444,21 @@ Rationale: pre-commit prevents observed-edge magnitude from biasing the bar. Sam
 2. Run `shakedown.py` (0a + 0b + 0c). **Halt on zero-fee assertion failure.**
 3. Run `slug_audit.py`. Commit corrected pattern list + CLOB-tokens verification.
 4. Run `pre_run.py` for 1 hour. Confirm 75-trade target reachable in ≤ 7 days.
-5. **HARD WAIT until 2026-04-25 00:00 UTC** (V2 cutover 2026-04-22 + 48–72h stabilization). Daemon does NOT start before this. Use the wait window to:
-   - Monitor `pm-trader` and `polymarket-apis` GitHub repos for V2-compatibility patches; pin known-good versions
-   - On 2026-04-22 ~10:00 UTC: take a pre-cutover snapshot of `markets.parquet` schema + a sampled `getClobMarketInfo` response for diff against post-cutover
-   - On 2026-04-22 +24h: confirm gamma-api response shapes still match `polymarket-apis` Pydantic models; patch or downgrade if not
-   - On 2026-04-23 / 24: re-run `shakedown.py` (0a + 0b) against the V2-live exchange
-   - **If V2 zero-fee finding does NOT replicate post-cutover:** apply Phase 0b's mandatory backtest re-validation rule before any further progress. Possible halt.
-6. Start daemon in tmux: `uv run python -m experiments.e12_paper_trade.daemon`.
-7. After 30 min: smoke-test `report.py`. Confirm positions opening on both paths, risk gates logging, no exceptions.
-8. Spot-check 3–5 resolved positions against real gamma-api trade tape. >20% fill-model mismatch → pause and debug.
-9. Run until `SAMPLE_TARGET_TRADES = 75` hit (or 7-day cap).
-10. Final `report.py` at `fee_bps = 0, 100, 300`.
-11. Apply decision criterion per size_model cell (see "Decision criterion" section for ambiguous-zone handling).
+5. **Start daemon NOW** in tmux: `uv run python -m experiments.e12_paper_trade.daemon`. All positions sidecar-tagged `protocol_version='v1'` until 2026-04-22 cutover.
+6. After 30 min: smoke-test `report.py`. Confirm positions opening on both paths, risk gates logging, no exceptions.
+7. Spot-check 3–5 resolved positions against real gamma-api trade tape. >20% fill-model mismatch → pause and debug.
+8. **2026-04-22 ~09:30 UTC:** signal daemon to pause (cron-triggered). Run `v2_migration.py snapshot` per V2 cutover plan above.
+9. **2026-04-22 +24h:** run `v2_migration.py verify`. If clean, resume daemon (positions now tagged `v2`); if not, stay paused, re-attempt verification daily until clean (or accept V1-only sample if persistent).
+10. Run until `SAMPLE_TARGET_TRADES = 75` hit per cell (or 7-day cap from start of step 5).
+11. Final `report.py` at `fee_bps = 0, 100, 300`, stratified by `protocol_version`. If V1 and V2 samples agree within noise, treat as one dataset. If they diverge per the Diff 4 pre-commit, treat V1-only as canonical.
+12. Apply decision criterion per size_model cell (see "Decision criterion" section for ambiguous-zone handling).
 
 ## Known limitations in v3
 
 - **Sample-thin historical confirmation:** e13's sports_lag backtest n=47 is small. Plateau likely due to trades.parquet ordering; a deeper re-run (`MAX_TRADE_ROW_GROUPS=300`) is queued in e13's open-questions list but not blocking this plan.
-- **H1 "flow-diffuse" unconfirmed:** e13's wallet-diversity probe (n=121 wallets) showed top-10 = 68% of volume, contradicting the original H1 claim (411 wallets, diffuse). Sample is too small to act on. If larger-sample confirmation reverses H1, we're fighting pros and the realistic capture rescales 3–5× down. Watch for this during paper trading: if realized fills are consistently losing to the same handful of wallets, H1 failed and the strategy needs re-pricing.
-- **V2 cutover during run:** 2026-04-22 protocol change forces a pause/verify/resume. Risk of library lag; mitigated by pinned versions + explicit migration script.
+- **H1 "flow-diffuse" — CONFIRMED at scale:** the initial n=121 probe contradicted H1 with top-10=68%, but the e13/08 follow-up at n=33,130 distinct wallets across 11,345 sports markets (RG coverage 42.6% of users.parquet, no price filter) reverses that: **top-10 = 21.5%, top-50 = 51.3%, top-100 = 65.7%, gini 0.98**. Average 21.9 wallets/market, p95 = 112 wallets/market. The original docs claim of "411 wallets across 5 markets, flow-diffuse" stands directionally; the sports post-resolution arb window IS retail-paced, not pro-dominated. Realistic-capture estimate of 5–15% for a NZ laptop operator stands without rescaling. Continue to monitor during paper trade — if realized fills are consistently the same top-10 wallets, the at-scale finding may not hold inside the post-resolution sub-window.
+- **Operating-point gap vs known operators (LlamaEnjoyer):** e13's data-api pull showed LlamaEnjoyer (full wallet `0x9b97…e12`) operates at 0.99–0.999 entry with $34k–$151k position sizes (per-trade edge ~0.1%, profit from scale). This plan operates at 0.95–0.97 with $100–$300 (per-trade edge ~3–4%, profit from edge magnitude). Two risks: (a) the 0.95–0.97 zone may have dramatically less depth than 0.99–0.999 because operators like LlamaEnjoyer (and Saguillo's sub-100ms bots) take it before it reaches our cap; (b) per-trade absolute profit at our scale is ~$4–$10 vs his $35–$150. Fix path: the 2x2 grid's `cap_too_tight` skip rate from `missed_opportunities` will tell us whether (a) is real. If `cap_too_tight` dominates, consider adding a 0.99 cap variant in v2 of the plan. (Not adding to v1 because it'd dilute the n-per-cell budget without first knowing whether 0.95–0.97 has depth.)
+- **V2 cutover during run:** 2026-04-22 protocol change forces a pause/verify/resume. Daemon runs on V1 starting now, pauses through cutover, resumes on V2 if verification passes. Every position tagged `protocol_version` so the report can stratify and (per pre-commit) discard V2 if the protocol breaks semantics. Risk of library lag mitigated by pinned versions + explicit `v2_migration.py verify` script.
 - **Saguillo arb-compression trend:** general-arb duration collapsed 12.3s → 2.7s in a year. Our 14.4 min sports_lag window is 300× longer — currently safe but not permanently.
 - **pm-trader fills against live book at detection:** no sub-second contention model. Realistic for a VPS-grade operator; a miss for anyone fighting sub-100ms bots.
 - **UMA disputes counted, not modeled:** H4 inferred <0.5% for sports post-MOOV2. Report flags if rate in paper run exceeds 2%.

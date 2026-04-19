@@ -1,0 +1,81 @@
+{
+  "probed_at": "2026-04-19T00:00:00.540208+00:00",
+  "current_patterns": [
+    "atp-",
+    "wta-",
+    "nba-",
+    "nfl-",
+    "nhl-",
+    "mlb-",
+    "cricipl-",
+    "ufc-",
+    "mls-",
+    "wnba-"
+  ],
+  "n_resolved_matched": 10,
+  "match_distribution": {
+    "ufc-": 4,
+    "nba-": 3,
+    "nfl-": 2,
+    "mlb-": 1
+  },
+  "broader_sweep": {
+    "n_recent_closed": 200,
+    "n_looks_sports": 58,
+    "n_matched_by_current_patterns": 6,
+    "n_missed_by_current_patterns": 52,
+    "n_caught_by_candidate_patterns": 3,
+    "missed_sample_slugs": [
+      "will-liverpool-win-their-match-against-leicester-this-weekend",
+      "will-the-kansas-city-chiefs-win-superbowl-55",
+      "will-jake-paul-win-his-boxing-match-against-nate-robinson",
+      "will-mike-tyson-win-his-boxing-match-against-roy-jones",
+      "will-floyd-mayweather-beat-logan-paul-in-their-boxing-exhibition-match",
+      "will-the-rams-or-the-packers-win-their-jan-16th-matchup",
+      "will-the-buccaneers-or-the-saints-win-their-jan-17th-matchup",
+      "will-the-browns-or-the-chiefs-win-their-jan-17th-matchup",
+      "will-the-ravens-or-bills-win-their-january-16th-matchup",
+      "will-the-green-bay-packers-or-the-tampa-bay-buccaneers-win-the-nfc-championship"
+    ],
+    "candidate_caught_sample": [
+      "will-jake-paul-win-his-boxing-match-against-nate-robinson",
+      "will-mike-tyson-win-his-boxing-match-against-roy-jones",
+      "will-floyd-mayweather-beat-logan-paul-in-their-boxing-exhibition-match"
+    ]
+  },
+  "clob_token_verification": {
+    "samples": [
+      {
+        "slug": "will-the-carolina-hurricanes-win-the-2026-nhl-stanley-cup",
+        "condition_id": "0xf7b5491e70b477d451afe7d9c1fde4bf1a927e69ff289d294b96df164f6c10f0",
+        "n_tokens": 0,
+        "ok": false
+      },
+      {
+        "slug": "will-the-edmonton-oilers-win-the-2026-nhl-stanley-cup",
+        "condition_id": "0x4a67e1270a2ed86be8fc524b6114640e41b0c56303ecaa9584deacd62402650a",
+        "n_tokens": 0,
+        "ok": false
+      },
+      {
+        "slug": "will-the-dallas-stars-win-the-2026-nhl-stanley-cup",
+        "condition_id": "0x44887f53abbfe7531b1384420b185a5f10ee42a4e6c9441d5883abd4f3c1e5ef",
+        "n_tokens": 0,
+        "ok": false
+      },
+      {
+        "slug": "will-the-colorado-avalanche-win-the-2026-nhl-stanley-cup",
+        "condition_id": "0xf8f63bb47b2a7c2e0c1be3cedf4075079b11c07476d76a9469065b0c4791961a",
+        "n_tokens": 0,
+        "ok": false
+      },
+      {
+        "slug": "will-the-vegas-golden-knights-win-the-2026-nhl-stanley-cup",
+        "condition_id": "0x89389a6b1439856a8d366234c795d72865c927a1aa3cf9d4cc04a3a400defde1",
+        "n_tokens": 0,
+        "ok": false
+      }
+    ],
+    "all_ok": false
+  }
+}
