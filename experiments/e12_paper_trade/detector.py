@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import asyncio
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 from typing import Iterable
 
 from . import config, gamma_client
@@ -36,12 +37,20 @@ def _winning_side_from_last_trade(last_trade_price: float) -> str | None:
 
 
 async def find_entries_book_poll(max_to_check: int = 200) -> list[Candidate]:
-    """Path B — scan all active sports markets at the broadest cap."""
+    """Path B — scan all active sports markets at the broadest cap.
+
+    Filters applied (in order):
+      - last_trade_price + best_ask in [PRICE_LO_FOR_DETECTION, max(ENTRY_TARGET_CAPS)]
+      - end_date within next END_DATE_WITHIN_HOURS hours (excludes futures)
+      - volume_24hr_clob >= MIN_VOLUME_24H_USD (excludes near-dead markets)
+    """
     markets = await gamma_client.fetch_active_sports_markets(limit=max_to_check)
     out: list[Candidate] = []
     max_cap = max(config.ENTRY_TARGET_CAPS)
+    now = datetime.now(timezone.utc)
+    end_horizon = now + timedelta(hours=config.END_DATE_WITHIN_HOURS)
+
     for m in markets:
-        # zombie filter is enforced by the gamma query (closed=False, active=True)
         ltp = getattr(m, "last_trade_price", None)
         ba = getattr(m, "best_ask", None)
         if ltp is None or ba is None:
@@ -50,9 +59,25 @@ async def find_entries_book_poll(max_to_check: int = 200) -> list[Candidate]:
         side = _winning_side_from_last_trade(ltp)
         if side is None:
             continue
-        # If NO is winning, the meaningful ask is the NO-side ask (= 1 - YES_bid roughly).
-        # gamma's `best_ask` is for the YES token; we approximate the NO-side ask as
-        # 1 - best_bid (best YES bid → NO ask). Skip markets where we can't infer it.
+
+        # End-date filter — exclude futures
+        end_date = getattr(m, "end_date", None) or getattr(m, "end_date_iso", None)
+        if end_date is None:
+            continue
+        if not isinstance(end_date, datetime):
+            continue
+        if end_date.tzinfo is None:
+            end_date = end_date.replace(tzinfo=timezone.utc)
+        if end_date < now or end_date > end_horizon:
+            continue
+
+        # Recent-volume filter — exclude near-dead markets
+        v24 = float(getattr(m, "volume_24hr_clob", None)
+                    or getattr(m, "volume_24hr", None) or 0)
+        if v24 < config.MIN_VOLUME_24H_USD:
+            continue
+
+        # Buy-side ask
         if side == "YES":
             ask_for_buy = ba
         else:
@@ -62,7 +87,7 @@ async def find_entries_book_poll(max_to_check: int = 200) -> list[Candidate]:
             ask_for_buy = 1 - float(bb)
         if ask_for_buy > max_cap or ask_for_buy < config.PRICE_LO_FOR_DETECTION:
             continue
-        # Approximate ask size: gamma model has best_ask_size sometimes
+
         ask_size = float(getattr(m, "best_ask_size", None) or 0)
         out.append(Candidate(
             market_slug=m.slug or "",

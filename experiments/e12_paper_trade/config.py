@@ -47,6 +47,10 @@ SPORTS_SLUG_PATTERNS = (
 )
 PRICE_LO_FOR_DETECTION = 0.95   # detection floor; per-cell entry_cap is the ceiling
 LAST_TRADE_RECENCY_MIN = 30     # ignore detections older than this
+END_DATE_WITHIN_HOURS = 24      # only catch markets resolving in next N hours
+                                # (excludes futures like Vezina/Stanley-Cup that
+                                # resolve in weeks-months — needed for today/overnight verification)
+MIN_VOLUME_24H_USD = 1_000      # skip near-dead markets with no recent trading
 
 # --- V2 cutover ---
 V2_CUTOVER_PAUSE_AT = datetime(2026, 4, 22, 9, 30, tzinfo=timezone.utc)
