@@ -2,6 +2,8 @@
 
 **A systematic investigation of solo-operator trading strategies on Polymarket, including the construction of a negative-risk arbitrage scanner and retrospective analysis of cross-outcome sum violations.**
 
+> 👉 **Not a markets person?** Read the [Explain Like I'm Five version](docs/ELI5.md) instead.
+
 ---
 
 ## Abstract
