@@ -1,0 +1,4 @@
+data/raw/
+data/*.csv
+data/*.parquet
+data/survey_*.html

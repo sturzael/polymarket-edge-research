@@ -1,0 +1,62 @@
+[
+  {
+    "name": "hub_datalist",
+    "url": "https://betfair-datascientists.github.io/data/dataListing/",
+    "status": 200,
+    "size": 79465
+  },
+  {
+    "name": "hub_historic",
+    "url": "https://betfair-datascientists.github.io/data/usingHistoricDataSite/",
+    "status": 200,
+    "size": 64930
+  },
+  {
+    "name": "kaggle_1wk",
+    "url": "https://www.kaggle.com/datasets/zygmunt/betfair-sports",
+    "status": 200,
+    "size": 10782
+  },
+  {
+    "name": "kaggle_bsp",
+    "url": "https://www.kaggle.com/datasets/eonsky/betfair-sp",
+    "status": 200,
+    "size": 10919
+  },
+  {
+    "name": "official_historicdata",
+    "url": "https://historicdata.betfair.com/",
+    "status": 403,
+    "size": 2348
+  },
+  {
+    "name": "footballdata_main",
+    "url": "https://www.football-data.co.uk/data.php",
+    "status": 200,
+    "size": 52474
+  },
+  {
+    "name": "footballdata_eng",
+    "url": "https://www.football-data.co.uk/englandm.php",
+    "status": 200,
+    "size": 68421
+  },
+  {
+    "name": "betfair_au_bsp",
+    "url": "https://www.betfair.com.au/hub/racing/horse-racing/racing-data-sets/",
+    "status": 404,
+    "size": 69670
+  },
+  {
+    "name": "betfair_au_results",
+    "url": "https://promo.betfair.com/betfairsp/prices/",
+    "status": 404,
+    "size": 106
+  },
+  {
+    "name": "betfair_data_archive",
+    "url": "https://www.betfair.com.au/hub/tools/models/bsp-ratings/",
+    "status": 404,
+    "size": 69670
+  }
+]
