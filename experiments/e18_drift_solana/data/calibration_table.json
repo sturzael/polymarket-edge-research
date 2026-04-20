@@ -1,0 +1,1079 @@
+{
+  "n_markets_total": 15,
+  "T_minus_7d": {
+    "n_rows": 13,
+    "rows": [
+      {
+        "symbol": "TRUMP-WIN-2024-BET",
+        "category": "politics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.65387,
+        "bucket": "0.65-0.70",
+        "bucket_mid": 0.675,
+        "source": "fill_vwap",
+        "duration_days": 84.58
+      },
+      {
+        "symbol": "KAMALA-POPULAR-VOTE-2024-BET",
+        "category": "politics",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.56118,
+        "bucket": "0.55-0.60",
+        "bucket_mid": 0.5750000000000001,
+        "source": "fill_vwap",
+        "duration_days": 85.71
+      },
+      {
+        "symbol": "FED-CUT-50-SEPT-2024-BET",
+        "category": "economics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.1102,
+        "bucket": "0.10-0.15",
+        "bucket_mid": 0.125,
+        "source": "fill_vwap",
+        "duration_days": 28.54
+      },
+      {
+        "symbol": "REPUBLICAN-POPULAR-AND-WIN-BET",
+        "category": "politics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.8794,
+        "bucket": "0.85-0.90",
+        "bucket_mid": 0.875,
+        "source": "fill_vwap",
+        "duration_days": 75.79
+      },
+      {
+        "symbol": "BREAKPOINT-IGGYERIC-BET",
+        "category": "crypto_events",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.48248,
+        "bucket": "0.45-0.50",
+        "bucket_mid": 0.47500000000000003,
+        "source": "fill_vwap",
+        "duration_days": 21.08
+      },
+      {
+        "symbol": "DEMOCRATS-WIN-MICHIGAN-BET",
+        "category": "politics",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.371,
+        "bucket": "0.35-0.40",
+        "bucket_mid": 0.375,
+        "source": "fill_vwap",
+        "duration_days": 61.38
+      },
+      {
+        "symbol": "WARWICK-FIGHT-WIN-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.56647,
+        "bucket": "0.55-0.60",
+        "bucket_mid": 0.5750000000000001,
+        "source": "fill_vwap",
+        "duration_days": 8.25
+      },
+      {
+        "symbol": "WLF-5B-1W-BET",
+        "category": "crypto_events",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.71352,
+        "bucket": "0.70-0.75",
+        "bucket_mid": 0.725,
+        "source": "oracle_mean",
+        "duration_days": 522.08
+      },
+      {
+        "symbol": "VRSTPN-WIN-F1-24-DRVRS-CHMP-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.90596,
+        "bucket": "0.90-0.95",
+        "bucket_mid": 0.925,
+        "source": "fill_vwap",
+        "duration_days": 34.79
+      },
+      {
+        "symbol": "SUPERBOWL-LIX-LIONS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.21998,
+        "bucket": "0.20-0.25",
+        "bucket_mid": 0.225,
+        "source": "fill_vwap",
+        "duration_days": 47.88
+      },
+      {
+        "symbol": "SUPERBOWL-LIX-CHIEFS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.53355,
+        "bucket": "0.50-0.55",
+        "bucket_mid": 0.525,
+        "source": "fill_vwap",
+        "duration_days": 69.79
+      },
+      {
+        "symbol": "NBAFINALS25-OKC-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.9685,
+        "bucket": "0.95-1.00",
+        "bucket_mid": 0.975,
+        "source": "oracle_mean",
+        "duration_days": 403.29
+      },
+      {
+        "symbol": "NBAFINALS25-BOS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.0,
+        "bucket": "0.00-0.05",
+        "bucket_mid": 0.025,
+        "source": "oracle_mean",
+        "duration_days": 402.42
+      }
+    ],
+    "buckets": [
+      {
+        "bucket": "0.00-0.05",
+        "n": 1,
+        "mid": 0.025,
+        "yes_rate": 0.0,
+        "deviation": -0.025,
+        "z_score": -0.16,
+        "symbols": [
+          "NBAFINALS25-BOS-BET"
+        ]
+      },
+      {
+        "bucket": "0.10-0.15",
+        "n": 1,
+        "mid": 0.125,
+        "yes_rate": 1.0,
+        "deviation": 0.875,
+        "z_score": 2.65,
+        "symbols": [
+          "FED-CUT-50-SEPT-2024-BET"
+        ]
+      },
+      {
+        "bucket": "0.20-0.25",
+        "n": 1,
+        "mid": 0.225,
+        "yes_rate": 0.0,
+        "deviation": -0.225,
+        "z_score": -0.54,
+        "symbols": [
+          "SUPERBOWL-LIX-LIONS-BET"
+        ]
+      },
+      {
+        "bucket": "0.35-0.40",
+        "n": 1,
+        "mid": 0.375,
+        "yes_rate": 0.0,
+        "deviation": -0.375,
+        "z_score": -0.77,
+        "symbols": [
+          "DEMOCRATS-WIN-MICHIGAN-BET"
+        ]
+      },
+      {
+        "bucket": "0.45-0.50",
+        "n": 1,
+        "mid": 0.475,
+        "yes_rate": 0.0,
+        "deviation": -0.475,
+        "z_score": -0.95,
+        "symbols": [
+          "BREAKPOINT-IGGYERIC-BET"
+        ]
+      },
+      {
+        "bucket": "0.50-0.55",
+        "n": 1,
+        "mid": 0.525,
+        "yes_rate": 0.0,
+        "deviation": -0.525,
+        "z_score": -1.05,
+        "symbols": [
+          "SUPERBOWL-LIX-CHIEFS-BET"
+        ]
+      },
+      {
+        "bucket": "0.55-0.60",
+        "n": 2,
+        "mid": 0.575,
+        "yes_rate": 0.5,
+        "deviation": -0.075,
+        "z_score": -0.21,
+        "symbols": [
+          "KAMALA-POPULAR-VOTE-2024-BET",
+          "WARWICK-FIGHT-WIN-BET"
+        ]
+      },
+      {
+        "bucket": "0.65-0.70",
+        "n": 1,
+        "mid": 0.675,
+        "yes_rate": 1.0,
+        "deviation": 0.325,
+        "z_score": 0.69,
+        "symbols": [
+          "TRUMP-WIN-2024-BET"
+        ]
+      },
+      {
+        "bucket": "0.70-0.75",
+        "n": 1,
+        "mid": 0.725,
+        "yes_rate": 1.0,
+        "deviation": 0.275,
+        "z_score": 0.62,
+        "symbols": [
+          "WLF-5B-1W-BET"
+        ]
+      },
+      {
+        "bucket": "0.85-0.90",
+        "n": 1,
+        "mid": 0.875,
+        "yes_rate": 1.0,
+        "deviation": 0.125,
+        "z_score": 0.38,
+        "symbols": [
+          "REPUBLICAN-POPULAR-AND-WIN-BET"
+        ]
+      },
+      {
+        "bucket": "0.90-0.95",
+        "n": 1,
+        "mid": 0.925,
+        "yes_rate": 1.0,
+        "deviation": 0.075,
+        "z_score": 0.28,
+        "symbols": [
+          "VRSTPN-WIN-F1-24-DRVRS-CHMP-BET"
+        ]
+      },
+      {
+        "bucket": "0.95-1.00",
+        "n": 1,
+        "mid": 0.975,
+        "yes_rate": 1.0,
+        "deviation": 0.025,
+        "z_score": 0.16,
+        "symbols": [
+          "NBAFINALS25-OKC-BET"
+        ]
+      }
+    ]
+  },
+  "T_minus_3d": {
+    "n_rows": 13,
+    "rows": [
+      {
+        "symbol": "TRUMP-WIN-2024-BET",
+        "category": "politics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.57573,
+        "bucket": "0.55-0.60",
+        "bucket_mid": 0.5750000000000001,
+        "source": "fill_vwap",
+        "duration_days": 84.58
+      },
+      {
+        "symbol": "KAMALA-POPULAR-VOTE-2024-BET",
+        "category": "politics",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.00228,
+        "bucket": "0.00-0.05",
+        "bucket_mid": 0.025,
+        "source": "fill_vwap",
+        "duration_days": 85.71
+      },
+      {
+        "symbol": "FED-CUT-50-SEPT-2024-BET",
+        "category": "economics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.49466,
+        "bucket": "0.45-0.50",
+        "bucket_mid": 0.47500000000000003,
+        "source": "fill_vwap",
+        "duration_days": 28.54
+      },
+      {
+        "symbol": "REPUBLICAN-POPULAR-AND-WIN-BET",
+        "category": "politics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.99877,
+        "bucket": "0.95-1.00",
+        "bucket_mid": 0.975,
+        "source": "fill_vwap",
+        "duration_days": 75.79
+      },
+      {
+        "symbol": "BREAKPOINT-IGGYERIC-BET",
+        "category": "crypto_events",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.54994,
+        "bucket": "0.50-0.55",
+        "bucket_mid": 0.525,
+        "source": "fill_vwap",
+        "duration_days": 21.08
+      },
+      {
+        "symbol": "DEMOCRATS-WIN-MICHIGAN-BET",
+        "category": "politics",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.58904,
+        "bucket": "0.55-0.60",
+        "bucket_mid": 0.5750000000000001,
+        "source": "fill_vwap",
+        "duration_days": 61.38
+      },
+      {
+        "symbol": "WARWICK-FIGHT-WIN-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.63412,
+        "bucket": "0.60-0.65",
+        "bucket_mid": 0.625,
+        "source": "fill_vwap",
+        "duration_days": 8.25
+      },
+      {
+        "symbol": "WLF-5B-1W-BET",
+        "category": "crypto_events",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.71352,
+        "bucket": "0.70-0.75",
+        "bucket_mid": 0.725,
+        "source": "oracle_mean",
+        "duration_days": 522.08
+      },
+      {
+        "symbol": "VRSTPN-WIN-F1-24-DRVRS-CHMP-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.92511,
+        "bucket": "0.90-0.95",
+        "bucket_mid": 0.925,
+        "source": "fill_vwap",
+        "duration_days": 34.79
+      },
+      {
+        "symbol": "SUPERBOWL-LIX-LIONS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.24899,
+        "bucket": "0.20-0.25",
+        "bucket_mid": 0.225,
+        "source": "fill_vwap",
+        "duration_days": 47.88
+      },
+      {
+        "symbol": "SUPERBOWL-LIX-CHIEFS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.52333,
+        "bucket": "0.50-0.55",
+        "bucket_mid": 0.525,
+        "source": "fill_vwap",
+        "duration_days": 69.79
+      },
+      {
+        "symbol": "NBAFINALS25-OKC-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.9685,
+        "bucket": "0.95-1.00",
+        "bucket_mid": 0.975,
+        "source": "oracle_mean",
+        "duration_days": 403.29
+      },
+      {
+        "symbol": "NBAFINALS25-BOS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.0,
+        "bucket": "0.00-0.05",
+        "bucket_mid": 0.025,
+        "source": "oracle_mean",
+        "duration_days": 402.42
+      }
+    ],
+    "buckets": [
+      {
+        "bucket": "0.00-0.05",
+        "n": 2,
+        "mid": 0.025,
+        "yes_rate": 0.0,
+        "deviation": -0.025,
+        "z_score": -0.23,
+        "symbols": [
+          "KAMALA-POPULAR-VOTE-2024-BET",
+          "NBAFINALS25-BOS-BET"
+        ]
+      },
+      {
+        "bucket": "0.20-0.25",
+        "n": 1,
+        "mid": 0.225,
+        "yes_rate": 0.0,
+        "deviation": -0.225,
+        "z_score": -0.54,
+        "symbols": [
+          "SUPERBOWL-LIX-LIONS-BET"
+        ]
+      },
+      {
+        "bucket": "0.45-0.50",
+        "n": 1,
+        "mid": 0.475,
+        "yes_rate": 1.0,
+        "deviation": 0.525,
+        "z_score": 1.05,
+        "symbols": [
+          "FED-CUT-50-SEPT-2024-BET"
+        ]
+      },
+      {
+        "bucket": "0.50-0.55",
+        "n": 2,
+        "mid": 0.525,
+        "yes_rate": 0.0,
+        "deviation": -0.525,
+        "z_score": -1.49,
+        "symbols": [
+          "BREAKPOINT-IGGYERIC-BET",
+          "SUPERBOWL-LIX-CHIEFS-BET"
+        ]
+      },
+      {
+        "bucket": "0.55-0.60",
+        "n": 2,
+        "mid": 0.575,
+        "yes_rate": 0.5,
+        "deviation": -0.075,
+        "z_score": -0.21,
+        "symbols": [
+          "TRUMP-WIN-2024-BET",
+          "DEMOCRATS-WIN-MICHIGAN-BET"
+        ]
+      },
+      {
+        "bucket": "0.60-0.65",
+        "n": 1,
+        "mid": 0.625,
+        "yes_rate": 1.0,
+        "deviation": 0.375,
+        "z_score": 0.77,
+        "symbols": [
+          "WARWICK-FIGHT-WIN-BET"
+        ]
+      },
+      {
+        "bucket": "0.70-0.75",
+        "n": 1,
+        "mid": 0.725,
+        "yes_rate": 1.0,
+        "deviation": 0.275,
+        "z_score": 0.62,
+        "symbols": [
+          "WLF-5B-1W-BET"
+        ]
+      },
+      {
+        "bucket": "0.90-0.95",
+        "n": 1,
+        "mid": 0.925,
+        "yes_rate": 1.0,
+        "deviation": 0.075,
+        "z_score": 0.28,
+        "symbols": [
+          "VRSTPN-WIN-F1-24-DRVRS-CHMP-BET"
+        ]
+      },
+      {
+        "bucket": "0.95-1.00",
+        "n": 2,
+        "mid": 0.975,
+        "yes_rate": 1.0,
+        "deviation": 0.025,
+        "z_score": 0.23,
+        "symbols": [
+          "REPUBLICAN-POPULAR-AND-WIN-BET",
+          "NBAFINALS25-OKC-BET"
+        ]
+      }
+    ]
+  },
+  "T_minus_1d": {
+    "n_rows": 14,
+    "rows": [
+      {
+        "symbol": "TRUMP-WIN-2024-BET",
+        "category": "politics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.60626,
+        "bucket": "0.60-0.65",
+        "bucket_mid": 0.625,
+        "source": "fill_vwap",
+        "duration_days": 84.58
+      },
+      {
+        "symbol": "KAMALA-POPULAR-VOTE-2024-BET",
+        "category": "politics",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.00225,
+        "bucket": "0.00-0.05",
+        "bucket_mid": 0.025,
+        "source": "fill_vwap",
+        "duration_days": 85.71
+      },
+      {
+        "symbol": "FED-CUT-50-SEPT-2024-BET",
+        "category": "economics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.50746,
+        "bucket": "0.50-0.55",
+        "bucket_mid": 0.525,
+        "source": "fill_vwap",
+        "duration_days": 28.54
+      },
+      {
+        "symbol": "REPUBLICAN-POPULAR-AND-WIN-BET",
+        "category": "politics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.99567,
+        "bucket": "0.95-1.00",
+        "bucket_mid": 0.975,
+        "source": "fill_vwap",
+        "duration_days": 75.79
+      },
+      {
+        "symbol": "BREAKPOINT-IGGYERIC-BET",
+        "category": "crypto_events",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.49532,
+        "bucket": "0.45-0.50",
+        "bucket_mid": 0.47500000000000003,
+        "source": "fill_vwap",
+        "duration_days": 21.08
+      },
+      {
+        "symbol": "DEMOCRATS-WIN-MICHIGAN-BET",
+        "category": "politics",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.37287,
+        "bucket": "0.35-0.40",
+        "bucket_mid": 0.375,
+        "source": "fill_vwap",
+        "duration_days": 61.38
+      },
+      {
+        "symbol": "LANDO-F1-SGP-WIN-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.51897,
+        "bucket": "0.50-0.55",
+        "bucket_mid": 0.525,
+        "source": "fill_vwap",
+        "duration_days": 2.83
+      },
+      {
+        "symbol": "WARWICK-FIGHT-WIN-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.80773,
+        "bucket": "0.80-0.85",
+        "bucket_mid": 0.8250000000000001,
+        "source": "fill_vwap",
+        "duration_days": 8.25
+      },
+      {
+        "symbol": "WLF-5B-1W-BET",
+        "category": "crypto_events",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.71352,
+        "bucket": "0.70-0.75",
+        "bucket_mid": 0.725,
+        "source": "oracle_mean",
+        "duration_days": 522.08
+      },
+      {
+        "symbol": "VRSTPN-WIN-F1-24-DRVRS-CHMP-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.97563,
+        "bucket": "0.95-1.00",
+        "bucket_mid": 0.975,
+        "source": "fill_vwap",
+        "duration_days": 34.79
+      },
+      {
+        "symbol": "SUPERBOWL-LIX-LIONS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.17031,
+        "bucket": "0.15-0.20",
+        "bucket_mid": 0.175,
+        "source": "fill_vwap",
+        "duration_days": 47.88
+      },
+      {
+        "symbol": "SUPERBOWL-LIX-CHIEFS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.4189,
+        "bucket": "0.40-0.45",
+        "bucket_mid": 0.42500000000000004,
+        "source": "fill_vwap",
+        "duration_days": 69.79
+      },
+      {
+        "symbol": "NBAFINALS25-OKC-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.9685,
+        "bucket": "0.95-1.00",
+        "bucket_mid": 0.975,
+        "source": "oracle_mean",
+        "duration_days": 403.29
+      },
+      {
+        "symbol": "NBAFINALS25-BOS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.0,
+        "bucket": "0.00-0.05",
+        "bucket_mid": 0.025,
+        "source": "oracle_mean",
+        "duration_days": 402.42
+      }
+    ],
+    "buckets": [
+      {
+        "bucket": "0.00-0.05",
+        "n": 2,
+        "mid": 0.025,
+        "yes_rate": 0.0,
+        "deviation": -0.025,
+        "z_score": -0.23,
+        "symbols": [
+          "KAMALA-POPULAR-VOTE-2024-BET",
+          "NBAFINALS25-BOS-BET"
+        ]
+      },
+      {
+        "bucket": "0.15-0.20",
+        "n": 1,
+        "mid": 0.175,
+        "yes_rate": 0.0,
+        "deviation": -0.175,
+        "z_score": -0.46,
+        "symbols": [
+          "SUPERBOWL-LIX-LIONS-BET"
+        ]
+      },
+      {
+        "bucket": "0.35-0.40",
+        "n": 1,
+        "mid": 0.375,
+        "yes_rate": 0.0,
+        "deviation": -0.375,
+        "z_score": -0.77,
+        "symbols": [
+          "DEMOCRATS-WIN-MICHIGAN-BET"
+        ]
+      },
+      {
+        "bucket": "0.40-0.45",
+        "n": 1,
+        "mid": 0.425,
+        "yes_rate": 0.0,
+        "deviation": -0.425,
+        "z_score": -0.86,
+        "symbols": [
+          "SUPERBOWL-LIX-CHIEFS-BET"
+        ]
+      },
+      {
+        "bucket": "0.45-0.50",
+        "n": 1,
+        "mid": 0.475,
+        "yes_rate": 0.0,
+        "deviation": -0.475,
+        "z_score": -0.95,
+        "symbols": [
+          "BREAKPOINT-IGGYERIC-BET"
+        ]
+      },
+      {
+        "bucket": "0.50-0.55",
+        "n": 2,
+        "mid": 0.525,
+        "yes_rate": 1.0,
+        "deviation": 0.475,
+        "z_score": 1.35,
+        "symbols": [
+          "FED-CUT-50-SEPT-2024-BET",
+          "LANDO-F1-SGP-WIN-BET"
+        ]
+      },
+      {
+        "bucket": "0.60-0.65",
+        "n": 1,
+        "mid": 0.625,
+        "yes_rate": 1.0,
+        "deviation": 0.375,
+        "z_score": 0.77,
+        "symbols": [
+          "TRUMP-WIN-2024-BET"
+        ]
+      },
+      {
+        "bucket": "0.70-0.75",
+        "n": 1,
+        "mid": 0.725,
+        "yes_rate": 1.0,
+        "deviation": 0.275,
+        "z_score": 0.62,
+        "symbols": [
+          "WLF-5B-1W-BET"
+        ]
+      },
+      {
+        "bucket": "0.80-0.85",
+        "n": 1,
+        "mid": 0.825,
+        "yes_rate": 1.0,
+        "deviation": 0.175,
+        "z_score": 0.46,
+        "symbols": [
+          "WARWICK-FIGHT-WIN-BET"
+        ]
+      },
+      {
+        "bucket": "0.95-1.00",
+        "n": 3,
+        "mid": 0.975,
+        "yes_rate": 1.0,
+        "deviation": 0.025,
+        "z_score": 0.28,
+        "symbols": [
+          "REPUBLICAN-POPULAR-AND-WIN-BET",
+          "VRSTPN-WIN-F1-24-DRVRS-CHMP-BET",
+          "NBAFINALS25-OKC-BET"
+        ]
+      }
+    ]
+  },
+  "midpoint": {
+    "n_rows": 13,
+    "rows": [
+      {
+        "symbol": "TRUMP-WIN-2024-BET",
+        "category": "politics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.48095,
+        "bucket": "0.45-0.50",
+        "bucket_mid": 0.47500000000000003,
+        "source": "fill_vwap",
+        "duration_days": 84.58
+      },
+      {
+        "symbol": "KAMALA-POPULAR-VOTE-2024-BET",
+        "category": "politics",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.75323,
+        "bucket": "0.75-0.80",
+        "bucket_mid": 0.775,
+        "source": "fill_vwap",
+        "duration_days": 85.71
+      },
+      {
+        "symbol": "FED-CUT-50-SEPT-2024-BET",
+        "category": "economics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.35099,
+        "bucket": "0.35-0.40",
+        "bucket_mid": 0.375,
+        "source": "fill_vwap",
+        "duration_days": 28.54
+      },
+      {
+        "symbol": "REPUBLICAN-POPULAR-AND-WIN-BET",
+        "category": "politics",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.22606,
+        "bucket": "0.20-0.25",
+        "bucket_mid": 0.225,
+        "source": "fill_vwap",
+        "duration_days": 75.79
+      },
+      {
+        "symbol": "BREAKPOINT-IGGYERIC-BET",
+        "category": "crypto_events",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.39817,
+        "bucket": "0.35-0.40",
+        "bucket_mid": 0.375,
+        "source": "fill_vwap",
+        "duration_days": 21.08
+      },
+      {
+        "symbol": "LANDO-F1-SGP-WIN-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.29219,
+        "bucket": "0.25-0.30",
+        "bucket_mid": 0.275,
+        "source": "fill_vwap",
+        "duration_days": 2.83
+      },
+      {
+        "symbol": "WARWICK-FIGHT-WIN-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.64099,
+        "bucket": "0.60-0.65",
+        "bucket_mid": 0.625,
+        "source": "fill_vwap",
+        "duration_days": 8.25
+      },
+      {
+        "symbol": "WLF-5B-1W-BET",
+        "category": "crypto_events",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.28533,
+        "bucket": "0.25-0.30",
+        "bucket_mid": 0.275,
+        "source": "oracle_mean",
+        "duration_days": 522.08
+      },
+      {
+        "symbol": "VRSTPN-WIN-F1-24-DRVRS-CHMP-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.9902,
+        "bucket": "0.95-1.00",
+        "bucket_mid": 0.975,
+        "source": "fill_vwap",
+        "duration_days": 34.79
+      },
+      {
+        "symbol": "SUPERBOWL-LIX-LIONS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.19062,
+        "bucket": "0.15-0.20",
+        "bucket_mid": 0.175,
+        "source": "fill_vwap",
+        "duration_days": 47.88
+      },
+      {
+        "symbol": "SUPERBOWL-LIX-CHIEFS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.28475,
+        "bucket": "0.25-0.30",
+        "bucket_mid": 0.275,
+        "source": "fill_vwap",
+        "duration_days": 69.79
+      },
+      {
+        "symbol": "NBAFINALS25-OKC-BET",
+        "category": "sports",
+        "outcome": "YES",
+        "yes": 1,
+        "price": 0.94423,
+        "bucket": "0.90-0.95",
+        "bucket_mid": 0.925,
+        "source": "oracle_mean",
+        "duration_days": 403.29
+      },
+      {
+        "symbol": "NBAFINALS25-BOS-BET",
+        "category": "sports",
+        "outcome": "NO",
+        "yes": 0,
+        "price": 0.02137,
+        "bucket": "0.00-0.05",
+        "bucket_mid": 0.025,
+        "source": "oracle_mean",
+        "duration_days": 402.42
+      }
+    ],
+    "buckets": [
+      {
+        "bucket": "0.00-0.05",
+        "n": 1,
+        "mid": 0.025,
+        "yes_rate": 0.0,
+        "deviation": -0.025,
+        "z_score": -0.16,
+        "symbols": [
+          "NBAFINALS25-BOS-BET"
+        ]
+      },
+      {
+        "bucket": "0.15-0.20",
+        "n": 1,
+        "mid": 0.175,
+        "yes_rate": 0.0,
+        "deviation": -0.175,
+        "z_score": -0.46,
+        "symbols": [
+          "SUPERBOWL-LIX-LIONS-BET"
+        ]
+      },
+      {
+        "bucket": "0.20-0.25",
+        "n": 1,
+        "mid": 0.225,
+        "yes_rate": 1.0,
+        "deviation": 0.775,
+        "z_score": 1.86,
+        "symbols": [
+          "REPUBLICAN-POPULAR-AND-WIN-BET"
+        ]
+      },
+      {
+        "bucket": "0.25-0.30",
+        "n": 3,
+        "mid": 0.275,
+        "yes_rate": 0.6667,
+        "deviation": 0.3917,
+        "z_score": 1.52,
+        "symbols": [
+          "LANDO-F1-SGP-WIN-BET",
+          "WLF-5B-1W-BET",
+          "SUPERBOWL-LIX-CHIEFS-BET"
+        ]
+      },
+      {
+        "bucket": "0.35-0.40",
+        "n": 2,
+        "mid": 0.375,
+        "yes_rate": 0.5,
+        "deviation": 0.125,
+        "z_score": 0.37,
+        "symbols": [
+          "FED-CUT-50-SEPT-2024-BET",
+          "BREAKPOINT-IGGYERIC-BET"
+        ]
+      },
+      {
+        "bucket": "0.45-0.50",
+        "n": 1,
+        "mid": 0.475,
+        "yes_rate": 1.0,
+        "deviation": 0.525,
+        "z_score": 1.05,
+        "symbols": [
+          "TRUMP-WIN-2024-BET"
+        ]
+      },
+      {
+        "bucket": "0.60-0.65",
+        "n": 1,
+        "mid": 0.625,
+        "yes_rate": 1.0,
+        "deviation": 0.375,
+        "z_score": 0.77,
+        "symbols": [
+          "WARWICK-FIGHT-WIN-BET"
+        ]
+      },
+      {
+        "bucket": "0.75-0.80",
+        "n": 1,
+        "mid": 0.775,
+        "yes_rate": 0.0,
+        "deviation": -0.775,
+        "z_score": -1.86,
+        "symbols": [
+          "KAMALA-POPULAR-VOTE-2024-BET"
+        ]
+      },
+      {
+        "bucket": "0.90-0.95",
+        "n": 1,
+        "mid": 0.925,
+        "yes_rate": 1.0,
+        "deviation": 0.075,
+        "z_score": 0.28,
+        "symbols": [
+          "NBAFINALS25-OKC-BET"
+        ]
+      },
+      {
+        "bucket": "0.95-1.00",
+        "n": 1,
+        "mid": 0.975,
+        "yes_rate": 1.0,
+        "deviation": 0.025,
+        "z_score": 0.16,
+        "symbols": [
+          "VRSTPN-WIN-F1-24-DRVRS-CHMP-BET"
+        ]
+      }
+    ]
+  },
+  "price_outcome_correlation": 0.4762,
+  "correlation_n": 14
+}

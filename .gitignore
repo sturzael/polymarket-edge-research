@@ -56,3 +56,7 @@ experiments/e15_neg_risk_arb/logs/
 
 # MVP runtime data (if any recreated)
 data/
+
+# Experiment data that SHOULD be tracked (scouting reports)
+!experiments/e18_drift_solana/data/
+!experiments/e18_drift_solana/data/**

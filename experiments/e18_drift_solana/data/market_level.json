@@ -1,0 +1,704 @@
+[
+  {
+    "symbol": "TRUMP-WIN-2024-BET",
+    "market_index": 36,
+    "category": "politics",
+    "outcome": "YES",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.9898,
+    "first_ts": 1723586400,
+    "resolution_ts": 1730894400,
+    "last_candle_ts": 1760706000,
+    "duration_days": 84.58,
+    "total_quote_volume": 8175899.38,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.65387,
+        "source": "fill_vwap",
+        "n_candles_window": 24,
+        "n_with_fills": 24,
+        "total_quote_volume_window": 96027.62
+      },
+      "T_minus_1d": {
+        "price": 0.60626,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 25,
+        "total_quote_volume_window": 493327.61
+      },
+      "T_minus_3d": {
+        "price": 0.57573,
+        "source": "fill_vwap",
+        "n_candles_window": 22,
+        "n_with_fills": 22,
+        "total_quote_volume_window": 107800.85
+      },
+      "T_minus_14d": {
+        "price": 0.6325,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 25,
+        "total_quote_volume_window": 42017.63
+      },
+      "midpoint": {
+        "price": 0.48095,
+        "source": "fill_vwap",
+        "n_candles_window": 16,
+        "n_with_fills": 16,
+        "total_quote_volume_window": 12502.56
+      }
+    }
+  },
+  {
+    "symbol": "KAMALA-POPULAR-VOTE-2024-BET",
+    "market_index": 37,
+    "category": "politics",
+    "outcome": "NO",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.0018,
+    "first_ts": 1724043600,
+    "resolution_ts": 1731448800,
+    "last_candle_ts": 1764064800,
+    "duration_days": 85.71,
+    "total_quote_volume": 23664624.12,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.56118,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 25,
+        "total_quote_volume_window": 196816.51
+      },
+      "T_minus_1d": {
+        "price": 0.00225,
+        "source": "fill_vwap",
+        "n_candles_window": 15,
+        "n_with_fills": 15,
+        "total_quote_volume_window": 13.69
+      },
+      "T_minus_3d": {
+        "price": 0.00228,
+        "source": "fill_vwap",
+        "n_candles_window": 9,
+        "n_with_fills": 9,
+        "total_quote_volume_window": 106.42
+      },
+      "T_minus_14d": {
+        "price": 0.58782,
+        "source": "fill_vwap",
+        "n_candles_window": 18,
+        "n_with_fills": 18,
+        "total_quote_volume_window": 10489.8
+      },
+      "midpoint": {
+        "price": 0.75323,
+        "source": "fill_vwap",
+        "n_candles_window": 10,
+        "n_with_fills": 10,
+        "total_quote_volume_window": 3849.91
+      }
+    }
+  },
+  {
+    "symbol": "FED-CUT-50-SEPT-2024-BET",
+    "market_index": 38,
+    "category": "economics",
+    "outcome": "YES",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.996,
+    "first_ts": 1724256000,
+    "resolution_ts": 1726722000,
+    "last_candle_ts": 1763391600,
+    "duration_days": 28.54,
+    "total_quote_volume": 222757.57,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.1102,
+        "source": "fill_vwap",
+        "n_candles_window": 14,
+        "n_with_fills": 14,
+        "total_quote_volume_window": 1131.11
+      },
+      "T_minus_1d": {
+        "price": 0.50746,
+        "source": "fill_vwap",
+        "n_candles_window": 24,
+        "n_with_fills": 24,
+        "total_quote_volume_window": 20253.83
+      },
+      "T_minus_3d": {
+        "price": 0.49466,
+        "source": "fill_vwap",
+        "n_candles_window": 18,
+        "n_with_fills": 18,
+        "total_quote_volume_window": 9498.49
+      },
+      "T_minus_14d": {
+        "price": 0.35051,
+        "source": "fill_vwap",
+        "n_candles_window": 13,
+        "n_with_fills": 13,
+        "total_quote_volume_window": 8688.39
+      },
+      "midpoint": {
+        "price": 0.35099,
+        "source": "fill_vwap",
+        "n_candles_window": 14,
+        "n_with_fills": 14,
+        "total_quote_volume_window": 10962.09
+      }
+    }
+  },
+  {
+    "symbol": "REPUBLICAN-POPULAR-AND-WIN-BET",
+    "market_index": 39,
+    "category": "politics",
+    "outcome": "YES",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.9954,
+    "first_ts": 1724900400,
+    "resolution_ts": 1731448800,
+    "last_candle_ts": 1764594000,
+    "duration_days": 75.79,
+    "total_quote_volume": 180024.47,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.8794,
+        "source": "fill_vwap",
+        "n_candles_window": 17,
+        "n_with_fills": 17,
+        "total_quote_volume_window": 54121.12
+      },
+      "T_minus_1d": {
+        "price": 0.99567,
+        "source": "fill_vwap",
+        "n_candles_window": 3,
+        "n_with_fills": 3,
+        "total_quote_volume_window": 23.9
+      },
+      "T_minus_3d": {
+        "price": 0.99877,
+        "source": "fill_vwap",
+        "n_candles_window": 11,
+        "n_with_fills": 11,
+        "total_quote_volume_window": 24916.73
+      },
+      "T_minus_14d": {
+        "price": 0.40319,
+        "source": "fill_vwap",
+        "n_candles_window": 6,
+        "n_with_fills": 6,
+        "total_quote_volume_window": 2521.68
+      },
+      "midpoint": {
+        "price": 0.22606,
+        "source": "fill_vwap",
+        "n_candles_window": 2,
+        "n_with_fills": 2,
+        "total_quote_volume_window": 4517.67
+      }
+    }
+  },
+  {
+    "symbol": "BREAKPOINT-IGGYERIC-BET",
+    "market_index": 40,
+    "category": "crypto_events",
+    "outcome": "NO",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.1008,
+    "first_ts": 1725228000,
+    "resolution_ts": 1727049600,
+    "last_candle_ts": 1739408400,
+    "duration_days": 21.08,
+    "total_quote_volume": 1518.47,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.48248,
+        "source": "fill_vwap",
+        "n_candles_window": 2,
+        "n_with_fills": 2,
+        "total_quote_volume_window": 81.8
+      },
+      "T_minus_1d": {
+        "price": 0.49532,
+        "source": "fill_vwap",
+        "n_candles_window": 3,
+        "n_with_fills": 3,
+        "total_quote_volume_window": 15.14
+      },
+      "T_minus_3d": {
+        "price": 0.54994,
+        "source": "fill_vwap",
+        "n_candles_window": 2,
+        "n_with_fills": 2,
+        "total_quote_volume_window": 37.95
+      },
+      "T_minus_14d": {
+        "price": 0.55775,
+        "source": "fill_vwap",
+        "n_candles_window": 4,
+        "n_with_fills": 4,
+        "total_quote_volume_window": 32.69
+      },
+      "midpoint": {
+        "price": 0.39817,
+        "source": "fill_vwap",
+        "n_candles_window": 5,
+        "n_with_fills": 5,
+        "total_quote_volume_window": 188.78
+      }
+    }
+  },
+  {
+    "symbol": "DEMOCRATS-WIN-MICHIGAN-BET",
+    "market_index": 41,
+    "category": "politics",
+    "outcome": "NO",
+    "outcome_source": "manual_override",
+    "final_fill": 0.3062,
+    "first_ts": 1725598800,
+    "resolution_ts": 1730901600,
+    "last_candle_ts": 1762952400,
+    "duration_days": 61.38,
+    "total_quote_volume": 14052.01,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.371,
+        "source": "fill_vwap",
+        "n_candles_window": 2,
+        "n_with_fills": 2,
+        "total_quote_volume_window": 48.23
+      },
+      "T_minus_1d": {
+        "price": 0.37287,
+        "source": "fill_vwap",
+        "n_candles_window": 15,
+        "n_with_fills": 15,
+        "total_quote_volume_window": 4044.07
+      },
+      "T_minus_3d": {
+        "price": 0.58904,
+        "source": "fill_vwap",
+        "n_candles_window": 2,
+        "n_with_fills": 2,
+        "total_quote_volume_window": 868.48
+      },
+      "T_minus_14d": {
+        "price": 0.35778,
+        "source": "fill_vwap",
+        "n_candles_window": 4,
+        "n_with_fills": 4,
+        "total_quote_volume_window": 18.66
+      },
+      "midpoint": null
+    }
+  },
+  {
+    "symbol": "LANDO-F1-SGP-WIN-BET",
+    "market_index": 43,
+    "category": "sports",
+    "outcome": "YES",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.9936,
+    "first_ts": 1726812000,
+    "resolution_ts": 1727056800,
+    "last_candle_ts": 1739408400,
+    "duration_days": 2.83,
+    "total_quote_volume": 580785.54,
+    "anchors": {
+      "T_minus_7d": null,
+      "T_minus_1d": {
+        "price": 0.51897,
+        "source": "fill_vwap",
+        "n_candles_window": 17,
+        "n_with_fills": 17,
+        "total_quote_volume_window": 15517.4
+      },
+      "T_minus_3d": null,
+      "T_minus_14d": null,
+      "midpoint": {
+        "price": 0.29219,
+        "source": "fill_vwap",
+        "n_candles_window": 18,
+        "n_with_fills": 18,
+        "total_quote_volume_window": 576413.94
+      }
+    }
+  },
+  {
+    "symbol": "WARWICK-FIGHT-WIN-BET",
+    "market_index": 46,
+    "category": "sports",
+    "outcome": "YES",
+    "outcome_source": "manual_override",
+    "final_fill": 0.5558,
+    "first_ts": 1727992800,
+    "resolution_ts": 1728705600,
+    "last_candle_ts": 1739408400,
+    "duration_days": 8.25,
+    "total_quote_volume": 6640.83,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.56647,
+        "source": "fill_vwap",
+        "n_candles_window": 6,
+        "n_with_fills": 6,
+        "total_quote_volume_window": 834.4
+      },
+      "T_minus_1d": {
+        "price": 0.80773,
+        "source": "fill_vwap",
+        "n_candles_window": 6,
+        "n_with_fills": 6,
+        "total_quote_volume_window": 1228.36
+      },
+      "T_minus_3d": {
+        "price": 0.63412,
+        "source": "fill_vwap",
+        "n_candles_window": 2,
+        "n_with_fills": 2,
+        "total_quote_volume_window": 11.9
+      },
+      "T_minus_14d": null,
+      "midpoint": {
+        "price": 0.64099,
+        "source": "fill_vwap",
+        "n_candles_window": 5,
+        "n_with_fills": 5,
+        "total_quote_volume_window": 8.22
+      }
+    }
+  },
+  {
+    "symbol": "WLF-5B-1W-BET",
+    "market_index": 48,
+    "category": "crypto_events",
+    "outcome": "YES",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 1.0,
+    "first_ts": 1728658800,
+    "resolution_ts": 1773766800,
+    "last_candle_ts": 1775520000,
+    "duration_days": 522.08,
+    "total_quote_volume": 7015.68,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.71352,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "T_minus_1d": {
+        "price": 0.71352,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "T_minus_3d": {
+        "price": 0.71352,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "T_minus_14d": {
+        "price": 0.71352,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "midpoint": {
+        "price": 0.28533,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      }
+    }
+  },
+  {
+    "symbol": "VRSTPN-WIN-F1-24-DRVRS-CHMP-BET",
+    "market_index": 49,
+    "category": "sports",
+    "outcome": "YES",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.9796,
+    "first_ts": 1729530000,
+    "resolution_ts": 1732536000,
+    "last_candle_ts": 1763564400,
+    "duration_days": 34.79,
+    "total_quote_volume": 33371.29,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.90596,
+        "source": "fill_vwap",
+        "n_candles_window": 6,
+        "n_with_fills": 6,
+        "total_quote_volume_window": 106.41
+      },
+      "T_minus_1d": {
+        "price": 0.97563,
+        "source": "fill_vwap",
+        "n_candles_window": 7,
+        "n_with_fills": 7,
+        "total_quote_volume_window": 2451.57
+      },
+      "T_minus_3d": {
+        "price": 0.92511,
+        "source": "fill_vwap",
+        "n_candles_window": 4,
+        "n_with_fills": 4,
+        "total_quote_volume_window": 373.91
+      },
+      "T_minus_14d": {
+        "price": 0.94049,
+        "source": "fill_vwap",
+        "n_candles_window": 5,
+        "n_with_fills": 5,
+        "total_quote_volume_window": 103.49
+      },
+      "midpoint": {
+        "price": 0.9902,
+        "source": "fill_vwap",
+        "n_candles_window": 9,
+        "n_with_fills": 9,
+        "total_quote_volume_window": 180.16
+      }
+    }
+  },
+  {
+    "symbol": "LNDO-WIN-F1-24-US-GP-BET",
+    "market_index": 50,
+    "category": "sports",
+    "outcome": null,
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.1962,
+    "first_ts": 1729486800,
+    "resolution_ts": 1729771200,
+    "last_candle_ts": 1739408400,
+    "duration_days": 3.29,
+    "total_quote_volume": 34.92,
+    "anchors": {
+      "T_minus_7d": null,
+      "T_minus_1d": {
+        "price": 0.19,
+        "source": "fill_vwap",
+        "n_candles_window": 8,
+        "n_with_fills": 8,
+        "total_quote_volume_window": 9.31
+      },
+      "T_minus_3d": {
+        "price": 0.39693,
+        "source": "fill_vwap",
+        "n_candles_window": 2,
+        "n_with_fills": 2,
+        "total_quote_volume_window": 11.74
+      },
+      "T_minus_14d": null,
+      "midpoint": null
+    }
+  },
+  {
+    "symbol": "SUPERBOWL-LIX-LIONS-BET",
+    "market_index": 57,
+    "category": "sports",
+    "outcome": "NO",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.0758,
+    "first_ts": 1733166000,
+    "resolution_ts": 1737302400,
+    "last_candle_ts": 1762952400,
+    "duration_days": 47.88,
+    "total_quote_volume": 452787.79,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.21998,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 4,
+        "total_quote_volume_window": 653.78
+      },
+      "T_minus_1d": {
+        "price": 0.17031,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 5,
+        "total_quote_volume_window": 1429.78
+      },
+      "T_minus_3d": {
+        "price": 0.24899,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 3,
+        "total_quote_volume_window": 150.89
+      },
+      "T_minus_14d": {
+        "price": 0.12331,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 9,
+        "total_quote_volume_window": 25873.39
+      },
+      "midpoint": {
+        "price": 0.19062,
+        "source": "fill_vwap",
+        "n_candles_window": 24,
+        "n_with_fills": 5,
+        "total_quote_volume_window": 6247.85
+      }
+    }
+  },
+  {
+    "symbol": "SUPERBOWL-LIX-CHIEFS-BET",
+    "market_index": 58,
+    "category": "sports",
+    "outcome": "NO",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.1038,
+    "first_ts": 1733166000,
+    "resolution_ts": 1739196000,
+    "last_candle_ts": 1762833600,
+    "duration_days": 69.79,
+    "total_quote_volume": 327571.75,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.53355,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 2,
+        "total_quote_volume_window": 91.23
+      },
+      "T_minus_1d": {
+        "price": 0.4189,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 11,
+        "total_quote_volume_window": 2013.96
+      },
+      "T_minus_3d": {
+        "price": 0.52333,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 5,
+        "total_quote_volume_window": 1854.2
+      },
+      "T_minus_14d": {
+        "price": 0.56411,
+        "source": "fill_vwap",
+        "n_candles_window": 25,
+        "n_with_fills": 5,
+        "total_quote_volume_window": 85.87
+      },
+      "midpoint": {
+        "price": 0.28475,
+        "source": "fill_vwap",
+        "n_candles_window": 24,
+        "n_with_fills": 2,
+        "total_quote_volume_window": 14.91
+      }
+    }
+  },
+  {
+    "symbol": "NBAFINALS25-OKC-BET",
+    "market_index": 67,
+    "category": "sports",
+    "outcome": "YES",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 1.0,
+    "first_ts": 1739498400,
+    "resolution_ts": 1774342800,
+    "last_candle_ts": 1775520000,
+    "duration_days": 403.29,
+    "total_quote_volume": 72655.97,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.9685,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "T_minus_1d": {
+        "price": 0.9685,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "T_minus_3d": {
+        "price": 0.9685,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "T_minus_14d": {
+        "price": 0.9685,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "midpoint": {
+        "price": 0.94423,
+        "source": "oracle_mean",
+        "n_candles_window": 24,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      }
+    }
+  },
+  {
+    "symbol": "NBAFINALS25-BOS-BET",
+    "market_index": 68,
+    "category": "sports",
+    "outcome": "NO",
+    "outcome_source": "auto_fillclose_tail",
+    "final_fill": 0.005,
+    "first_ts": 1739498400,
+    "resolution_ts": 1774267200,
+    "last_candle_ts": 1775520000,
+    "duration_days": 402.42,
+    "total_quote_volume": 10322.79,
+    "anchors": {
+      "T_minus_7d": {
+        "price": 0.0,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "T_minus_1d": {
+        "price": 0.0,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "T_minus_3d": {
+        "price": 0.0,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "T_minus_14d": {
+        "price": 0.0,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      },
+      "midpoint": {
+        "price": 0.02137,
+        "source": "oracle_mean",
+        "n_candles_window": 25,
+        "n_with_fills": 0,
+        "total_quote_volume_window": 0.0
+      }
+    }
+  }
+]
