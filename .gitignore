@@ -93,3 +93,24 @@ experiments/e23_stratification/live_trader/data/flagged_markets.jsonl
 experiments/e23_stratification/live_trader/data/seen_markets.json
 experiments/e23_stratification/live_trader/data/trades.jsonl
 experiments/e23_stratification/live_trader/data/scanner.log
+experiments/e23_stratification/live_trader/data/scanner.pid
+
+# e24 Orca CL LP: commit all structured outputs (small JSONs + scripts)
+!experiments/e24_orca_cl_lp/data/
+!experiments/e24_orca_cl_lp/data/**
+
+# e25 HL wallet forensics: commit summaries + scripts; skip raw fills (113MB, regenerable) + leaderboard (27MB, regenerable)
+!experiments/e25_hyperliquid_forensics/data/
+!experiments/e25_hyperliquid_forensics/data/**
+experiments/e25_hyperliquid_forensics/data/fills/
+experiments/e25_hyperliquid_forensics/data/leaderboard.json
+experiments/e25_hyperliquid_forensics/data/prices/*.json
+
+# e26 HL MM investigation: commit summaries + scripts + L2 snapshots; skip large raw candles
+!experiments/e26_hl_mm_investigation/data/
+!experiments/e26_hl_mm_investigation/data/**
+!experiments/e26_hl_mm_investigation/agent_reports/
+!experiments/e26_hl_mm_investigation/agent_reports/**
+experiments/e26_hl_mm_investigation/data/btc_1m_candles.json
+experiments/e26_hl_mm_investigation/data/btc_5m_candles.json
+experiments/e26_hl_mm_investigation/data/btc_15m_candles.json

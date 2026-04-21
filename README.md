@@ -4,6 +4,38 @@
 
 > 👉 **Not a markets person?** Read the [Explain Like I'm Five version](docs/ELI5.md) instead.
 
+> ⏩ **Looking for the current-state summary?** Jump to [Current state (2026-04-21)](#current-state-2026-04-21) — what's deployable, what's killed, what's open.
+
+---
+
+## Current state (2026-04-21)
+
+The ten-thesis falsification described in the abstract below is **Stage 1** of this project. Stage 2 (cross-venue calibration) and Stage 3 (stratification + deployment scoping) have since found one deployable edge and opened an active investigation on a second. Summary:
+
+### ✅ Deployable now (subject to forward validation + V2 cutover)
+
+- **[e23 — Polymarket sports FLB](experiments/e23_stratification/SYNTHESIS.md)** — MLB/NBA/NFL/NHL game-outcome favorites at T-7d in 0.55–0.60 price bucket, ≤14d lifespan, ≥$5k window volume. Measured +25.8pp edge on 120-market bucket (z=7.6). Scanner + notification infra live in [`experiments/e23_stratification/live_trader/`](experiments/e23_stratification/live_trader/). Planning number: **$4–11k/yr on $5–25k capital** (÷5-adjusted).
+
+### 🔴 Null results from the 2026-04-21 Solana/HL recon
+
+- **[e24 — Orca USDC/SOL CL LP stratification](experiments/e24_orca_cl_lp/)** — closed. Pool-level simulation calibrated against Heimbach 49.5% loser-rate prior returns no cell meeting the pre-committed n≥200 + median APR>5% gate. Narrow ranges lose −96 to −121% APR in the observed SOL −31% regime.
+- **[Solana perps funding arb](experiments/e11_funding_arb_sensecheck/)** — confirmed killed. Drift paused post-$286M exploit; Jupiter/Flash are one-way borrow-fee (not bilateral funding); Zeta too thin. No cross-venue divergence to trade.
+- **Solana LST NAV arb** — ~25bps steady-state (inside Sanctum unstake fee); depegs minute-scale, require co-located MM infra.
+
+### 🟡 Open investigations
+
+- **[e25 — Hyperliquid top-wallet forensics](experiments/e25_hyperliquid_forensics/)** — descriptive classification of top-50 HL wallets using the e9 methodology. Headline: the Polymarket "mostly momentum-lucky" pattern **inverts on HL** — distribution is heavily left-skewed toward structural signatures. 10 of 24 top wallets don't trade BTC/ETH/SOL at all — real top-PnL book lives in synthetics/HYPE/alts. Content-monetizable as a standalone finding.
+- **[e26 — HL BTC-PERP MM viability](experiments/e26_hl_mm_investigation/)** — 4-agent recon complete. Verdict: build possible from Tokyo VPS at $12–90/mo opex; classical spread capture is dead for solo retail; niche inventory-management in quiet hours (03–12 UTC band) is the only residual path, capped at HLP-like ~15–20% APR gross. Deployed capital expectation ÷5-adjusted below e23. Defer build until paginated 60-day wallet pull validates rank-2 wallet's hour-of-day selectivity.
+
+### 💡 Byproducts worth monetizing independently
+
+- **Methodology** (÷5, counter-memo, pre-registration, default-to-KILL). Applied across 25+ experiments. Unusual in crypto research; saleable as due-diligence consulting or a report product.
+- **[Cross-venue FLB synthesis](experiments/SYNTHESIS_flb_cross_venue.md)** — Polymarket T-7d +25pp vs Betfair ≤±6pp vs Azuro +0.4pp across 1.9M resolution events. Novel empirical finding; publication-ready.
+- **[The inverted HL distribution](experiments/e25_hyperliquid_forensics/README.md)** — no prior public work decomposes HL top-wallet PnL into structural vs regime components.
+- **API/microstructure findings** — see the [Polymarket microstructure findings](#polymarket-microstructure-findings) section below.
+
+See [SYNTHESIS.md](SYNTHESIS.md) for the original Stage 1 arc + the 2026-04-19 post-synthesis update, and [SYNTHESIS_flb_cross_venue.md](experiments/SYNTHESIS_flb_cross_venue.md) for the cross-venue work.
+
 ---
 
 ## Abstract
@@ -152,10 +184,17 @@ None of these is venue expansion. Investigation of Kalshi, Probo, Manifold, or o
 
 All code is MIT-licensed and runnable against public APIs. Raw data is gitignored for size; collectors are included, data is regenerable.
 
-- [`experiments/e1`](experiments/e1_post_expiry_paths/) through [`e15`](experiments/e15_neg_risk_arb/) — individual thesis investigations, self-contained
+- [`experiments/e1`](experiments/e1_post_expiry_paths/) through [`e15`](experiments/e15_neg_risk_arb/) — Stage 1 thesis investigations (the ten-strategy sweep), self-contained
 - [`experiments/e15_neg_risk_arb/`](experiments/e15_neg_risk_arb/) — scanner, phantom-depth verifier, retrospective frameworks, hourly logger
 - [`experiments/e12_paper_trade/`](experiments/e12_paper_trade/) — paper-trade harness with V2 cutover handling
 - [`experiments/e13_external_repo_audit/`](experiments/e13_external_repo_audit/) — SII-WANGZJ dataset integration and wallet forensics
+- [`experiments/e16_calibration_study/`](experiments/e16_calibration_study/) — Polymarket sports FLB calibration (the +25pp finding at T-7d)
+- [`experiments/e18_drift_solana/`](experiments/e18_drift_solana/) through [`e22_cross_venue_spread/`](experiments/e22_cross_venue_spread/) — cross-venue FLB work (Drift, Baozi, Azuro, Betfair, Smarkets)
+- [`experiments/e23_stratification/`](experiments/e23_stratification/) — 6-dimension stratification + **[`live_trader/`](experiments/e23_stratification/live_trader/)** (the currently-deployable FLB scanner)
+- [`experiments/e24_orca_cl_lp/`](experiments/e24_orca_cl_lp/) — Solana CL LP stratification (clean null)
+- [`experiments/e25_hyperliquid_forensics/`](experiments/e25_hyperliquid_forensics/) — HL top-wallet structural-vs-momentum decomposition (inverted-from-Polymarket finding)
+- [`experiments/e26_hl_mm_investigation/`](experiments/e26_hl_mm_investigation/) — HL BTC-PERP MM viability (4-agent recon, defer build)
+- [`experiments/SYNTHESIS_flb_cross_venue.md`](experiments/SYNTHESIS_flb_cross_venue.md) — cross-venue meta-synthesis
 - [`probe/`](probe/) — 24-hour Polymarket market structure reconnaissance tool
 - [`docs/`](docs/) — findings log, null results, methodology, project postscript
 

@@ -1,0 +1,643 @@
+[
+  {
+    "total_fills": 12542,
+    "total_open_fills": 5691,
+    "tradable_open_fills": 869,
+    "entries_analyzed": 869,
+    "by_coin": [
+      [
+        "BTC",
+        733
+      ],
+      [
+        "SOL",
+        1
+      ],
+      [
+        "ETH",
+        135
+      ]
+    ],
+    "momentum": 1,
+    "contrarian": 140,
+    "neutral": 728,
+    "missing_price": 0,
+    "momentum_pct": 0.11507479861910241,
+    "contrarian_pct": 16.110471806674337,
+    "neutral_pct": 83.77445339470655,
+    "momentum_pct_directional": 0.7092198581560284,
+    "addr": "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+    "rank": 2,
+    "allTime_pnl": 203286376.111334,
+    "allTime_vlm": 247546335570.07,
+    "month_pnl": 1711400.151891,
+    "label": "STRUCTURAL CANDIDATE"
+  },
+  {
+    "total_fills": 31598,
+    "total_open_fills": 3109,
+    "tradable_open_fills": 2940,
+    "entries_analyzed": 2940,
+    "by_coin": [
+      [
+        "BTC",
+        2870
+      ],
+      [
+        "ETH",
+        70
+      ]
+    ],
+    "momentum": 1698,
+    "contrarian": 0,
+    "neutral": 1242,
+    "missing_price": 0,
+    "momentum_pct": 57.755102040816325,
+    "contrarian_pct": 0.0,
+    "neutral_pct": 42.244897959183675,
+    "momentum_pct_directional": 100.0,
+    "addr": "0x5b5d51203a0f9079f8aeb098a6523a13f298c060",
+    "rank": 4,
+    "allTime_pnl": 180310017.305842,
+    "allTime_vlm": 4124964986.38,
+    "month_pnl": 4002317.292164,
+    "label": "MIXED"
+  },
+  {
+    "total_fills": 13175,
+    "total_open_fills": 8845,
+    "tradable_open_fills": 4413,
+    "entries_analyzed": 4413,
+    "by_coin": [
+      [
+        "ETH",
+        3225
+      ],
+      [
+        "BTC",
+        1169
+      ],
+      [
+        "SOL",
+        19
+      ]
+    ],
+    "momentum": 139,
+    "contrarian": 3159,
+    "neutral": 1115,
+    "missing_price": 0,
+    "momentum_pct": 3.1497847269431225,
+    "contrarian_pct": 71.5839564921822,
+    "neutral_pct": 25.26625878087469,
+    "momentum_pct_directional": 4.214675560946028,
+    "addr": "0x7fdafde5cfb5465924316eced2d3715494c517d1",
+    "rank": 5,
+    "allTime_pnl": 159484485.209886,
+    "allTime_vlm": 10960503529.650002,
+    "month_pnl": -785288.7824070001,
+    "label": "STRUCTURAL CANDIDATE"
+  },
+  {
+    "total_fills": 28232,
+    "total_open_fills": 7875,
+    "tradable_open_fills": 2197,
+    "entries_analyzed": 2197,
+    "by_coin": [
+      [
+        "ETH",
+        609
+      ],
+      [
+        "SOL",
+        1566
+      ],
+      [
+        "BTC",
+        22
+      ]
+    ],
+    "momentum": 432,
+    "contrarian": 1305,
+    "neutral": 460,
+    "missing_price": 0,
+    "momentum_pct": 19.663177059626765,
+    "contrarian_pct": 59.399180700955846,
+    "neutral_pct": 20.937642239417386,
+    "momentum_pct_directional": 24.870466321243523,
+    "addr": "0xb83de012dba672c76a7dbbbf3e459cb59d7d6e36",
+    "rank": 9,
+    "allTime_pnl": 123584642.162079,
+    "allTime_vlm": 3807975765.8199997,
+    "month_pnl": 46050.898517,
+    "label": "STRUCTURAL CANDIDATE"
+  },
+  {
+    "total_fills": 16631,
+    "total_open_fills": 4445,
+    "tradable_open_fills": 3136,
+    "entries_analyzed": 3136,
+    "by_coin": [
+      [
+        "BTC",
+        1046
+      ],
+      [
+        "SOL",
+        869
+      ],
+      [
+        "ETH",
+        1221
+      ]
+    ],
+    "momentum": 521,
+    "contrarian": 793,
+    "neutral": 1822,
+    "missing_price": 0,
+    "momentum_pct": 16.613520408163264,
+    "contrarian_pct": 25.286989795918366,
+    "neutral_pct": 58.099489795918366,
+    "momentum_pct_directional": 39.64992389649924,
+    "addr": "0x880ac484a1743862989a441d6d867238c7aa311c",
+    "rank": 11,
+    "allTime_pnl": 113958924.381557,
+    "allTime_vlm": 6575830063.56,
+    "month_pnl": 663062.751375,
+    "label": "STRUCTURAL CANDIDATE"
+  },
+  {
+    "total_fills": 16541,
+    "total_open_fills": 10274,
+    "tradable_open_fills": 0,
+    "entries_analyzed": 0,
+    "by_coin": [],
+    "momentum": 0,
+    "contrarian": 0,
+    "neutral": 0,
+    "missing_price": 0,
+    "momentum_pct": null,
+    "momentum_pct_directional": null,
+    "addr": "0xa312114b5795dff9b8db50474dd57701aa78ad1e",
+    "rank": 14,
+    "allTime_pnl": 96373040.003646,
+    "allTime_vlm": 1171902593.69,
+    "month_pnl": 2617272.024006,
+    "label": "UNDERPOWERED"
+  },
+  {
+    "total_fills": 72,
+    "total_open_fills": 0,
+    "tradable_open_fills": 0,
+    "entries_analyzed": 0,
+    "by_coin": [],
+    "momentum": 0,
+    "contrarian": 0,
+    "neutral": 0,
+    "missing_price": 0,
+    "momentum_pct": null,
+    "momentum_pct_directional": null,
+    "addr": "0x2e3d94f0562703b25c83308a05046ddaf9a8dd14",
+    "rank": 16,
+    "allTime_pnl": 84592536.79,
+    "allTime_vlm": 3333636686.01,
+    "month_pnl": -613514.056451,
+    "label": "UNDERPOWERED"
+  },
+  {
+    "total_fills": 16570,
+    "total_open_fills": 691,
+    "tradable_open_fills": 634,
+    "entries_analyzed": 634,
+    "by_coin": [
+      [
+        "ETH",
+        3
+      ],
+      [
+        "BTC",
+        631
+      ]
+    ],
+    "momentum": 110,
+    "contrarian": 83,
+    "neutral": 441,
+    "missing_price": 0,
+    "momentum_pct": 17.350157728706623,
+    "contrarian_pct": 13.091482649842272,
+    "neutral_pct": 69.5583596214511,
+    "momentum_pct_directional": 56.994818652849744,
+    "addr": "0xd47587702a91731dc1089b5db0932cf820151a91",
+    "rank": 17,
+    "allTime_pnl": 81677637.42280999,
+    "allTime_vlm": 4245748419.15,
+    "month_pnl": 674234.273407,
+    "label": "STRUCTURAL CANDIDATE"
+  },
+  {
+    "total_fills": 10591,
+    "total_open_fills": 1954,
+    "tradable_open_fills": 15,
+    "entries_analyzed": 15,
+    "by_coin": [
+      [
+        "ETH",
+        15
+      ]
+    ],
+    "momentum": 0,
+    "contrarian": 0,
+    "neutral": 15,
+    "missing_price": 0,
+    "momentum_pct": 0.0,
+    "contrarian_pct": 0.0,
+    "neutral_pct": 100.0,
+    "momentum_pct_directional": null,
+    "addr": "0x45d26f28196d226497130c4bac709d808fed4029",
+    "rank": 18,
+    "allTime_pnl": 80001127.375526,
+    "allTime_vlm": 644299638.07,
+    "month_pnl": -388654.497579,
+    "label": "UNDERPOWERED"
+  },
+  {
+    "total_fills": 69,
+    "total_open_fills": 44,
+    "tradable_open_fills": 0,
+    "entries_analyzed": 0,
+    "by_coin": [],
+    "momentum": 0,
+    "contrarian": 0,
+    "neutral": 0,
+    "missing_price": 0,
+    "momentum_pct": null,
+    "momentum_pct_directional": null,
+    "addr": "0xbdfa4f4492dd7b7cf211209c4791af8d52bf5c50",
+    "rank": 19,
+    "allTime_pnl": 75979376.378213,
+    "allTime_vlm": 102076235.45,
+    "month_pnl": 771525.380715,
+    "label": "UNDERPOWERED"
+  },
+  {
+    "total_fills": 16655,
+    "total_open_fills": 8438,
+    "tradable_open_fills": 3987,
+    "entries_analyzed": 3987,
+    "by_coin": [
+      [
+        "ETH",
+        2136
+      ],
+      [
+        "BTC",
+        1675
+      ],
+      [
+        "SOL",
+        176
+      ]
+    ],
+    "momentum": 1229,
+    "contrarian": 890,
+    "neutral": 1868,
+    "missing_price": 0,
+    "momentum_pct": 30.825181840983195,
+    "contrarian_pct": 22.322548281916227,
+    "neutral_pct": 46.852269877100575,
+    "momentum_pct_directional": 57.99905615856536,
+    "addr": "0x023a3d058020fb76cca98f01b3c48c8938a22355",
+    "rank": 21,
+    "allTime_pnl": 67210200.80336599,
+    "allTime_vlm": 228772238448.96,
+    "month_pnl": 1766490.379778,
+    "label": "MIXED"
+  },
+  {
+    "total_fills": 1064,
+    "total_open_fills": 461,
+    "tradable_open_fills": 0,
+    "entries_analyzed": 0,
+    "by_coin": [],
+    "momentum": 0,
+    "contrarian": 0,
+    "neutral": 0,
+    "missing_price": 0,
+    "momentum_pct": null,
+    "momentum_pct_directional": null,
+    "addr": "0x5d2f4460ac3514ada79f5d9838916e508ab39bb7",
+    "rank": 23,
+    "allTime_pnl": 63092805.265743,
+    "allTime_vlm": 1613777321.16,
+    "month_pnl": 1751644.483393,
+    "label": "UNDERPOWERED"
+  },
+  {
+    "total_fills": 22990,
+    "total_open_fills": 8347,
+    "tradable_open_fills": 0,
+    "entries_analyzed": 0,
+    "by_coin": [],
+    "momentum": 0,
+    "contrarian": 0,
+    "neutral": 0,
+    "missing_price": 0,
+    "momentum_pct": null,
+    "momentum_pct_directional": null,
+    "addr": "0x8af700ba841f30e0a3fcb0ee4c4a9d223e1efa05",
+    "rank": 24,
+    "allTime_pnl": 62886408.446647,
+    "allTime_vlm": 4639669570.67,
+    "month_pnl": 3573582.452353,
+    "label": "UNDERPOWERED"
+  },
+  {
+    "total_fills": 11292,
+    "total_open_fills": 5363,
+    "tradable_open_fills": 1820,
+    "entries_analyzed": 1820,
+    "by_coin": [
+      [
+        "BTC",
+        1812
+      ],
+      [
+        "ETH",
+        8
+      ]
+    ],
+    "momentum": 554,
+    "contrarian": 270,
+    "neutral": 996,
+    "missing_price": 0,
+    "momentum_pct": 30.439560439560438,
+    "contrarian_pct": 14.835164835164836,
+    "neutral_pct": 54.72527472527472,
+    "momentum_pct_directional": 67.23300970873787,
+    "addr": "0x35d1151ef1aab579cbb3109e69fa82f94ff5acb1",
+    "rank": 27,
+    "allTime_pnl": 59088891.742638,
+    "allTime_vlm": 607710718.09,
+    "month_pnl": 1162247.011469,
+    "label": "MIXED"
+  },
+  {
+    "total_fills": 21893,
+    "total_open_fills": 8279,
+    "tradable_open_fills": 0,
+    "entries_analyzed": 0,
+    "by_coin": [],
+    "momentum": 0,
+    "contrarian": 0,
+    "neutral": 0,
+    "missing_price": 0,
+    "momentum_pct": null,
+    "momentum_pct_directional": null,
+    "addr": "0x8e096995c3e4a3f0bc5b3ea1cba94de2aa4d70c9",
+    "rank": 28,
+    "allTime_pnl": 58882565.928457,
+    "allTime_vlm": 1404287137.25,
+    "month_pnl": -878570.800881,
+    "label": "UNDERPOWERED"
+  },
+  {
+    "total_fills": 31,
+    "total_open_fills": 0,
+    "tradable_open_fills": 0,
+    "entries_analyzed": 0,
+    "by_coin": [],
+    "momentum": 0,
+    "contrarian": 0,
+    "neutral": 0,
+    "missing_price": 0,
+    "momentum_pct": null,
+    "momentum_pct_directional": null,
+    "addr": "0x939f95036d2e7b6d7419ec072bf9d967352204d2",
+    "rank": 32,
+    "allTime_pnl": 52207163.386364,
+    "allTime_vlm": 2112473745.01,
+    "month_pnl": 3102896.386055,
+    "label": "UNDERPOWERED"
+  },
+  {
+    "total_fills": 14332,
+    "total_open_fills": 11,
+    "tradable_open_fills": 0,
+    "entries_analyzed": 0,
+    "by_coin": [],
+    "momentum": 0,
+    "contrarian": 0,
+    "neutral": 0,
+    "missing_price": 0,
+    "momentum_pct": null,
+    "momentum_pct_directional": null,
+    "addr": "0x7dacca323e44f168494c779bb5e7483c468ef410",
+    "rank": 35,
+    "allTime_pnl": 47338173.580226995,
+    "allTime_vlm": 195085475.01999998,
+    "month_pnl": -346408.278207,
+    "label": "UNDERPOWERED"
+  },
+  {
+    "total_fills": 13039,
+    "total_open_fills": 6712,
+    "tradable_open_fills": 134,
+    "entries_analyzed": 134,
+    "by_coin": [
+      [
+        "SOL",
+        18
+      ],
+      [
+        "ETH",
+        65
+      ],
+      [
+        "BTC",
+        51
+      ]
+    ],
+    "momentum": 0,
+    "contrarian": 19,
+    "neutral": 115,
+    "missing_price": 0,
+    "momentum_pct": 0.0,
+    "contrarian_pct": 14.17910447761194,
+    "neutral_pct": 85.82089552238806,
+    "momentum_pct_directional": 0.0,
+    "addr": "0x010461c14e146ac35fe42271bdc1134ee31c703a",
+    "rank": 36,
+    "allTime_pnl": 47055343.520992,
+    "allTime_vlm": 189308953847.94,
+    "month_pnl": -14850.354418,
+    "label": "STRUCTURAL CANDIDATE"
+  },
+  {
+    "total_fills": 7626,
+    "total_open_fills": 720,
+    "tradable_open_fills": 186,
+    "entries_analyzed": 186,
+    "by_coin": [
+      [
+        "BTC",
+        186
+      ]
+    ],
+    "momentum": 186,
+    "contrarian": 0,
+    "neutral": 0,
+    "missing_price": 0,
+    "momentum_pct": 100.0,
+    "contrarian_pct": 0.0,
+    "neutral_pct": 0.0,
+    "momentum_pct_directional": 100.0,
+    "addr": "0xcac19662ec88d23fa1c81ac0e8570b0cf2ff26b3",
+    "rank": 38,
+    "allTime_pnl": 44036050.675935,
+    "allTime_vlm": 716851358.44,
+    "month_pnl": -789596.3703139999,
+    "label": "MOMENTUM-LUCKY"
+  },
+  {
+    "total_fills": 18870,
+    "total_open_fills": 3796,
+    "tradable_open_fills": 600,
+    "entries_analyzed": 600,
+    "by_coin": [
+      [
+        "SOL",
+        396
+      ],
+      [
+        "BTC",
+        204
+      ]
+    ],
+    "momentum": 160,
+    "contrarian": 74,
+    "neutral": 366,
+    "missing_price": 0,
+    "momentum_pct": 26.666666666666668,
+    "contrarian_pct": 12.333333333333334,
+    "neutral_pct": 61.0,
+    "momentum_pct_directional": 68.37606837606837,
+    "addr": "0x162cc7c861ebd0c06b3d72319201150482518185",
+    "rank": 40,
+    "allTime_pnl": 41885241.48824199,
+    "allTime_vlm": 697393374943.7799,
+    "month_pnl": 462511.2279579999,
+    "label": "STRUCTURAL CANDIDATE"
+  },
+  {
+    "total_fills": 12494,
+    "total_open_fills": 5815,
+    "tradable_open_fills": 81,
+    "entries_analyzed": 81,
+    "by_coin": [
+      [
+        "ETH",
+        76
+      ],
+      [
+        "BTC",
+        5
+      ]
+    ],
+    "momentum": 0,
+    "contrarian": 77,
+    "neutral": 4,
+    "missing_price": 0,
+    "momentum_pct": 0.0,
+    "contrarian_pct": 95.06172839506173,
+    "neutral_pct": 4.938271604938271,
+    "momentum_pct_directional": 0.0,
+    "addr": "0x856c35038594767646266bc7fd68dc26480e910d",
+    "rank": 42,
+    "allTime_pnl": 39255719.60652299,
+    "allTime_vlm": 18799092217.850002,
+    "month_pnl": 1585770.2382239997,
+    "label": "STRUCTURAL CANDIDATE"
+  },
+  {
+    "total_fills": 11977,
+    "total_open_fills": 5763,
+    "tradable_open_fills": 160,
+    "entries_analyzed": 160,
+    "by_coin": [
+      [
+        "BTC",
+        67
+      ],
+      [
+        "SOL",
+        24
+      ],
+      [
+        "ETH",
+        69
+      ]
+    ],
+    "momentum": 17,
+    "contrarian": 0,
+    "neutral": 143,
+    "missing_price": 0,
+    "momentum_pct": 10.625,
+    "contrarian_pct": 0.0,
+    "neutral_pct": 89.375,
+    "momentum_pct_directional": 100.0,
+    "addr": "0x31ca8395cf837de08b24da3f660e77761dfb974b",
+    "rank": 45,
+    "allTime_pnl": 37194021.196238,
+    "allTime_vlm": 185188629015.96,
+    "month_pnl": -361454.276657,
+    "label": "STRUCTURAL CANDIDATE"
+  },
+  {
+    "total_fills": 3467,
+    "total_open_fills": 487,
+    "tradable_open_fills": 476,
+    "entries_analyzed": 476,
+    "by_coin": [
+      [
+        "BTC",
+        381
+      ],
+      [
+        "ETH",
+        95
+      ]
+    ],
+    "momentum": 41,
+    "contrarian": 224,
+    "neutral": 211,
+    "missing_price": 0,
+    "momentum_pct": 8.61344537815126,
+    "contrarian_pct": 47.05882352941177,
+    "neutral_pct": 44.32773109243698,
+    "momentum_pct_directional": 15.471698113207546,
+    "addr": "0x418aa6bf98a2b2bc93779f810330d88cde488888",
+    "rank": 49,
+    "allTime_pnl": 34087369.645153,
+    "allTime_vlm": 719312874.57,
+    "month_pnl": -1351688.209741,
+    "label": "STRUCTURAL CANDIDATE"
+  },
+  {
+    "total_fills": 3245,
+    "total_open_fills": 0,
+    "tradable_open_fills": 0,
+    "entries_analyzed": 0,
+    "by_coin": [],
+    "momentum": 0,
+    "contrarian": 0,
+    "neutral": 0,
+    "missing_price": 0,
+    "momentum_pct": null,
+    "momentum_pct_directional": null,
+    "addr": "0x82d8dc80190e6bc1d92b048f9fc7e85e5e1e32ff",
+    "rank": 50,
+    "allTime_pnl": 33111243.396402,
+    "allTime_vlm": 86309632.54,
+    "month_pnl": 0.0,
+    "label": "UNDERPOWERED"
+  }
+]

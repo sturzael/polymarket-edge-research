@@ -1,0 +1,72 @@
+[
+  {
+    "width_pct": 2.5,
+    "tir": 1.9,
+    "concentration": 20.0,
+    "fee_apr_pct": 23.6,
+    "fee_90d_pct": 5.83,
+    "principal_final_usd": 0.7,
+    "hodl_final_usd": 0.846,
+    "il_vs_hodl_pct": -17.2,
+    "net_pnl_pct_90d": -24.14,
+    "net_vs_hodl_pct": -8.72,
+    "exited_range": true,
+    "annualized_net_pct": -97.9
+  },
+  {
+    "width_pct": 5.0,
+    "tir": 2.8,
+    "concentration": 10.0,
+    "fee_apr_pct": 17.1,
+    "fee_90d_pct": 4.22,
+    "principal_final_usd": 0.709,
+    "hodl_final_usd": 0.846,
+    "il_vs_hodl_pct": -16.11,
+    "net_pnl_pct_90d": -24.84,
+    "net_vs_hodl_pct": -9.41,
+    "exited_range": true,
+    "annualized_net_pct": -100.7
+  },
+  {
+    "width_pct": 10.0,
+    "tir": 4.7,
+    "concentration": 5.0,
+    "fee_apr_pct": 14.5,
+    "fee_90d_pct": 3.57,
+    "principal_final_usd": 0.729,
+    "hodl_final_usd": 0.846,
+    "il_vs_hodl_pct": -13.82,
+    "net_pnl_pct_90d": -23.54,
+    "net_vs_hodl_pct": -8.12,
+    "exited_range": true,
+    "annualized_net_pct": -95.5
+  },
+  {
+    "width_pct": 20.0,
+    "tir": 8.5,
+    "concentration": 2.5,
+    "fee_apr_pct": 13.1,
+    "fee_90d_pct": 3.24,
+    "principal_final_usd": 0.773,
+    "hodl_final_usd": 0.846,
+    "il_vs_hodl_pct": -8.59,
+    "net_pnl_pct_90d": -19.45,
+    "net_vs_hodl_pct": -4.02,
+    "exited_range": true,
+    "annualized_net_pct": -78.9
+  },
+  {
+    "width_pct": 40.0,
+    "tir": 100.0,
+    "concentration": 1.2,
+    "fee_apr_pct": 77.8,
+    "fee_90d_pct": 19.17,
+    "principal_final_usd": 0.832,
+    "hodl_final_usd": 0.846,
+    "il_vs_hodl_pct": -1.68,
+    "net_pnl_pct_90d": 2.33,
+    "net_vs_hodl_pct": 17.75,
+    "exited_range": false,
+    "annualized_net_pct": 9.4
+  }
+]

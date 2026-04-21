@@ -1,0 +1,154 @@
+{
+  "wallet": "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+  "total_btc_fills": 876,
+  "btc_entries_n": 733,
+  "btc_closes_n": 137,
+  "entry_count_pct_by_hour_utc": {
+    "0": 0.0,
+    "1": 9.55,
+    "2": 82.26,
+    "3": 8.19,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0,
+    "10": 0.0,
+    "11": 0.0,
+    "12": 0.0,
+    "13": 0.0,
+    "14": 0.0,
+    "15": 0.0,
+    "16": 0.0,
+    "17": 0.0,
+    "18": 0.0,
+    "19": 0.0,
+    "20": 0.0,
+    "21": 0.0,
+    "22": 0.0,
+    "23": 0.0
+  },
+  "entry_notional_pct_by_hour_utc": {
+    "0": 0.0,
+    "1": 24.82,
+    "2": 59.16,
+    "3": 16.02,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0,
+    "10": 0.0,
+    "11": 0.0,
+    "12": 0.0,
+    "13": 0.0,
+    "14": 0.0,
+    "15": 0.0,
+    "16": 0.0,
+    "17": 0.0,
+    "18": 0.0,
+    "19": 0.0,
+    "20": 0.0,
+    "21": 0.0,
+    "22": 0.0,
+    "23": 0.0
+  },
+  "rank_ordered_top10_hours": [
+    [
+      2,
+      82.26
+    ],
+    [
+      1,
+      9.55
+    ],
+    [
+      3,
+      8.19
+    ],
+    [
+      0,
+      0.0
+    ],
+    [
+      4,
+      0.0
+    ],
+    [
+      5,
+      0.0
+    ],
+    [
+      6,
+      0.0
+    ],
+    [
+      7,
+      0.0
+    ],
+    [
+      8,
+      0.0
+    ],
+    [
+      9,
+      0.0
+    ]
+  ],
+  "quiet_hours_used": [
+    3,
+    5,
+    6,
+    9,
+    10,
+    12
+  ],
+  "quiet_hours_expected_share_pct": 25.0,
+  "quiet_hours_actual_entry_share_pct": 8.19,
+  "quiet_hours_actual_notional_share_pct": 16.02,
+  "concentration_ratio_count": 0.328,
+  "concentration_ratio_notional": 0.641,
+  "fills_time_range_utc": [
+    "2026-04-21T00:54:58.050000+00:00",
+    "2026-04-21T03:50:19.230000+00:00"
+  ],
+  "CRITICAL_CAVEAT": "Wallet fills file covers only 2026-04-21 00:53-03:50 UTC (~3hr single session, 876 BTC fills). Hour-of-day concentration is therefore a window artifact, NOT evidence of hour preference. The informative test is whether that 3hr session itself was a 'quiet' period \u2014 see today_window_analysis.",
+  "today_window_analysis": {
+    "0": {
+      "rv_today_bps": 27.4,
+      "hour_median_60d_bps": 34.88,
+      "below_median": true,
+      "n_wallet_btc_fills_this_hour": 26
+    },
+    "1": {
+      "rv_today_bps": 22.5,
+      "hour_median_60d_bps": 35.82,
+      "below_median": true,
+      "n_wallet_btc_fills_this_hour": 152
+    },
+    "2": {
+      "rv_today_bps": 31.1,
+      "hour_median_60d_bps": 33.85,
+      "below_median": true,
+      "n_wallet_btc_fills_this_hour": 606
+    },
+    "3": {
+      "rv_today_bps": 25.5,
+      "hour_median_60d_bps": 25.51,
+      "below_median": true,
+      "n_wallet_btc_fills_this_hour": 92
+    }
+  },
+  "sample_window_utc": [
+    "2026-04-21T00:54:58.050000+00:00",
+    "2026-04-21T03:50:19.230000+00:00"
+  ],
+  "four_h_ret_context": {
+    "window_centered_22_02_utc_pct": 0.511,
+    "window_centered_02_06_utc_pct": 0.234,
+    "flat_threshold_pct": 0.5,
+    "verdict": "Wallet operated during window where 4h |ret| was at or below the 0.5% flat threshold."
+  }
+}

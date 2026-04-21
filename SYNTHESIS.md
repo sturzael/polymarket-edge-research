@@ -224,3 +224,69 @@ Both align with the broader posture already in this synthesis: the LLM is a rese
 - Next step: Phase 0 shakedown + slug_audit + pre_run before the main daemon
 
 The research is not complete. The synthesis above captures the Stage 1 arc (exploration → falsification → one survivor). Stage 2 (paper-trade validation) is now in progress and will either promote sports_lag to live-deployment candidate or add it to NULL_RESULTS.md.
+
+---
+
+## Post-synthesis update (2026-04-21): Stage 2 complete, Stage 3 started
+
+Substantial progress since the 2026-04-19 update. Three shifts:
+
+### 1. Sports FLB at T-7d emerged as the deployable edge (e16 → e23)
+
+The sports settlement-lag thesis faded (see 2026-04-19 update: e13 found +3.99% edge on n=47 but H1 wallet-diffuse assumption partially contradicted at re-derivation). Separately, the **e16 calibration study** measured a +25.8pp favorite-longshot bias on Polymarket sports at T-7d in the 0.55–0.60 bucket (z=7.6, n=120/2,025). The **e23 stratification suite** (six parallel agents: per-sport, temporal, volume, lifetime, sub-category, execution-adjusted) narrowed this to a specific operating cell: **MLB/NBA/NFL/NHL × game_outcome × T-7d × 0.55–0.60 × ≤14d lifespan × ≥$5k window volume**. Planning number: **$4–11k/yr on $5–25k capital** (÷5-applied). Scanner + ntfy notification infrastructure live in [`experiments/e23_stratification/live_trader/`](experiments/e23_stratification/live_trader/). Deployment gated on V2 cutover (2026-04-22, imminent) + 30-day forward-validation collector + 10 manual fills before automation.
+
+The cross-venue control (e18–e22: Drift, Baozi, Azuro, Betfair, Smarkets) confirmed this is a **Polymarket × T-7d specific effect**, 5–75× larger than any other measured venue's FLB at the same price level. See [`experiments/SYNTHESIS_flb_cross_venue.md`](experiments/SYNTHESIS_flb_cross_venue.md).
+
+### 2. Solana DeFi recon (2026-04-21): 2 kills, 1 null, 1 open investigation
+
+Spawned in a single session investigating Solana as an alternative edge surface. Four candidates tested in parallel via sub-agents:
+
+- **Solana perps funding arb** — KILL. Drift paused post-$286M DPRK-linked exploit. Jupiter Perps / Flash Trade are one-way borrow-fee (not bilateral funding). Zeta liquidity rounding-error. Only one real funding venue exists and it's offline.
+- **Solana LST NAV arb** — KILL. Steady-state deviation ~25bps (inside Sanctum instant-unstake fee). Depeg windows minute-scale, captured by Wintermute-class MMs with co-located infra.
+- **[e24 Orca USDC/SOL CL LP](experiments/e24_orca_cl_lp/)** — NULL. Per-position data architecturally gated behind paid indexers (Dune analyst plan ~$390/mo minimum). Pool-level simulation calibrated against Heimbach 49.5% loser-rate prior (Bancor/IntoTheBlock study of Uniswap V3). No cell meets the pre-committed n≥200 + median APR>5% decision gate. Closed.
+- **[e25 Hyperliquid wallet forensics](experiments/e25_hyperliquid_forensics/)** — OPEN, pivoted. Solana venues (Drift/Jupiter/Flash/Zeta) require custom indexing; Hyperliquid is the only accessible perps-wallet data surface. Study returned the most important finding of the session (see §3).
+
+### 3. The Hyperliquid inverted-distribution finding
+
+The e21-style wallet decomposition (lucky-vs-structural momentum classification, ±0.5% / 4h lookback) applied to 24 of HL's top-50 all-time-PnL wallets produced a finding that **inverts** the Polymarket pattern:
+
+- On Polymarket, top wallets clustered at >90% momentum-coincident — regime-lucky, not structural.
+- On Hyperliquid, the distribution is heavily left-skewed: **9 of 14 analyzable wallets below 20% momentum.** 10 of 24 top wallets don't even trade BTC/ETH/SOL — real top-PnL lives in synthetics (xyz:CL, BRENTOIL, SILVER, MSTR), HYPE, TAO, XMR.
+
+Three wallets stand out as structural candidates worth deeper profiling:
+- `0xecb63caa` (rank 2, $203M allTime) — 0.1% momentum, 84% flat-regime on BTC. MM-like fingerprint.
+- `0x7fdafde5` (rank 5, $159M allTime) — 72% contrarian on ETH, n=4,413. Cleanest heavy fader.
+- `0x856c3503` (rank 42, $39M allTime) — 95% contrarian ETH, small-n.
+
+**Critical caveat added post-e26 analysis:** the `0xecb63caa` fills sample covers only a 3-hour 2026-04-21 session (876 fills), not 60 days. HL `userFillsByTime` returned only the most recent batch. The "MM in quiet hours" hypothesis is directionally consistent with the 3-hour observation (below-median vol, passive-resting-quote fill composition) but **not validated at 60-day horizon**. Paginated pull required before acting.
+
+### 4. HL MM viability scoping (e26): 4-agent recon
+
+Four parallel sub-agents investigated: (A) fee economics + HLP mechanics + capacity, (B) quiet-hours empirical characterization + rank-2 wallet overlap, (C) competitive landscape + HLP dominance + incidents, (D) technical stack + latency + risk framework. Detailed reports in [`experiments/e26_hl_mm_investigation/agent_reports/`](experiments/e26_hl_mm_investigation/agent_reports/).
+
+Combined verdict: **build is physically possible from a Tokyo VPS at $12–90/mo opex. Economic edge is structurally thin.** Classical spread capture is dead for solo retail at HL's ~1bp BTC top-of-book spread vs ~1.3bp net maker fee. Edge must come from inventory-timing, not spread capture. Niche quiet-hours MM (03–12 UTC band identified empirically) is the only residual path, capped at HLP-like ~15–20% APR gross. After ÷5 discipline: ~3–5% annualized on $5–10k = $15–50/mo. **Worse than e23 FLB on every dimension except novelty.** Defer build until (a) paginated 60-day rank-2 wallet pull validates hour-of-day selectivity AND (b) 30-day testnet/paper-trade shows net-of-fees positive P&L.
+
+### 5. Byproducts worth monetizing independently
+
+The 2026-04-21 session reinforced something that's been latent since Stage 1: the research infrastructure and methodology have standalone value separate from any deployed strategy. Specifically:
+
+- **The ÷5 + counter-memo + pre-registration + default-to-KILL discipline** demonstrated across 26 experiments (19 killed, 1 deployable, 1 null, 1 open) is rare in crypto research. Saleable as due-diligence consulting or a packaged report.
+- **The cross-venue FLB finding** (Polymarket T-7d +25pp vs Betfair/Azuro 5–75× smaller at same price level) is publication-grade novel measurement.
+- **The inverted HL distribution** (left-skew toward structural signatures vs Polymarket's right-skew toward momentum) has no prior public analog.
+- **The null-result corpus itself** (9 killed Stage-1 theses + 3 killed Stage-2+3 theses + the e24/LST/funding Solana nulls) is a product: "thesis X is dead, here's why, with data" is what operators considering these exact strategies will pay to not waste $10k learning independently.
+
+### 6. What's next
+
+Ordered by expected-value per unit of effort:
+
+1. **Finish e23 forward validation and deploy at $5k post-V2.** Already scoped. Expected outcome $400/mo at planning number.
+2. **Publish the cross-venue FLB + inverted-HL findings.** Substack / X thread / prediction-market research community. Non-trading income path, 1–2 days.
+3. **Paginated HL wallet pull (mandatory before any e26 build).** 3–4 hours rate-limited agent work. Validates or falsifies the rank-2 hypothesis.
+4. **Package the methodology as a paid consulting offer.** 1-week positioning + landing page + Substack-as-distribution.
+5. **Only if #3 validates:** testnet deploy of `basic_adding.py` + A-S spread logic + 30-day paper-trade. 2-week build.
+
+Stage 1 found 1 survivor out of 10. Stage 2+3 found 1 deployable cell + 1 open investigation + 4 kills/nulls out of 6 theses tested. The downward-trajectory pattern documented in the original synthesis continues to hold: honest research produces modest, heavily-caveated estimates, not inflating ones.
+
+---
+
+*End of 2026-04-21 update. Research remains live. e23 deployment planned post-V2; e26 deferred pending data; byproducts-as-product path newly prioritized.*

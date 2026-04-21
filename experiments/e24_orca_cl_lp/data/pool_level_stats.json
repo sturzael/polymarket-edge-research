@@ -1,0 +1,12 @@
+{
+  "pool": "Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE",
+  "window_n_hours": 2161,
+  "window_start_ts": 1768968000,
+  "window_end_ts": 1776744000,
+  "sol_90d_pct_change": -33.22,
+  "sol_90d_max": 132.030531777161,
+  "sol_90d_min": 68.06236283435535,
+  "sol_realized_vol_ann_pct": 73.5,
+  "pool_tvl_usd": 29582357.364048075,
+  "pool_gross_apr_model_pct": 61.2
+}
