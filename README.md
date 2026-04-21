@@ -1,10 +1,20 @@
-# Measuring Structural Inefficiency in Prediction Markets
+# A Solo Trader Hunted for Edge on Polymarket. Here's the Catalog of What Didn't Work.
 
-**A systematic investigation of solo-operator trading strategies on Polymarket, including the construction of a negative-risk arbitrage scanner and retrospective analysis of cross-outcome sum violations.**
+**10 strategies tested. 10 falsified at retail latency and $1k bankroll. But along the way: a live negative-risk arbitrage scanner, a 954M-row on-chain audit of actual arbitrage persistence (median 1 minute), a map of undocumented Polymarket API quirks, and specific conditions under which the null flips. Plus two sibling studies spawned from this work.**
 
 > 👉 **Not a markets person?** Read the [Explain Like I'm Five version](docs/ELI5.md) instead.
 
 > ⏩ **Looking for the current-state summary?** Jump to [Current state (2026-04-21)](#current-state-2026-04-21) — what's deployable, what's killed, what's open.
+
+---
+
+## TL;DR
+
+- **Ten trading strategies** systematically tested over ~a month. All ten **falsified for $1k-bankroll retail operators with 200-300ms latency.**
+- Built a **live negative-risk arbitrage scanner** with phantom-depth verification — detected 39 apparent violations in one day, of which ~half were market correctly pricing tail risk, not arbitrage.
+- Retrospective analysis on **954M-row on-chain dataset:** median negative-risk arbitrage window = **1 minute**, 95th percentile = **2.8 minutes**.
+- Documented **20+ undocumented Polymarket API quirks and microstructure facts** (API filter silently ignored, CLOB `/book` sort order, fee formula empirics, resolution-lag measurements).
+- Spawned **two sibling studies:** a pre-registered Trump-tweet replication (KILL) and an AI-markets reconnaissance (in progress). See [Related studies](#related-studies).
 
 ---
 
@@ -236,3 +246,21 @@ GitHub: sturzael/polymarket-edge-research
 ## Disclosure
 
 No capital was deployed. No trading was conducted. All findings are based on observation of public Polymarket data, public wallet activity, and public market infrastructure. Wallet analysis is at the behavioral-pattern level; no claims of informed trading or misconduct are made against any named wallet or operator.
+
+---
+
+## Related studies
+
+This is the parent repo in a three-repo portfolio on solo-operator trading research. Two sibling studies spawned from this work:
+
+| Repo | Question | Verdict |
+|------|----------|---------|
+| **`polymarket-edge-research`** (this repo) | Does retail edge exist on Polymarket at $1k bankroll across 10 candidate strategies? | KILL (all 10 falsified) + durable tooling |
+| [`trump-polymarket-replication`](https://github.com/sturzael/trump-polymarket-replication) | Does a claimed 61.3% Trump-tweet→S&P signal translate to Polymarket? | KILL — 0 of 100 cells cleared the 7-gate test |
+| [`polymarket-ai-edge`](https://github.com/sturzael/polymarket-ai-edge) | Is there retail edge on Polymarket's AI markets? | Pre-registration complete; forward observation not yet begun |
+
+All three share methodology DNA: pre-registration before data access, ÷5 heuristic on edge estimates, counter-memo before verdict, git log as audit trail.
+
+---
+
+**Star ⭐ this repo if negative-result research in quantitative finance is your thing. Most people only publish wins. This is what honest null results look like.**
