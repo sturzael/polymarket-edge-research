@@ -1,0 +1,731 @@
+{
+  "generated_at": "2026-04-21T06:38:06.069150+00:00",
+  "wallets": {
+    "rank14": {
+      "n_fills": 16541,
+      "total_ntl_usd": 10453295.35,
+      "distinct_coins": 16,
+      "top_assets": [
+        {
+          "coin": "LIT",
+          "fill_count": 7496,
+          "fill_pct": 45.32,
+          "ntl_usd": 2521933.1,
+          "ntl_pct": 24.13
+        },
+        {
+          "coin": "HYPE",
+          "fill_count": 1307,
+          "fill_pct": 7.9,
+          "ntl_usd": 947639.25,
+          "ntl_pct": 9.07
+        },
+        {
+          "coin": "MON",
+          "fill_count": 1236,
+          "fill_pct": 7.47,
+          "ntl_usd": 768871.16,
+          "ntl_pct": 7.36
+        },
+        {
+          "coin": "ZRO",
+          "fill_count": 953,
+          "fill_pct": 5.76,
+          "ntl_usd": 508304.0,
+          "ntl_pct": 4.86
+        },
+        {
+          "coin": "ENA",
+          "fill_count": 878,
+          "fill_pct": 5.31,
+          "ntl_usd": 550671.75,
+          "ntl_pct": 5.27
+        }
+      ],
+      "dir_composition": {
+        "Open Short": 10274,
+        "Close Short": 5423,
+        "Sell": 844
+      },
+      "maker_share": 0.514,
+      "taker_share": 0.486,
+      "liquidation_fills": 0,
+      "fees_usd": 2089.62,
+      "closed_pnl_usd": 221732.72,
+      "time_range_days": 5.97,
+      "earliest_fill_utc": "2026-04-15T02:34:57.499000+00:00",
+      "latest_fill_utc": "2026-04-21T01:53:20.522000+00:00",
+      "hour_distribution_utc": {
+        "0": 282,
+        "1": 319,
+        "2": 703,
+        "3": 741,
+        "4": 922,
+        "5": 823,
+        "6": 1097,
+        "7": 922,
+        "8": 1126,
+        "9": 809,
+        "10": 603,
+        "11": 292,
+        "12": 128,
+        "13": 875,
+        "14": 1047,
+        "15": 876,
+        "16": 1012,
+        "17": 1680,
+        "18": 901,
+        "19": 694,
+        "20": 291,
+        "21": 203,
+        "22": 107,
+        "23": 88
+      },
+      "hours_active_ge_2pct": 16,
+      "role_heuristic": "mixed",
+      "addr": "0xa312114b5795dff9b8db50474dd57701aa78ad1e",
+      "allTime_pnl_usd": 96400000
+    },
+    "rank16": {
+      "n_fills": 72,
+      "total_ntl_usd": 115134.77,
+      "distinct_coins": 1,
+      "top_assets": [
+        {
+          "coin": "TST",
+          "fill_count": 72,
+          "fill_pct": 100.0,
+          "ntl_usd": 115134.77,
+          "ntl_pct": 100.0
+        }
+      ],
+      "dir_composition": {
+        "Close Short": 47,
+        "Liquidated Cross Short": 14,
+        "Liquidated Isolated Short": 11
+      },
+      "maker_share": 0.514,
+      "taker_share": 0.486,
+      "liquidation_fills": 25,
+      "fees_usd": 15.24,
+      "closed_pnl_usd": -7930.65,
+      "time_range_days": 0.24,
+      "earliest_fill_utc": "2026-04-16T20:03:21.655000+00:00",
+      "latest_fill_utc": "2026-04-17T01:55:15.491000+00:00",
+      "hour_distribution_utc": {
+        "1": 47,
+        "20": 24,
+        "22": 1
+      },
+      "hours_active_ge_2pct": 2,
+      "role_heuristic": "mixed",
+      "addr": "0x2e3d94f0562703b25c83308a05046ddaf9a8dd14",
+      "allTime_pnl_usd": 84600000
+    },
+    "rank19": {
+      "n_fills": 69,
+      "total_ntl_usd": 1302788.08,
+      "distinct_coins": 4,
+      "top_assets": [
+        {
+          "coin": "xyz:CL",
+          "fill_count": 51,
+          "fill_pct": 73.91,
+          "ntl_usd": 582214.75,
+          "ntl_pct": 44.69
+        },
+        {
+          "coin": "km:SMALL2000",
+          "fill_count": 15,
+          "fill_pct": 21.74,
+          "ntl_usd": 670575.57,
+          "ntl_pct": 51.47
+        },
+        {
+          "coin": "xyz:XYZ100",
+          "fill_count": 2,
+          "fill_pct": 2.9,
+          "ntl_usd": 49997.69,
+          "ntl_pct": 3.84
+        },
+        {
+          "coin": "km:USBOND",
+          "fill_count": 1,
+          "fill_pct": 1.45,
+          "ntl_usd": 0.08,
+          "ntl_pct": 0.0
+        }
+      ],
+      "dir_composition": {
+        "Open Long": 28,
+        "Close Long": 23,
+        "Open Short": 16,
+        "Liquidated Isolated Long": 1,
+        "Liquidated Isolated Short": 1
+      },
+      "maker_share": 0.391,
+      "taker_share": 0.609,
+      "liquidation_fills": 2,
+      "fees_usd": 27.79,
+      "closed_pnl_usd": -50998.72,
+      "time_range_days": 19.24,
+      "earliest_fill_utc": "2026-03-23T11:10:28.724000+00:00",
+      "latest_fill_utc": "2026-04-11T16:51:51.125000+00:00",
+      "hour_distribution_utc": {
+        "0": 1,
+        "2": 1,
+        "4": 1,
+        "10": 9,
+        "11": 11,
+        "14": 19,
+        "15": 2,
+        "16": 22,
+        "18": 1,
+        "20": 1,
+        "23": 1
+      },
+      "hours_active_ge_2pct": 5,
+      "role_heuristic": "mixed",
+      "addr": "0xbdfa4f4492dd7b7cf211209c4791af8d52bf5c50",
+      "allTime_pnl_usd": 76000000
+    },
+    "rank23": {
+      "n_fills": 1064,
+      "total_ntl_usd": 10875704.37,
+      "distinct_coins": 3,
+      "top_assets": [
+        {
+          "coin": "xyz:CL",
+          "fill_count": 835,
+          "fill_pct": 78.48,
+          "ntl_usd": 6361520.17,
+          "ntl_pct": 58.49
+        },
+        {
+          "coin": "xyz:SP500",
+          "fill_count": 189,
+          "fill_pct": 17.76,
+          "ntl_usd": 3029484.19,
+          "ntl_pct": 27.86
+        },
+        {
+          "coin": "xyz:XYZ100",
+          "fill_count": 40,
+          "fill_pct": 3.76,
+          "ntl_usd": 1484700.0,
+          "ntl_pct": 13.65
+        }
+      ],
+      "dir_composition": {
+        "Close Long": 603,
+        "Open Long": 461
+      },
+      "maker_share": 0.932,
+      "taker_share": 0.068,
+      "liquidation_fills": 0,
+      "fees_usd": 346.16,
+      "closed_pnl_usd": -143823.83,
+      "time_range_days": 17.9,
+      "earliest_fill_utc": "2026-04-02T13:43:31.470000+00:00",
+      "latest_fill_utc": "2026-04-20T11:21:10.485000+00:00",
+      "hour_distribution_utc": {
+        "1": 5,
+        "2": 35,
+        "3": 6,
+        "10": 141,
+        "11": 13,
+        "13": 178,
+        "14": 76,
+        "15": 196,
+        "16": 31,
+        "17": 28,
+        "22": 43,
+        "23": 312
+      },
+      "hours_active_ge_2pct": 9,
+      "role_heuristic": "mixed",
+      "addr": "0x5d2f4460ac3514ada79f5d9838916e508ab39bb7",
+      "allTime_pnl_usd": 63100000
+    },
+    "rank24": {
+      "n_fills": 22990,
+      "total_ntl_usd": 110040095.48,
+      "distinct_coins": 7,
+      "top_assets": [
+        {
+          "coin": "xyz:CL",
+          "fill_count": 10725,
+          "fill_pct": 46.65,
+          "ntl_usd": 52249314.55,
+          "ntl_pct": 47.48
+        },
+        {
+          "coin": "xyz:BRENTOIL",
+          "fill_count": 7960,
+          "fill_pct": 34.62,
+          "ntl_usd": 37523590.72,
+          "ntl_pct": 34.1
+        },
+        {
+          "coin": "xyz:XYZ100",
+          "fill_count": 2479,
+          "fill_pct": 10.78,
+          "ntl_usd": 16029754.62,
+          "ntl_pct": 14.57
+        },
+        {
+          "coin": "AAVE",
+          "fill_count": 963,
+          "fill_pct": 4.19,
+          "ntl_usd": 1357547.32,
+          "ntl_pct": 1.23
+        },
+        {
+          "coin": "DOGE",
+          "fill_count": 613,
+          "fill_pct": 2.67,
+          "ntl_usd": 1485444.39,
+          "ntl_pct": 1.35
+        }
+      ],
+      "dir_composition": {
+        "Close Long": 11539,
+        "Open Short": 4705,
+        "Open Long": 3642,
+        "Close Short": 3102,
+        "Long > Short": 2
+      },
+      "maker_share": 0.596,
+      "taker_share": 0.404,
+      "liquidation_fills": 0,
+      "fees_usd": 5878.88,
+      "closed_pnl_usd": -4226548.61,
+      "time_range_days": 15.12,
+      "earliest_fill_utc": "2026-04-05T23:50:50.024000+00:00",
+      "latest_fill_utc": "2026-04-21T02:41:58.866000+00:00",
+      "hour_distribution_utc": {
+        "0": 1897,
+        "1": 1093,
+        "2": 561,
+        "3": 22,
+        "4": 500,
+        "5": 200,
+        "6": 168,
+        "7": 419,
+        "8": 1170,
+        "9": 2810,
+        "10": 1502,
+        "11": 764,
+        "12": 859,
+        "13": 3948,
+        "14": 1674,
+        "15": 36,
+        "17": 512,
+        "18": 649,
+        "22": 1471,
+        "23": 2735
+      },
+      "hours_active_ge_2pct": 15,
+      "role_heuristic": "mixed",
+      "addr": "0x8af700ba841f30e0a3fcb0ee4c4a9d223e1efa05",
+      "allTime_pnl_usd": 62900000
+    },
+    "rank28": {
+      "n_fills": 21893,
+      "total_ntl_usd": 45352213.78,
+      "distinct_coins": 6,
+      "top_assets": [
+        {
+          "coin": "xyz:CL",
+          "fill_count": 8545,
+          "fill_pct": 39.03,
+          "ntl_usd": 21040475.63,
+          "ntl_pct": 46.39
+        },
+        {
+          "coin": "BTC",
+          "fill_count": 4731,
+          "fill_pct": 21.61,
+          "ntl_usd": 8028340.38,
+          "ntl_pct": 17.7
+        },
+        {
+          "coin": "xyz:SILVER",
+          "fill_count": 4350,
+          "fill_pct": 19.87,
+          "ntl_usd": 4032861.49,
+          "ntl_pct": 8.89
+        },
+        {
+          "coin": "xyz:BRENTOIL",
+          "fill_count": 3050,
+          "fill_pct": 13.93,
+          "ntl_usd": 6060447.14,
+          "ntl_pct": 13.36
+        },
+        {
+          "coin": "ETH",
+          "fill_count": 1196,
+          "fill_pct": 5.46,
+          "ntl_usd": 6058557.54,
+          "ntl_pct": 13.36
+        }
+      ],
+      "dir_composition": {
+        "Close Short": 8859,
+        "Close Long": 4751,
+        "Open Short": 4229,
+        "Open Long": 4050,
+        "Long > Short": 2,
+        "Short > Long": 2
+      },
+      "maker_share": 0.093,
+      "taker_share": 0.907,
+      "liquidation_fills": 0,
+      "fees_usd": 7482.93,
+      "closed_pnl_usd": -136107.65,
+      "time_range_days": 25.46,
+      "earliest_fill_utc": "2026-03-23T07:36:53.220000+00:00",
+      "latest_fill_utc": "2026-04-17T18:44:46.760000+00:00",
+      "hour_distribution_utc": {
+        "0": 8,
+        "1": 7,
+        "2": 1015,
+        "3": 688,
+        "4": 995,
+        "5": 2271,
+        "6": 1295,
+        "7": 1923,
+        "8": 1969,
+        "9": 193,
+        "10": 131,
+        "11": 393,
+        "12": 409,
+        "13": 1241,
+        "14": 670,
+        "15": 588,
+        "16": 1149,
+        "17": 2463,
+        "18": 2208,
+        "19": 436,
+        "20": 51,
+        "21": 75,
+        "22": 1430,
+        "23": 285
+      },
+      "hours_active_ge_2pct": 14,
+      "role_heuristic": "aggressive_taker",
+      "addr": "0x8e096995c3e4a3f0bc5b3ea1cba94de2aa4d70c9",
+      "allTime_pnl_usd": 58900000
+    },
+    "rank32": {
+      "n_fills": 31,
+      "total_ntl_usd": 96747.03,
+      "distinct_coins": 1,
+      "top_assets": [
+        {
+          "coin": "xyz:CL",
+          "fill_count": 31,
+          "fill_pct": 100.0,
+          "ntl_usd": 96747.03,
+          "ntl_pct": 100.0
+        }
+      ],
+      "dir_composition": {
+        "Close Long": 31
+      },
+      "maker_share": 0.0,
+      "taker_share": 1.0,
+      "liquidation_fills": 0,
+      "fees_usd": 6.1,
+      "closed_pnl_usd": -3161.87,
+      "time_range_days": 3.59,
+      "earliest_fill_utc": "2026-04-11T16:40:06.133000+00:00",
+      "latest_fill_utc": "2026-04-15T06:49:02.357000+00:00",
+      "hour_distribution_utc": {
+        "6": 1,
+        "16": 30
+      },
+      "hours_active_ge_2pct": 2,
+      "role_heuristic": "aggressive_taker",
+      "addr": "0x939f95036d2e7b6d7419ec072bf9d967352204d2",
+      "allTime_pnl_usd": 52200000
+    },
+    "rank35": {
+      "n_fills": 14332,
+      "total_ntl_usd": 10794347.77,
+      "distinct_coins": 2,
+      "top_assets": [
+        {
+          "coin": "HYPE",
+          "fill_count": 14305,
+          "fill_pct": 99.81,
+          "ntl_usd": 10793907.26,
+          "ntl_pct": 100.0
+        },
+        {
+          "coin": "CRV",
+          "fill_count": 27,
+          "fill_pct": 0.19,
+          "ntl_usd": 440.51,
+          "ntl_pct": 0.0
+        }
+      ],
+      "dir_composition": {
+        "Close Short": 14313,
+        "Open Short": 6,
+        "Open Long": 5,
+        "Close Long": 5,
+        "Short > Long": 2,
+        "Long > Short": 1
+      },
+      "maker_share": 0.479,
+      "taker_share": 0.521,
+      "liquidation_fills": 0,
+      "fees_usd": 2726.25,
+      "closed_pnl_usd": -607885.18,
+      "time_range_days": 6.91,
+      "earliest_fill_utc": "2026-04-07T19:19:20.099000+00:00",
+      "latest_fill_utc": "2026-04-14T17:02:44.667000+00:00",
+      "hour_distribution_utc": {
+        "0": 314,
+        "7": 407,
+        "8": 766,
+        "9": 667,
+        "10": 613,
+        "11": 535,
+        "12": 574,
+        "13": 671,
+        "14": 693,
+        "15": 511,
+        "16": 654,
+        "17": 783,
+        "18": 646,
+        "19": 1087,
+        "20": 1491,
+        "21": 1448,
+        "22": 1693,
+        "23": 779
+      },
+      "hours_active_ge_2pct": 18,
+      "role_heuristic": "mixed",
+      "addr": "0x7dacca323e44f168494c779bb5e7483c468ef410",
+      "allTime_pnl_usd": 47300000
+    },
+    "rank50": {
+      "n_fills": 3245,
+      "total_ntl_usd": 22949238.16,
+      "distinct_coins": 1,
+      "top_assets": [
+        {
+          "coin": "@107",
+          "fill_count": 3245,
+          "fill_pct": 100.0,
+          "ntl_usd": 22949238.16,
+          "ntl_pct": 100.0
+        }
+      ],
+      "dir_composition": {
+        "Sell": 3245
+      },
+      "maker_share": 0.696,
+      "taker_share": 0.304,
+      "liquidation_fills": 0,
+      "fees_usd": 10970.04,
+      "closed_pnl_usd": 11869875.65,
+      "time_range_days": 1.14,
+      "earliest_fill_utc": "2026-03-23T11:35:34.886000+00:00",
+      "latest_fill_utc": "2026-03-24T14:54:52.862000+00:00",
+      "hour_distribution_utc": {
+        "11": 540,
+        "14": 1836,
+        "19": 869
+      },
+      "hours_active_ge_2pct": 3,
+      "role_heuristic": "mixed",
+      "addr": "0x82d8dc80190e6bc1d92b048f9fc7e85e5e1e32ff",
+      "allTime_pnl_usd": 33100000
+    }
+  },
+  "asset_aggregation": [
+    {
+      "coin": "xyz:CL",
+      "fill_count_across_wallets": 20187,
+      "ntl_usd_across_wallets": 80330272.13,
+      "wallets_using": [
+        "rank19",
+        "rank23",
+        "rank24",
+        "rank28",
+        "rank32"
+      ],
+      "n_wallets": 5
+    },
+    {
+      "coin": "HYPE",
+      "fill_count_across_wallets": 15612,
+      "ntl_usd_across_wallets": 11741546.51,
+      "wallets_using": [
+        "rank14",
+        "rank35"
+      ],
+      "n_wallets": 2
+    },
+    {
+      "coin": "xyz:BRENTOIL",
+      "fill_count_across_wallets": 11010,
+      "ntl_usd_across_wallets": 43584037.86,
+      "wallets_using": [
+        "rank24",
+        "rank28"
+      ],
+      "n_wallets": 2
+    },
+    {
+      "coin": "LIT",
+      "fill_count_across_wallets": 7496,
+      "ntl_usd_across_wallets": 2521933.1,
+      "wallets_using": [
+        "rank14"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "BTC",
+      "fill_count_across_wallets": 4731,
+      "ntl_usd_across_wallets": 8028340.38,
+      "wallets_using": [
+        "rank28"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "xyz:SILVER",
+      "fill_count_across_wallets": 4350,
+      "ntl_usd_across_wallets": 4032861.49,
+      "wallets_using": [
+        "rank28"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "@107",
+      "fill_count_across_wallets": 3245,
+      "ntl_usd_across_wallets": 22949238.16,
+      "wallets_using": [
+        "rank50"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "xyz:XYZ100",
+      "fill_count_across_wallets": 2521,
+      "ntl_usd_across_wallets": 17564452.31,
+      "wallets_using": [
+        "rank19",
+        "rank23",
+        "rank24"
+      ],
+      "n_wallets": 3
+    },
+    {
+      "coin": "MON",
+      "fill_count_across_wallets": 1236,
+      "ntl_usd_across_wallets": 768871.16,
+      "wallets_using": [
+        "rank14"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "ETH",
+      "fill_count_across_wallets": 1196,
+      "ntl_usd_across_wallets": 6058557.54,
+      "wallets_using": [
+        "rank28"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "AAVE",
+      "fill_count_across_wallets": 963,
+      "ntl_usd_across_wallets": 1357547.32,
+      "wallets_using": [
+        "rank24"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "ZRO",
+      "fill_count_across_wallets": 953,
+      "ntl_usd_across_wallets": 508304.0,
+      "wallets_using": [
+        "rank14"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "ENA",
+      "fill_count_across_wallets": 878,
+      "ntl_usd_across_wallets": 550671.75,
+      "wallets_using": [
+        "rank14"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "DOGE",
+      "fill_count_across_wallets": 613,
+      "ntl_usd_across_wallets": 1485444.39,
+      "wallets_using": [
+        "rank24"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "xyz:SP500",
+      "fill_count_across_wallets": 189,
+      "ntl_usd_across_wallets": 3029484.19,
+      "wallets_using": [
+        "rank23"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "TST",
+      "fill_count_across_wallets": 72,
+      "ntl_usd_across_wallets": 115134.77,
+      "wallets_using": [
+        "rank16"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "CRV",
+      "fill_count_across_wallets": 27,
+      "ntl_usd_across_wallets": 440.51,
+      "wallets_using": [
+        "rank35"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "km:SMALL2000",
+      "fill_count_across_wallets": 15,
+      "ntl_usd_across_wallets": 670575.57,
+      "wallets_using": [
+        "rank19"
+      ],
+      "n_wallets": 1
+    },
+    {
+      "coin": "km:USBOND",
+      "fill_count_across_wallets": 1,
+      "ntl_usd_across_wallets": 0.08,
+      "wallets_using": [
+        "rank19"
+      ],
+      "n_wallets": 1
+    }
+  ]
+}

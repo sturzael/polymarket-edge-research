@@ -21,6 +21,7 @@ The ten-thesis falsification described in the abstract below is **Stage 1** of t
 - **[e24 — Orca USDC/SOL CL LP stratification](experiments/e24_orca_cl_lp/)** — closed. Pool-level simulation calibrated against Heimbach 49.5% loser-rate prior returns no cell meeting the pre-committed n≥200 + median APR>5% gate. Narrow ranges lose −96 to −121% APR in the observed SOL −31% regime.
 - **[Solana perps funding arb](experiments/e11_funding_arb_sensecheck/)** — confirmed killed. Drift paused post-$286M exploit; Jupiter/Flash are one-way borrow-fee (not bilateral funding); Zeta too thin. No cross-venue divergence to trade.
 - **Solana LST NAV arb** — ~25bps steady-state (inside Sanctum unstake fee); depegs minute-scale, require co-located MM infra.
+- **[e27 — HL synthetics slice MM](experiments/e27_hl_synthetics_recon/)** — closed. The "5–20× wider spreads on synthetics" hypothesis was falsified against live L2 data. Top xyz:SP500 / xyz:CL / xyz:BRENTOIL / xyz:SILVER synthetics quote at 0.14–0.94 bps (comparable to BTC). Wide-spread assets (LIT 4bp, MON 4bp, xyz:MSTR 6bp) lack volume AND top-wallet concentration. Best candidate ÷5-planning: $129/mo at $5–10k. Top wallets on synthetics are predominantly directional traders (rank-28 is 91% taker), not MMs — their PnL is not replicable by a market-making book.
 
 ### 🟡 Open investigations
 
@@ -194,6 +195,7 @@ All code is MIT-licensed and runnable against public APIs. Raw data is gitignore
 - [`experiments/e24_orca_cl_lp/`](experiments/e24_orca_cl_lp/) — Solana CL LP stratification (clean null)
 - [`experiments/e25_hyperliquid_forensics/`](experiments/e25_hyperliquid_forensics/) — HL top-wallet structural-vs-momentum decomposition (inverted-from-Polymarket finding)
 - [`experiments/e26_hl_mm_investigation/`](experiments/e26_hl_mm_investigation/) — HL BTC-PERP MM viability (4-agent recon, defer build)
+- [`experiments/e27_hl_synthetics_recon/`](experiments/e27_hl_synthetics_recon/) — HL synthetics MM recon (5–20× hypothesis falsified; extends defer-build verdict across all of HL)
 - [`experiments/SYNTHESIS_flb_cross_venue.md`](experiments/SYNTHESIS_flb_cross_venue.md) — cross-venue meta-synthesis
 - [`probe/`](probe/) — 24-hour Polymarket market structure reconnaissance tool
 - [`docs/`](docs/) — findings log, null results, methodology, project postscript

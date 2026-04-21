@@ -114,3 +114,7 @@ experiments/e25_hyperliquid_forensics/data/prices/*.json
 experiments/e26_hl_mm_investigation/data/btc_1m_candles.json
 experiments/e26_hl_mm_investigation/data/btc_5m_candles.json
 experiments/e26_hl_mm_investigation/data/btc_15m_candles.json
+
+# e27 HL synthetics recon: commit all (artifacts are modest size)
+!experiments/e27_hl_synthetics_recon/
+!experiments/e27_hl_synthetics_recon/**
