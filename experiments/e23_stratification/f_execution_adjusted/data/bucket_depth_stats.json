@@ -1,0 +1,65 @@
+{
+  "n": 120,
+  "yes_rate": 0.8333333333333334,
+  "median_trade_usd_p50": 20.0,
+  "median_trade_usd_p75": 30.255,
+  "max_single_trade_usd_p50": 9085.744999999999,
+  "max_single_trade_usd_p25": 1992.5,
+  "total_usd_window_p50": 60790.95,
+  "fill_ceiling_pct": {
+    "200": 0.8666666666666667,
+    "500": 0.8333333333333334,
+    "1000": 0.8,
+    "2000": 0.7416666666666667
+  },
+  "by_category": [
+    {
+      "category": "sports_f1",
+      "n": 2,
+      "yes_rate": 0.5,
+      "med_max_single": 82224.145
+    },
+    {
+      "category": "sports_mlb",
+      "n": 54,
+      "yes_rate": 0.9444444444444444,
+      "med_max_single": 12949.265
+    },
+    {
+      "category": "sports_nba",
+      "n": 19,
+      "yes_rate": 0.7368421052631579,
+      "med_max_single": 13304.32
+    },
+    {
+      "category": "sports_nfl",
+      "n": 8,
+      "yes_rate": 0.875,
+      "med_max_single": 2116.145
+    },
+    {
+      "category": "sports_nhl",
+      "n": 11,
+      "yes_rate": 0.9090909090909091,
+      "med_max_single": 8821.03
+    },
+    {
+      "category": "sports_soccer",
+      "n": 6,
+      "yes_rate": 0.6666666666666666,
+      "med_max_single": 94.775
+    },
+    {
+      "category": "sports_tennis",
+      "n": 11,
+      "yes_rate": 0.6363636363636364,
+      "med_max_single": 377.11
+    },
+    {
+      "category": "sports_ufc_boxing",
+      "n": 9,
+      "yes_rate": 0.6666666666666666,
+      "med_max_single": 790.96
+    }
+  ]
+}

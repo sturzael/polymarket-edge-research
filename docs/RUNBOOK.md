@@ -1,6 +1,10 @@
 # Runbook — what's running and how to revive it
 
-**Last updated:** 2026-04-19. **Purpose:** 30-day paper-trade experiment at $5k simulated bankroll to empirically measure neg-risk arb PnL before committing to VPS/real capital.
+**Last updated:** 2026-04-20. **Purpose:** 30-day paper-trade experiment to empirically measure neg-risk arb PnL + tracked events' edge persistence, then evaluate whether a directional strategy (calibration bias) is worth deploying capital on.
+
+**Companion findings docs:**
+- [e15 paper-trade findings (36h snapshot)](../experiments/e15_neg_risk_arb/FINDINGS.md)
+- [e16 calibration study (sports favorite-longshot bias)](../experiments/e16_calibration_study/FINDINGS.md)
 
 ## Architecture (after 2026-04-19 launchd migration)
 
@@ -8,7 +12,7 @@ Four launchd agents — hourly loops for the 3 collectors + weekly audit. Plists
 
 | launchd label | Module | What it does | DB | Log |
 |---|---|---|---|---|
-| `com.elliot.polymarket-paper-trader` | [paper_trader.py](../experiments/e15_neg_risk_arb/paper_trader.py) | Auto-enters GUARANTEED arbs ≥1% edge at $5k sizing (max $500/pos, 10 concurrent). Resolves at event close. | `data/paper_trader.db` | `logs/paper_trader.log` |
+| `com.elliot.polymarket-paper-trader` | [paper_trader.py](../experiments/e15_neg_risk_arb/paper_trader.py) | Auto-enters GUARANTEED arbs ≥1% edge at $500/position, **up to 200 concurrent** (raised from 10 on 2026-04-20 for learning-mode; enters every qualifying opportunity). Resolves at event close. | `data/paper_trader.db` | `logs/paper_trader.log` |
 | `com.elliot.polymarket-arb-logger` | [logger.py](../experiments/e15_neg_risk_arb/logger.py) | Records every opportunity every scan (census data — frequency, persistence, shape). | `data/arb_log.db` | `logs/logger.log` |
 | `com.elliot.polymarket-forward-trader` | [forward_trader.py](../experiments/e15_neg_risk_arb/forward_trader.py) | Hourly snapshots of 6 hand-picked events. | `data/forward_trader.db` | `logs/forward_trader.log` |
 | `com.elliot.polymarket-phantom-audit` | [audit_open_positions.sh](../experiments/e15_neg_risk_arb/audit_open_positions.sh) | **Weekly (Sundays 9am local)**. Runs phantom_check on every open position — verifies paper-fill depth was real, not gamma cache. | — | `logs/phantom_audit.log` |

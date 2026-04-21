@@ -1,0 +1,27 @@
+{
+  "one_sided": {
+    "order_size": 500,
+    "fee_bps": 3.0,
+    "fee_model": "one_sided",
+    "half_spread_pp": 1.0,
+    "slippage_pp": 0.96,
+    "fee_pp_per_side": 0.00733125,
+    "total_fee_pp": 0.00733125,
+    "total_friction_pp": 1.96733125,
+    "raw_edge_pp": 25.8,
+    "net_edge_pp": 23.83266875
+  },
+  "two_sided": {
+    "order_size": 500,
+    "fee_bps": 3.0,
+    "fee_model": "two_sided",
+    "half_spread_pp": 1.0,
+    "slippage_pp": 0.96,
+    "fee_pp_per_side": 0.00733125,
+    "total_fee_pp": 0.0146625,
+    "total_friction_pp": 1.9746625,
+    "raw_edge_pp": 25.8,
+    "net_edge_pp": 23.8253375
+  },
+  "delta_pp": 0.007331250000000011
+}

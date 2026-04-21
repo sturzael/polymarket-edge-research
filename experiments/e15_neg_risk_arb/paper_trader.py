@@ -45,7 +45,9 @@ MIN_EDGE_PCT = 1.0
 MIN_DAYS_TO_RES = 0.5
 MAX_DAYS_TO_RES = 90.0
 ALLOWED_COMPLETENESS = ("GUARANTEED",)
-MAX_CONCURRENT = 10
+# Uncapped for learning: enter every qualifying opportunity. Real deployment
+# would enforce a lower cap — this is paper-trade research mode.
+MAX_CONCURRENT = 200
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS ticks (

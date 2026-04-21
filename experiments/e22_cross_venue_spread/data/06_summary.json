@@ -1,0 +1,205 @@
+{
+  "generated_at": "2026-04-20T05:27:53.717753+00:00",
+  "n_records": 152,
+  "n_clean": 146,
+  "all_stats": {
+    "mean": 0.0016,
+    "median": -0.0009,
+    "stdev": 0.0201,
+    "abs_mean": 0.0097
+  },
+  "by_bucket": [
+    {
+      "bucket_lo": 0.0,
+      "bucket_hi": 0.05,
+      "n": 1,
+      "pm_mean": 0.0405,
+      "sm_mean": 0.0239,
+      "spread_mean": 0.0166,
+      "spread_median": 0.0166,
+      "abs_spread_mean": 0.0166
+    },
+    {
+      "bucket_lo": 0.05,
+      "bucket_hi": 0.1,
+      "n": 5,
+      "pm_mean": 0.091,
+      "sm_mean": 0.0962,
+      "spread_mean": -0.0052,
+      "spread_median": -0.0053,
+      "abs_spread_mean": 0.0143
+    },
+    {
+      "bucket_lo": 0.1,
+      "bucket_hi": 0.15,
+      "n": 2,
+      "pm_mean": 0.1375,
+      "sm_mean": 0.1373,
+      "spread_mean": 0.0002,
+      "spread_median": 0.0002,
+      "abs_spread_mean": 0.0042
+    },
+    {
+      "bucket_lo": 0.15,
+      "bucket_hi": 0.2,
+      "n": 10,
+      "pm_mean": 0.1725,
+      "sm_mean": 0.1745,
+      "spread_mean": -0.002,
+      "spread_median": -0.003,
+      "abs_spread_mean": 0.0059
+    },
+    {
+      "bucket_lo": 0.2,
+      "bucket_hi": 0.25,
+      "n": 19,
+      "pm_mean": 0.2234,
+      "sm_mean": 0.2173,
+      "spread_mean": 0.0062,
+      "spread_median": -0.0003,
+      "abs_spread_mean": 0.0118
+    },
+    {
+      "bucket_lo": 0.25,
+      "bucket_hi": 0.3,
+      "n": 13,
+      "pm_mean": 0.2781,
+      "sm_mean": 0.265,
+      "spread_mean": 0.0131,
+      "spread_median": 0.0003,
+      "abs_spread_mean": 0.0172
+    },
+    {
+      "bucket_lo": 0.3,
+      "bucket_hi": 0.35,
+      "n": 18,
+      "pm_mean": 0.3186,
+      "sm_mean": 0.3233,
+      "spread_mean": -0.0046,
+      "spread_median": -0.0029,
+      "abs_spread_mean": 0.0129
+    },
+    {
+      "bucket_lo": 0.35,
+      "bucket_hi": 0.4,
+      "n": 20,
+      "pm_mean": 0.3752,
+      "sm_mean": 0.3792,
+      "spread_mean": -0.0039,
+      "spread_median": -0.0025,
+      "abs_spread_mean": 0.0066
+    },
+    {
+      "bucket_lo": 0.4,
+      "bucket_hi": 0.45,
+      "n": 10,
+      "pm_mean": 0.422,
+      "sm_mean": 0.4196,
+      "spread_mean": 0.0024,
+      "spread_median": -0.0008,
+      "abs_spread_mean": 0.0069
+    },
+    {
+      "bucket_lo": 0.45,
+      "bucket_hi": 0.5,
+      "n": 10,
+      "pm_mean": 0.4805,
+      "sm_mean": 0.4764,
+      "spread_mean": 0.0041,
+      "spread_median": 0.0019,
+      "abs_spread_mean": 0.0083
+    },
+    {
+      "bucket_lo": 0.5,
+      "bucket_hi": 0.55,
+      "n": 14,
+      "pm_mean": 0.5218,
+      "sm_mean": 0.5226,
+      "spread_mean": -0.0008,
+      "spread_median": 0.0007,
+      "abs_spread_mean": 0.0071
+    },
+    {
+      "bucket_lo": 0.55,
+      "bucket_hi": 0.6,
+      "n": 12,
+      "pm_mean": 0.5742,
+      "sm_mean": 0.5701,
+      "spread_mean": 0.0041,
+      "spread_median": 0.004,
+      "abs_spread_mean": 0.0084
+    },
+    {
+      "bucket_lo": 0.6,
+      "bucket_hi": 0.65,
+      "n": 4,
+      "pm_mean": 0.625,
+      "sm_mean": 0.6166,
+      "spread_mean": 0.0084,
+      "spread_median": 0.0058,
+      "abs_spread_mean": 0.0084
+    },
+    {
+      "bucket_lo": 0.65,
+      "bucket_hi": 0.7,
+      "n": 3,
+      "pm_mean": 0.6817,
+      "sm_mean": 0.6909,
+      "spread_mean": -0.0092,
+      "spread_median": -0.0128,
+      "abs_spread_mean": 0.0092
+    },
+    {
+      "bucket_lo": 0.7,
+      "bucket_hi": 0.75,
+      "n": 1,
+      "pm_mean": 0.735,
+      "sm_mean": 0.7354,
+      "spread_mean": -0.0004,
+      "spread_median": -0.0004,
+      "abs_spread_mean": 0.0004
+    },
+    {
+      "bucket_lo": 0.75,
+      "bucket_hi": 0.8,
+      "n": 2,
+      "pm_mean": 0.77,
+      "sm_mean": 0.7563,
+      "spread_mean": 0.0137,
+      "spread_median": 0.0137,
+      "abs_spread_mean": 0.0137
+    },
+    {
+      "bucket_lo": 0.8,
+      "bucket_hi": 0.85,
+      "n": 1,
+      "pm_mean": 0.805,
+      "sm_mean": 0.81,
+      "spread_mean": -0.005,
+      "spread_median": -0.005,
+      "abs_spread_mean": 0.005
+    },
+    {
+      "bucket_lo": 0.9,
+      "bucket_hi": 0.95,
+      "n": 1,
+      "pm_mean": 0.905,
+      "sm_mean": 0.9001,
+      "spread_mean": 0.005,
+      "spread_median": 0.005,
+      "abs_spread_mean": 0.005
+    }
+  ],
+  "fav_bucket_0.55_0.60": {
+    "n": 12,
+    "pm_mean": 0.5742,
+    "sm_mean": 0.5701,
+    "spread_mean": 0.0041
+  },
+  "fav_range_0.50_0.65": {
+    "n": 30,
+    "spread_mean": 0.0024,
+    "spread_median": 0.0017,
+    "spread_stdev": 0.0098
+  }
+}

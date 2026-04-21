@@ -866,6 +866,7 @@ dependencies = [
     { name = "nba-api" },
     { name = "numpy" },
     { name = "pandas" },
+    { name = "pmxt" },
     { name = "polymarket-apis" },
     { name = "polymarket-paper-trader" },
     { name = "pyarrow" },
@@ -890,6 +891,7 @@ requires-dist = [
     { name = "nba-api", specifier = ">=1.11.4" },
     { name = "numpy", specifier = ">=2.4.4" },
     { name = "pandas", specifier = ">=3.0.2" },
+    { name = "pmxt", specifier = ">=2.31.1" },
     { name = "polymarket-apis", specifier = ">=0.5.7" },
     { name = "polymarket-paper-trader", specifier = ">=0.1.7" },
     { name = "pyarrow", specifier = ">=23.0.1" },
@@ -1633,6 +1635,21 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz", hash = "sha256:7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3", size = 69412, upload-time = "2025-05-15T12:30:07.975Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl", hash = "sha256:e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746", size = 20538, upload-time = "2025-05-15T12:30:06.134Z" },
+]
+
+[[package]]
+name = "pmxt"
+version = "2.31.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pydantic" },
+    { name = "python-dateutil" },
+    { name = "typing-extensions" },
+    { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4f/1f/11d389e7ae4dfa4c9a8be30a60e2bfd23c65d777c02110e198d98616b8a4/pmxt-2.31.1.tar.gz", hash = "sha256:d8bbb063a47c3398252a84c37dd40eead0d2625dbb1e60e3d22eb6d09612b5ba", size = 2146468, upload-time = "2026-04-18T09:09:25.461Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3a/50/503e1660686fbdb360ccd6fcd3ca67e78c973a6ca66d2fffdf198ea057c9/pmxt-2.31.1-py3-none-any.whl", hash = "sha256:f0f44792813c0a662909ddf608748da869463a4757779a77f263adc372db4988", size = 2263400, upload-time = "2026-04-18T09:09:23.764Z" },
 ]
 
 [[package]]

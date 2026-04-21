@@ -1,0 +1,666 @@
+{
+  "root_fields": [
+    "_meta",
+    "affiliateMonthlies",
+    "affiliateMonthly",
+    "azuroBetContract",
+    "azuroBetContracts",
+    "bet",
+    "betMargin",
+    "betMargins",
+    "bets",
+    "bettor",
+    "bettors",
+    "cashback",
+    "cashbackContract",
+    "cashbackContracts",
+    "cashbacks",
+    "cashout",
+    "cashouts",
+    "condition",
+    "conditionLog",
+    "conditionLogs",
+    "conditions",
+    "coreContract",
+    "coreContracts",
+    "countries",
+    "country",
+    "event",
+    "events",
+    "expressPrematchRelation",
+    "expressPrematchRelations",
+    "freebet",
+    "freebetContract",
+    "freebetContracts",
+    "freebets",
+    "game",
+    "games",
+    "league",
+    "leagues",
+    "liquidityPoolContract",
+    "liquidityPoolContracts",
+    "liquidityPoolNft",
+    "liquidityPoolNfts",
+    "liquidityPoolTransaction",
+    "liquidityPoolTransactions",
+    "liveBet",
+    "liveBets",
+    "liveCondition",
+    "liveConditions",
+    "liveOutcome",
+    "liveOutcomes",
+    "liveSelection",
+    "liveSelections",
+    "outcome",
+    "outcomes",
+    "outcomesKeyConditionRelation",
+    "outcomesKeyConditionRelations",
+    "participant",
+    "participants",
+    "selection",
+    "selections",
+    "sport",
+    "sportHub",
+    "sportHubs",
+    "sports",
+    "v3Bet",
+    "v3BetMetadata",
+    "v3BetMetadata_collection",
+    "v3Bets",
+    "v3Condition",
+    "v3Conditions",
+    "v3Outcome",
+    "v3Outcomes",
+    "v3Selection",
+    "v3Selections"
+  ],
+  "Condition": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "title",
+      "type": "String"
+    },
+    {
+      "name": "core",
+      "type": "CoreContract"
+    },
+    {
+      "name": "coreAddress",
+      "type": "String"
+    },
+    {
+      "name": "conditionId",
+      "type": "BigInt"
+    },
+    {
+      "name": "game",
+      "type": "Game"
+    },
+    {
+      "name": "outcomes",
+      "type": "Outcome"
+    },
+    {
+      "name": "outcomesIds",
+      "type": "BigInt"
+    },
+    {
+      "name": "wonOutcomes",
+      "type": "Outcome"
+    },
+    {
+      "name": "wonOutcomeIds",
+      "type": "BigInt"
+    },
+    {
+      "name": "margin",
+      "type": "BigInt"
+    },
+    {
+      "name": "reinforcement",
+      "type": "BigInt"
+    },
+    {
+      "name": "status",
+      "type": "ConditionStatus"
+    },
+    {
+      "name": "hidden",
+      "type": "Boolean"
+    },
+    {
+      "name": "turnover",
+      "type": "BigInt"
+    },
+    {
+      "name": "provider",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdTxHash",
+      "type": "String"
+    },
+    {
+      "name": "resolvedBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "resolvedBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "resolvedTxHash",
+      "type": "String"
+    },
+    {
+      "name": "internalStartsAt",
+      "type": "BigInt"
+    },
+    {
+      "name": "isExpressForbidden",
+      "type": "Boolean"
+    },
+    {
+      "name": "_updatedAt",
+      "type": "BigInt"
+    },
+    {
+      "name": "_winningOutcomesCount",
+      "type": "Int"
+    },
+    {
+      "name": "_outcomesKey",
+      "type": "String"
+    }
+  ],
+  "Game": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "liquidityPool",
+      "type": "LiquidityPoolContract"
+    },
+    {
+      "name": "gameId",
+      "type": "BigInt"
+    },
+    {
+      "name": "title",
+      "type": "String"
+    },
+    {
+      "name": "_providerTitle",
+      "type": "String"
+    },
+    {
+      "name": "slug",
+      "type": "String"
+    },
+    {
+      "name": "league",
+      "type": "League"
+    },
+    {
+      "name": "sport",
+      "type": "Sport"
+    },
+    {
+      "name": "status",
+      "type": "GameStatus"
+    },
+    {
+      "name": "participants",
+      "type": "Participant"
+    },
+    {
+      "name": "conditions",
+      "type": "Condition"
+    },
+    {
+      "name": "hasActiveConditions",
+      "type": "Boolean"
+    },
+    {
+      "name": "_conditionsCount",
+      "type": "Int"
+    },
+    {
+      "name": "_activeConditionsEntityIds",
+      "type": "String"
+    },
+    {
+      "name": "_resolvedConditionsEntityIds",
+      "type": "String"
+    },
+    {
+      "name": "_canceledConditionsEntityIds",
+      "type": "String"
+    },
+    {
+      "name": "_pausedConditionsEntityIds",
+      "type": "String"
+    },
+    {
+      "name": "startsAt",
+      "type": "BigInt"
+    },
+    {
+      "name": "provider",
+      "type": "BigInt"
+    },
+    {
+      "name": "turnover",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdTxHash",
+      "type": "String"
+    },
+    {
+      "name": "shiftedBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "shiftedBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "shiftedTxHash",
+      "type": "String"
+    },
+    {
+      "name": "resolvedBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "resolvedBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "resolvedTxHash",
+      "type": "String"
+    },
+    {
+      "name": "_updatedAt",
+      "type": "BigInt"
+    }
+  ],
+  "Outcome": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "title",
+      "type": "String"
+    },
+    {
+      "name": "core",
+      "type": "CoreContract"
+    },
+    {
+      "name": "outcomeId",
+      "type": "BigInt"
+    },
+    {
+      "name": "condition",
+      "type": "Condition"
+    },
+    {
+      "name": "fund",
+      "type": "BigInt"
+    },
+    {
+      "name": "rawCurrentOdds",
+      "type": "BigInt"
+    },
+    {
+      "name": "currentOdds",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "sortOrder",
+      "type": "Int"
+    },
+    {
+      "name": "_betsEntityIds",
+      "type": "String"
+    },
+    {
+      "name": "result",
+      "type": "OutcomeResult"
+    },
+    {
+      "name": "selections",
+      "type": "Selection"
+    },
+    {
+      "name": "_updatedAt",
+      "type": "BigInt"
+    }
+  ],
+  "Bet": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "core",
+      "type": "CoreContract"
+    },
+    {
+      "name": "type",
+      "type": "BetType"
+    },
+    {
+      "name": "betId",
+      "type": "BigInt"
+    },
+    {
+      "name": "bettor",
+      "type": "String"
+    },
+    {
+      "name": "owner",
+      "type": "String"
+    },
+    {
+      "name": "actor",
+      "type": "String"
+    },
+    {
+      "name": "affiliate",
+      "type": "String"
+    },
+    {
+      "name": "_conditions",
+      "type": "Condition"
+    },
+    {
+      "name": "_conditionIds",
+      "type": "BigInt"
+    },
+    {
+      "name": "rawAmount",
+      "type": "BigInt"
+    },
+    {
+      "name": "amount",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "_tokenDecimals",
+      "type": "Int"
+    },
+    {
+      "name": "rawPotentialPayout",
+      "type": "BigInt"
+    },
+    {
+      "name": "potentialPayout",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "rawPayout",
+      "type": "BigInt"
+    },
+    {
+      "name": "payout",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "rawOdds",
+      "type": "BigInt"
+    },
+    {
+      "name": "odds",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "_oddsDecimals",
+      "type": "Int"
+    },
+    {
+      "name": "rawSettledOdds",
+      "type": "BigInt"
+    },
+    {
+      "name": "settledOdds",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "rawSettledMargin",
+      "type": "BigInt"
+    },
+    {
+      "name": "settledMargin",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "_marginsForSettle",
+      "type": "String"
+    },
+    {
+      "name": "approxSettledAt",
+      "type": "BigInt"
+    },
+    {
+      "name": "selections",
+      "type": "Selection"
+    },
+    {
+      "name": "_games",
+      "type": "Game"
+    },
+    {
+      "name": "createdBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdTxHash",
+      "type": "String"
+    },
+    {
+      "name": "resolvedBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "resolvedBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "resolvedTxHash",
+      "type": "String"
+    },
+    {
+      "name": "status",
+      "type": "BetStatus"
+    },
+    {
+      "name": "result",
+      "type": "BetResult"
+    },
+    {
+      "name": "isRedeemable",
+      "type": "Boolean"
+    },
+    {
+      "name": "isRedeemed",
+      "type": "Boolean"
+    },
+    {
+      "name": "redeemedBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "redeemedBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "redeemedTxHash",
+      "type": "String"
+    },
+    {
+      "name": "_subBetsCount",
+      "type": "Int"
+    },
+    {
+      "name": "_wonSubBetsCount",
+      "type": "Int"
+    },
+    {
+      "name": "_lostSubBetsCount",
+      "type": "Int"
+    },
+    {
+      "name": "_canceledSubBetsCount",
+      "type": "Int"
+    },
+    {
+      "name": "_isFreebet",
+      "type": "Boolean"
+    },
+    {
+      "name": "freebet",
+      "type": "Freebet"
+    },
+    {
+      "name": "isCashedOut",
+      "type": "Boolean"
+    },
+    {
+      "name": "cashout",
+      "type": "Cashout"
+    },
+    {
+      "name": "_updatedAt",
+      "type": "BigInt"
+    }
+  ],
+  "Sport": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "sportId",
+      "type": "BigInt"
+    },
+    {
+      "name": "name",
+      "type": "String"
+    },
+    {
+      "name": "slug",
+      "type": "String"
+    },
+    {
+      "name": "sporthub",
+      "type": "SportHub"
+    },
+    {
+      "name": "countries",
+      "type": "Country"
+    },
+    {
+      "name": "games",
+      "type": "Game"
+    }
+  ],
+  "League": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "name",
+      "type": "String"
+    },
+    {
+      "name": "slug",
+      "type": "String"
+    },
+    {
+      "name": "country",
+      "type": "Country"
+    },
+    {
+      "name": "games",
+      "type": "Game"
+    },
+    {
+      "name": "hasActiveGames",
+      "type": "Boolean"
+    },
+    {
+      "name": "activeGamesEntityIds",
+      "type": "String"
+    },
+    {
+      "name": "turnover",
+      "type": "BigInt"
+    }
+  ],
+  "Country": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "name",
+      "type": "String"
+    },
+    {
+      "name": "slug",
+      "type": "String"
+    },
+    {
+      "name": "sport",
+      "type": "Sport"
+    },
+    {
+      "name": "leagues",
+      "type": "League"
+    },
+    {
+      "name": "hasActiveLeagues",
+      "type": "Boolean"
+    },
+    {
+      "name": "activeLeaguesEntityIds",
+      "type": "String"
+    },
+    {
+      "name": "turnover",
+      "type": "BigInt"
+    }
+  ],
+  "LiquidityPool": null,
+  "Odd": null,
+  "ConditionOutcome": null
+}

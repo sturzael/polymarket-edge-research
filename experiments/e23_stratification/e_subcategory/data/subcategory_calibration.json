@@ -1,0 +1,560 @@
+{
+  "source_parquet": "e16_calibration_study/data/05_tm7d_prices_sports_deep.parquet",
+  "n_markets": 2025,
+  "counts_per_subcategory": {
+    "game_outcome": 1667,
+    "props": 173,
+    "futures": 144,
+    "totals": 21,
+    "spreads": 16,
+    "uncategorized": 4
+  },
+  "category_subcategory_cross": {
+    "sports_f1": {
+      "futures": 15,
+      "game_outcome": 108,
+      "props": 133,
+      "spreads": 0,
+      "totals": 0,
+      "uncategorized": 0
+    },
+    "sports_mlb": {
+      "futures": 4,
+      "game_outcome": 460,
+      "props": 1,
+      "spreads": 0,
+      "totals": 0,
+      "uncategorized": 0
+    },
+    "sports_nba": {
+      "futures": 23,
+      "game_outcome": 309,
+      "props": 1,
+      "spreads": 0,
+      "totals": 0,
+      "uncategorized": 3
+    },
+    "sports_nfl": {
+      "futures": 33,
+      "game_outcome": 97,
+      "props": 26,
+      "spreads": 5,
+      "totals": 4,
+      "uncategorized": 1
+    },
+    "sports_nhl": {
+      "futures": 5,
+      "game_outcome": 231,
+      "props": 0,
+      "spreads": 0,
+      "totals": 1,
+      "uncategorized": 0
+    },
+    "sports_soccer": {
+      "futures": 20,
+      "game_outcome": 95,
+      "props": 2,
+      "spreads": 2,
+      "totals": 7,
+      "uncategorized": 0
+    },
+    "sports_tennis": {
+      "futures": 44,
+      "game_outcome": 235,
+      "props": 4,
+      "spreads": 9,
+      "totals": 9,
+      "uncategorized": 0
+    },
+    "sports_ufc_boxing": {
+      "futures": 0,
+      "game_outcome": 132,
+      "props": 6,
+      "spreads": 0,
+      "totals": 0,
+      "uncategorized": 0
+    }
+  },
+  "calibration_by_subcategory": {
+    "game_outcome": [
+      {
+        "bucket": "0.00-0.05",
+        "n": 98,
+        "yes_rate": 0.01020408163265306,
+        "mid": 0.025,
+        "deviation": -0.014795918367346941
+      },
+      {
+        "bucket": "0.05-0.10",
+        "n": 45,
+        "yes_rate": 0.022222222222222223,
+        "mid": 0.07500000000000001,
+        "deviation": -0.052777777777777785
+      },
+      {
+        "bucket": "0.10-0.15",
+        "n": 56,
+        "yes_rate": 0.0,
+        "mid": 0.125,
+        "deviation": -0.125
+      },
+      {
+        "bucket": "0.15-0.20",
+        "n": 70,
+        "yes_rate": 0.02857142857142857,
+        "mid": 0.175,
+        "deviation": -0.1464285714285714
+      },
+      {
+        "bucket": "0.20-0.25",
+        "n": 96,
+        "yes_rate": 0.09375,
+        "mid": 0.225,
+        "deviation": -0.13125
+      },
+      {
+        "bucket": "0.25-0.30",
+        "n": 118,
+        "yes_rate": 0.06779661016949153,
+        "mid": 0.275,
+        "deviation": -0.2072033898305085
+      },
+      {
+        "bucket": "0.30-0.35",
+        "n": 121,
+        "yes_rate": 0.11570247933884298,
+        "mid": 0.325,
+        "deviation": -0.20929752066115703
+      },
+      {
+        "bucket": "0.35-0.40",
+        "n": 125,
+        "yes_rate": 0.184,
+        "mid": 0.375,
+        "deviation": -0.191
+      },
+      {
+        "bucket": "0.40-0.45",
+        "n": 124,
+        "yes_rate": 0.25,
+        "mid": 0.42500000000000004,
+        "deviation": -0.17500000000000004
+      },
+      {
+        "bucket": "0.45-0.50",
+        "n": 118,
+        "yes_rate": 0.4830508474576271,
+        "mid": 0.47500000000000003,
+        "deviation": 0.008050847457627075
+      },
+      {
+        "bucket": "0.50-0.55",
+        "n": 91,
+        "yes_rate": 0.6263736263736264,
+        "mid": 0.525,
+        "deviation": 0.10137362637362635
+      },
+      {
+        "bucket": "0.55-0.60",
+        "n": 113,
+        "yes_rate": 0.8495575221238938,
+        "mid": 0.5750000000000001,
+        "deviation": 0.2745575221238937
+      },
+      {
+        "bucket": "0.60-0.65",
+        "n": 128,
+        "yes_rate": 0.8125,
+        "mid": 0.625,
+        "deviation": 0.1875
+      },
+      {
+        "bucket": "0.65-0.70",
+        "n": 95,
+        "yes_rate": 0.9368421052631579,
+        "mid": 0.675,
+        "deviation": 0.2618421052631579
+      },
+      {
+        "bucket": "0.70-0.75",
+        "n": 88,
+        "yes_rate": 0.9318181818181818,
+        "mid": 0.725,
+        "deviation": 0.2068181818181818
+      },
+      {
+        "bucket": "0.75-0.80",
+        "n": 63,
+        "yes_rate": 0.9682539682539683,
+        "mid": 0.775,
+        "deviation": 0.19325396825396823
+      },
+      {
+        "bucket": "0.80-0.85",
+        "n": 58,
+        "yes_rate": 0.9827586206896551,
+        "mid": 0.8250000000000001,
+        "deviation": 0.15775862068965507
+      },
+      {
+        "bucket": "0.85-0.90",
+        "n": 32,
+        "yes_rate": 1.0,
+        "mid": 0.875,
+        "deviation": 0.125
+      },
+      {
+        "bucket": "0.90-0.95",
+        "n": 18,
+        "yes_rate": 1.0,
+        "mid": 0.9250000000000002,
+        "deviation": 0.07499999999999984
+      },
+      {
+        "bucket": "0.95-1.00",
+        "n": 10,
+        "yes_rate": 1.0,
+        "mid": 0.975,
+        "deviation": 0.025000000000000022
+      }
+    ],
+    "props": [
+      {
+        "bucket": "0.00-0.05",
+        "n": 102,
+        "yes_rate": 0.00980392156862745,
+        "mid": 0.025,
+        "deviation": -0.01519607843137255
+      },
+      {
+        "bucket": "0.05-0.10",
+        "n": 11,
+        "yes_rate": 0.0,
+        "mid": 0.07500000000000001,
+        "deviation": -0.07500000000000001
+      },
+      {
+        "bucket": "0.10-0.15",
+        "n": 5,
+        "yes_rate": 0.0,
+        "mid": 0.125,
+        "deviation": -0.125
+      },
+      {
+        "bucket": "0.15-0.20",
+        "n": 6,
+        "yes_rate": 0.16666666666666666,
+        "mid": 0.17499999999999996,
+        "deviation": -0.008333333333333304
+      },
+      {
+        "bucket": "0.20-0.25",
+        "n": 3,
+        "yes_rate": 0.0,
+        "mid": 0.225,
+        "deviation": -0.225
+      },
+      {
+        "bucket": "0.25-0.30",
+        "n": 7,
+        "yes_rate": 0.14285714285714285,
+        "mid": 0.275,
+        "deviation": -0.13214285714285717
+      },
+      {
+        "bucket": "0.30-0.35",
+        "n": 5,
+        "yes_rate": 0.0,
+        "mid": 0.325,
+        "deviation": -0.325
+      },
+      {
+        "bucket": "0.35-0.40",
+        "n": 1,
+        "yes_rate": 0.0,
+        "mid": 0.375,
+        "deviation": -0.375
+      },
+      {
+        "bucket": "0.40-0.45",
+        "n": 3,
+        "yes_rate": 0.0,
+        "mid": 0.42500000000000004,
+        "deviation": -0.42500000000000004
+      },
+      {
+        "bucket": "0.45-0.50",
+        "n": 2,
+        "yes_rate": 1.0,
+        "mid": 0.47500000000000003,
+        "deviation": 0.5249999999999999
+      },
+      {
+        "bucket": "0.50-0.55",
+        "n": 2,
+        "yes_rate": 1.0,
+        "mid": 0.525,
+        "deviation": 0.475
+      },
+      {
+        "bucket": "0.60-0.65",
+        "n": 2,
+        "yes_rate": 0.5,
+        "mid": 0.625,
+        "deviation": -0.125
+      },
+      {
+        "bucket": "0.65-0.70",
+        "n": 3,
+        "yes_rate": 0.6666666666666666,
+        "mid": 0.6750000000000002,
+        "deviation": -0.008333333333333526
+      },
+      {
+        "bucket": "0.75-0.80",
+        "n": 3,
+        "yes_rate": 1.0,
+        "mid": 0.775,
+        "deviation": 0.22499999999999998
+      },
+      {
+        "bucket": "0.80-0.85",
+        "n": 3,
+        "yes_rate": 1.0,
+        "mid": 0.8250000000000001,
+        "deviation": 0.17499999999999993
+      },
+      {
+        "bucket": "0.85-0.90",
+        "n": 3,
+        "yes_rate": 1.0,
+        "mid": 0.875,
+        "deviation": 0.125
+      },
+      {
+        "bucket": "0.90-0.95",
+        "n": 2,
+        "yes_rate": 1.0,
+        "mid": 0.925,
+        "deviation": 0.07499999999999996
+      },
+      {
+        "bucket": "0.95-1.00",
+        "n": 10,
+        "yes_rate": 1.0,
+        "mid": 0.975,
+        "deviation": 0.025000000000000022
+      }
+    ],
+    "futures": [
+      {
+        "bucket": "0.00-0.05",
+        "n": 51,
+        "yes_rate": 0.0,
+        "mid": 0.025,
+        "deviation": -0.025
+      },
+      {
+        "bucket": "0.05-0.10",
+        "n": 9,
+        "yes_rate": 0.0,
+        "mid": 0.07500000000000001,
+        "deviation": -0.07500000000000001
+      },
+      {
+        "bucket": "0.10-0.15",
+        "n": 11,
+        "yes_rate": 0.09090909090909091,
+        "mid": 0.125,
+        "deviation": -0.03409090909090909
+      },
+      {
+        "bucket": "0.15-0.20",
+        "n": 9,
+        "yes_rate": 0.1111111111111111,
+        "mid": 0.175,
+        "deviation": -0.06388888888888888
+      },
+      {
+        "bucket": "0.20-0.25",
+        "n": 4,
+        "yes_rate": 0.25,
+        "mid": 0.225,
+        "deviation": 0.024999999999999994
+      },
+      {
+        "bucket": "0.25-0.30",
+        "n": 4,
+        "yes_rate": 0.0,
+        "mid": 0.275,
+        "deviation": -0.275
+      },
+      {
+        "bucket": "0.30-0.35",
+        "n": 5,
+        "yes_rate": 0.4,
+        "mid": 0.325,
+        "deviation": 0.07500000000000001
+      },
+      {
+        "bucket": "0.35-0.40",
+        "n": 4,
+        "yes_rate": 0.5,
+        "mid": 0.375,
+        "deviation": 0.125
+      },
+      {
+        "bucket": "0.40-0.45",
+        "n": 5,
+        "yes_rate": 0.6,
+        "mid": 0.425,
+        "deviation": 0.175
+      },
+      {
+        "bucket": "0.45-0.50",
+        "n": 5,
+        "yes_rate": 0.4,
+        "mid": 0.475,
+        "deviation": -0.07499999999999996
+      },
+      {
+        "bucket": "0.50-0.55",
+        "n": 3,
+        "yes_rate": 0.3333333333333333,
+        "mid": 0.525,
+        "deviation": -0.1916666666666667
+      },
+      {
+        "bucket": "0.55-0.60",
+        "n": 5,
+        "yes_rate": 0.4,
+        "mid": 0.5750000000000001,
+        "deviation": -0.17500000000000004
+      },
+      {
+        "bucket": "0.60-0.65",
+        "n": 3,
+        "yes_rate": 0.6666666666666666,
+        "mid": 0.625,
+        "deviation": 0.04166666666666663
+      },
+      {
+        "bucket": "0.65-0.70",
+        "n": 1,
+        "yes_rate": 0.0,
+        "mid": 0.675,
+        "deviation": -0.675
+      },
+      {
+        "bucket": "0.70-0.75",
+        "n": 3,
+        "yes_rate": 0.6666666666666666,
+        "mid": 0.725,
+        "deviation": -0.05833333333333335
+      },
+      {
+        "bucket": "0.75-0.80",
+        "n": 3,
+        "yes_rate": 1.0,
+        "mid": 0.775,
+        "deviation": 0.22499999999999998
+      },
+      {
+        "bucket": "0.80-0.85",
+        "n": 3,
+        "yes_rate": 0.6666666666666666,
+        "mid": 0.8250000000000001,
+        "deviation": -0.15833333333333344
+      },
+      {
+        "bucket": "0.85-0.90",
+        "n": 2,
+        "yes_rate": 1.0,
+        "mid": 0.875,
+        "deviation": 0.125
+      },
+      {
+        "bucket": "0.90-0.95",
+        "n": 5,
+        "yes_rate": 1.0,
+        "mid": 0.925,
+        "deviation": 0.07499999999999996
+      },
+      {
+        "bucket": "0.95-1.00",
+        "n": 9,
+        "yes_rate": 1.0,
+        "mid": 0.9750000000000001,
+        "deviation": 0.02499999999999991
+      }
+    ],
+    "totals": [],
+    "spreads": [],
+    "uncategorized": []
+  },
+  "flb_055_060_by_subcategory": {
+    "game_outcome": {
+      "n_0p55_0p60": 113,
+      "yes_rate": 0.8496,
+      "deviation": 0.2746,
+      "insufficient": false
+    },
+    "props": {
+      "n_0p55_0p60": 0,
+      "yes_rate": null,
+      "deviation": null,
+      "insufficient": true
+    },
+    "futures": {
+      "n_0p55_0p60": 5,
+      "yes_rate": 0.4,
+      "deviation": -0.175,
+      "insufficient": true
+    }
+  },
+  "mid_range_flb_0p40_0p70_by_subcategory": {
+    "game_outcome": {
+      "n": 669,
+      "mean_price": 0.5461,
+      "yes_rate": 0.6487,
+      "deviation": 0.1026,
+      "insufficient": false
+    },
+    "props": {
+      "n": 12,
+      "mean_price": 0.5379,
+      "yes_rate": 0.5833,
+      "deviation": 0.0454,
+      "insufficient": true
+    },
+    "futures": {
+      "n": 22,
+      "mean_price": 0.5253,
+      "yes_rate": 0.4545,
+      "deviation": -0.0707,
+      "insufficient": true
+    },
+    "totals": {
+      "n": 10,
+      "mean_price": 0.5207,
+      "yes_rate": 0.7,
+      "deviation": 0.1793,
+      "insufficient": true
+    },
+    "spreads": {
+      "n": 7,
+      "mean_price": 0.5682,
+      "yes_rate": 0.8571,
+      "deviation": 0.2889,
+      "insufficient": true
+    },
+    "uncategorized": {
+      "n": 1,
+      "mean_price": 0.4973,
+      "yes_rate": 0.0,
+      "deviation": -0.4973,
+      "insufficient": true
+    }
+  },
+  "uncategorized_n": 4
+}

@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-04-20T04:45:46.334459+00:00",
+  "n_matches_total": 8,
+  "by_n_venues": {
+    "2": 8
+  },
+  "spread_polymarket_vs_smarkets": {
+    "n": 8,
+    "mean_spread": 0.4388,
+    "median_spread": 0.445,
+    "stdev_spread": 0.0564,
+    "abs_mean_spread": 0.4388,
+    "pct_spread_gt_5pp": 1.0
+  }
+}

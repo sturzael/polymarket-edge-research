@@ -1,0 +1,42 @@
+{
+  "assumptions": {
+    "fill_cap_haircut": 0.85,
+    "source": "e16 sports-deep parquet, 0.55-0.60 bucket, n=120",
+    "fee_bps": 3.0,
+    "fee_model": "one_sided (buy + hold to resolution)"
+  },
+  "rows": [
+    {
+      "order_size_usd": 200,
+      "ceiling_from_data": 0.8666666666666667,
+      "fill_prob_adjusted": 0.7366666666666667,
+      "net_edge_pp_at_3bps": 24.43266875,
+      "expected_pnl_per_bet_usd": 35.99746529166667,
+      "expected_pnl_per_bet_pct_of_notional": 17.998732645833336
+    },
+    {
+      "order_size_usd": 500,
+      "ceiling_from_data": 0.8333333333333334,
+      "fill_prob_adjusted": 0.7083333333333334,
+      "net_edge_pp_at_3bps": 23.83266875,
+      "expected_pnl_per_bet_usd": 84.40736848958335,
+      "expected_pnl_per_bet_pct_of_notional": 16.88147369791667
+    },
+    {
+      "order_size_usd": 1000,
+      "ceiling_from_data": 0.8,
+      "fill_prob_adjusted": 0.68,
+      "net_edge_pp_at_3bps": 22.83266875,
+      "expected_pnl_per_bet_usd": 155.2621475,
+      "expected_pnl_per_bet_pct_of_notional": 15.52621475
+    },
+    {
+      "order_size_usd": 2000,
+      "ceiling_from_data": 0.7416666666666667,
+      "fill_prob_adjusted": 0.6304166666666666,
+      "net_edge_pp_at_3bps": 20.83266875,
+      "expected_pnl_per_bet_usd": 262.6652318229166,
+      "expected_pnl_per_bet_pct_of_notional": 13.13326159114583
+    }
+  ]
+}

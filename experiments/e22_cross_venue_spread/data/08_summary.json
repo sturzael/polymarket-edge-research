@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-04-20T05:35:19.797786+00:00",
+  "n_matched": 43,
+  "by_sport": {
+    "basketball": {
+      "n": 30,
+      "mean_spread": 0.0019,
+      "abs_mean_spread": 0.082
+    },
+    "ice_hockey": {
+      "n": 13,
+      "mean_spread": -0.0032,
+      "abs_mean_spread": 0.0141
+    }
+  },
+  "overall": {
+    "mean": 0.0003,
+    "median": -0.0018,
+    "stdev": 0.1249,
+    "abs_mean": 0.0615
+  }
+}

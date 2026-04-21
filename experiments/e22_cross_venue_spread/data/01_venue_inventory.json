@@ -1,0 +1,638 @@
+{
+  "generated_at": "2026-04-20T04:33:30.670512+00:00",
+  "venues": {
+    "polymarket": {
+      "n_markets": 70144,
+      "categories_top10": [
+        [
+          "Sports",
+          23698
+        ],
+        [
+          "Esports",
+          6789
+        ],
+        [
+          "Politics",
+          5979
+        ],
+        [
+          "Elections",
+          2656
+        ],
+        [
+          "Up or Down",
+          2243
+        ],
+        [
+          "Weather",
+          1596
+        ],
+        [
+          "Soccer",
+          1495
+        ],
+        [
+          "Tennis",
+          1326
+        ],
+        [
+          "Crypto",
+          1136
+        ],
+        [
+          "Culture",
+          1067
+        ]
+      ],
+      "tags_top10": [
+        [
+          "Sports",
+          40487
+        ],
+        [
+          "Games",
+          29942
+        ],
+        [
+          "Soccer",
+          22952
+        ],
+        [
+          "Politics",
+          15496
+        ],
+        [
+          "Elections",
+          12465
+        ],
+        [
+          "Esports",
+          7731
+        ],
+        [
+          "Hide From New",
+          7385
+        ],
+        [
+          "Recurring",
+          5663
+        ],
+        [
+          "Crypto",
+          5435
+        ],
+        [
+          "Midterms",
+          4991
+        ]
+      ],
+      "sample_titles": [
+        "Israel x Hezbollah ceasefire by...? - Israel x Hezbollah ceasefire by April 18, 2026?",
+        "Trail Blazers vs. Spurs - Trail Blazers vs. Spurs",
+        "US x Iran permanent peace deal by...? - US x Iran permanent peace deal by April 22, 2026?",
+        "Counter-Strike: Spirit vs Vitality (BO5) - IEM Rio Playoffs - Counter-Strike: Spirit vs Vitality (BO5) - IEM Rio Playoffs",
+        "Colombia Chamber of Representatives Election: 3rd Place - Will PH win the third most seats in the 2026 Colombian Chamber of Representatives election?",
+        "Will the Iranian regime fall by April 30? - Will the Iranian regime fall by April 30?",
+        "Strait of Hormuz traffic returns to normal by end of April? - Strait of Hormuz traffic returns to normal by end of April?",
+        "Fed decision in April? - Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
+        "Trail Blazers vs. Spurs - Spread: Spurs (-11.5)",
+        "Iran x Israel/US conflict ends by...? - Iran x Israel/US conflict ends by April 7?",
+        "Fed decision in April? - Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
+        "2026 NBA Champion - Will the Los Angeles Lakers win the 2026 NBA Finals?",
+        "What price will Bitcoin hit in April? - Will Bitcoin reach $80,000 in April?",
+        "Utah vs. Golden Knights - Utah vs. Golden Knights",
+        "Fed decision in April? - Will there be no change in Fed interest rates after the April 2026 meeting?"
+      ],
+      "fetch_seconds": 106.35,
+      "n_sports_category": 0,
+      "kw_nba": 910,
+      "kw_nfl": 555,
+      "kw_premier league": 422,
+      "kw_soccer": 15,
+      "kw_football": 2047,
+      "kw_mlb": 811,
+      "kw_nhl": 857,
+      "kw_tennis": 127,
+      "kw_ufc": 721,
+      "kw_boxing": 0
+    },
+    "kalshi": {
+      "n_markets": 40907,
+      "categories_top10": [
+        [
+          "Sports",
+          18228
+        ],
+        [
+          "Elections",
+          5049
+        ],
+        [
+          "Entertainment",
+          4940
+        ],
+        [
+          "Economics",
+          3059
+        ],
+        [
+          "Crypto",
+          2955
+        ],
+        [
+          "Politics",
+          1640
+        ],
+        [
+          "Mentions",
+          1340
+        ],
+        [
+          "Financials",
+          882
+        ],
+        [
+          "Commodities",
+          837
+        ],
+        [
+          "Climate and Weather",
+          617
+        ]
+      ],
+      "tags_top10": [
+        [
+          "Sports",
+          18835
+        ],
+        [
+          "Elections",
+          5050
+        ],
+        [
+          "Entertainment",
+          4940
+        ],
+        [
+          "Basketball",
+          3891
+        ],
+        [
+          "Football",
+          3540
+        ],
+        [
+          "Baseball",
+          3363
+        ],
+        [
+          "Soccer",
+          3088
+        ],
+        [
+          "Economics",
+          3059
+        ],
+        [
+          "Crypto",
+          2955
+        ],
+        [
+          "Primaries",
+          2292
+        ]
+      ],
+      "sample_titles": [
+        "Will Elon Musk visit Mars in his lifetime?",
+        "Who will the next Pope be?",
+        "Who will the next Pope be?",
+        "Who will the next Pope be?",
+        "Who will the next Pope be?",
+        "Who will the next Pope be?",
+        "Who will the next Pope be?",
+        "Who will the next Pope be?",
+        "Will the world pass 2 degrees Celsius over pre-industrial levels before 2050?",
+        "Will a human land on Mars before California starts high-speed rail?",
+        "Will a supervolcano erupt before 2050?",
+        "Will humans colonize Mars before 2050?",
+        "Will Zohran Mamdani become President of the United States before 2045?",
+        "Who will be named as Xi Jinping's successor?",
+        "Who will be named as Xi Jinping's successor?"
+      ],
+      "fetch_seconds": 25.32,
+      "n_sports_category": 0,
+      "kw_nba": 28,
+      "kw_nfl": 249,
+      "kw_premier league": 28,
+      "kw_soccer": 18,
+      "kw_football": 2252,
+      "kw_mlb": 0,
+      "kw_nhl": 172,
+      "kw_tennis": 0,
+      "kw_ufc": 107,
+      "kw_boxing": 0
+    },
+    "limitless": {
+      "n_markets": 313,
+      "categories_top10": [
+        [
+          "Props",
+          234
+        ],
+        [
+          "Weekly",
+          34
+        ],
+        [
+          "Daily",
+          22
+        ],
+        [
+          "This vs That",
+          6
+        ],
+        [
+          "Hourly",
+          5
+        ],
+        [
+          "Pre-TGE",
+          5
+        ],
+        [
+          "Crypto",
+          4
+        ],
+        [
+          "Bitcoin",
+          3
+        ]
+      ],
+      "tags_top10": [
+        [
+          "Lumy",
+          300
+        ],
+        [
+          "Football",
+          234
+        ],
+        [
+          "club_dominance",
+          186
+        ],
+        [
+          "Recurring",
+          66
+        ],
+        [
+          "control_game",
+          48
+        ],
+        [
+          "Weekly",
+          42
+        ],
+        [
+          "Prophet",
+          28
+        ],
+        [
+          "Simple Mode",
+          26
+        ],
+        [
+          "nav:domain:finance",
+          24
+        ],
+        [
+          "Daily",
+          23
+        ]
+      ],
+      "sample_titles": [
+        "BTC above $74530.17 on Apr 20, 04:45 UTC?",
+        "SOL above $84.42 on Apr 20, 04:45 UTC?",
+        "XRP above $1.4084 on Apr 20, 04:45 UTC?",
+        "ETH above $2282.49 on Apr 20, 04:45 UTC?",
+        "BTC above $74663.72 on Apr 20, 05:00 UTC?",
+        "SOL above $84.61 on Apr 20, 05:00 UTC?",
+        "DOGE above $0.09427 on Apr 20, 05:00 UTC?",
+        "XRP above $1.4114 on Apr 20, 05:00 UTC?",
+        "ETH above $2287.27 on Apr 20, 05:00 UTC?",
+        "MNT above $0.63971 on Apr 20, 19:00 UTC?",
+        "AVAX above $9.1528 on Apr 20, 18:00 UTC?",
+        "BCH above $441.87 on Apr 20, 17:00 UTC?",
+        "BNB above $626.10 on Apr 20, 16:00 UTC?",
+        "ONDO above $0.25953 on Apr 20, 15:00 UTC?",
+        "SOL above $86.36 on Apr 20, 14:00 UTC?"
+      ],
+      "fetch_seconds": 1.39,
+      "n_sports_category": 0,
+      "kw_nba": 1,
+      "kw_nfl": 1,
+      "kw_premier league": 0,
+      "kw_soccer": 0,
+      "kw_football": 0,
+      "kw_mlb": 0,
+      "kw_nhl": 0,
+      "kw_tennis": 0,
+      "kw_ufc": 0,
+      "kw_boxing": 0
+    },
+    "baozi": {
+      "n_markets": 3,
+      "categories_top10": [
+        [
+          "lab",
+          3
+        ]
+      ],
+      "tags_top10": [
+        [
+          "lab",
+          3
+        ],
+        [
+          "solana",
+          3
+        ],
+        [
+          "pari-mutuel",
+          3
+        ]
+      ],
+      "sample_titles": [
+        "Will the SEC approve a prediction market ETF before Jun 30, 2026? (Source: SEC EDGAR)",
+        "Will Block Inc announce additional layoffs by June 30 2026 check? (Source: SEC Filings / Official Press)",
+        "Will Cboe launch its event contracts product before July 1, 2026? (Source: Cboe Official)"
+      ],
+      "fetch_seconds": 0.84,
+      "n_sports_category": 0,
+      "kw_nba": 0,
+      "kw_nfl": 0,
+      "kw_premier league": 0,
+      "kw_soccer": 0,
+      "kw_football": 0,
+      "kw_mlb": 0,
+      "kw_nhl": 0,
+      "kw_tennis": 0,
+      "kw_ufc": 0,
+      "kw_boxing": 0
+    },
+    "myriad": {
+      "n_markets": 100,
+      "categories_top10": [
+        [
+          "None",
+          100
+        ]
+      ],
+      "tags_top10": [
+        [
+          "Crypto",
+          31
+        ],
+        [
+          "Sports",
+          27
+        ],
+        [
+          "Culture",
+          18
+        ],
+        [
+          "Economy",
+          7
+        ],
+        [
+          "Gaming",
+          6
+        ],
+        [
+          "Memecoins",
+          6
+        ],
+        [
+          "Politics",
+          6
+        ],
+        [
+          "WalletConnect",
+          3
+        ],
+        [
+          "Pope",
+          2
+        ],
+        [
+          "F1",
+          2
+        ]
+      ],
+      "sample_titles": [
+        "Who wins Worlds 2025?",
+        "Who will win the 24/25 La Liga Title?",
+        "Who will be the 2025 NBA Champion?",
+        "Up or Down?",
+        "Elon Musk: How many posts on X between March 21 and 28?",
+        "Who wins the NFC West?",
+        "Where will the ETH/BTC ratio land by the end of March?",
+        "Which token will launch first?",
+        "Who will win Premier League 2025/26?",
+        "Where will the ETH/BTC ratio land by the end of April?",
+        "Who wins the StarLadder Budapest Major 2025?",
+        "How many rounds of voting will it take to elect the new Pope?",
+        "Who wins the NFC South?",
+        "Total unique wallets connecting with WalletConnect in April",
+        "Will MOG surpass a $500M Market Cap by the end of May 2025?"
+      ],
+      "fetch_seconds": 2.35,
+      "n_sports_category": 0,
+      "kw_nba": 3,
+      "kw_nfl": 0,
+      "kw_premier league": 1,
+      "kw_soccer": 1,
+      "kw_football": 0,
+      "kw_mlb": 1,
+      "kw_nhl": 0,
+      "kw_tennis": 0,
+      "kw_ufc": 0,
+      "kw_boxing": 0
+    },
+    "opinion": {
+      "error": "Request failed with status code 401",
+      "traceback": [
+        "           ^^^^^^^^^^^^^^^^^^^^^^",
+        "  File \"/Users/elliotsturzaker/dev/event-impact-mvp/.venv/lib/python3.12/site-packages/pmxt/client.py\", line 357, in _handle_response",
+        "    raise from_server_error(error)",
+        "pmxt.errors.PmxtError: Request failed with status code 401"
+      ]
+    },
+    "probable": {
+      "n_markets": 20,
+      "categories_top10": [
+        [
+          "None",
+          20
+        ]
+      ],
+      "tags_top10": [],
+      "sample_titles": [
+        "Will Jesus Christ return before 2027?",
+        "Will the US confirm that aliens exist before 2027?",
+        "Will JB Pritzker win the 2028 US Presidential Election?",
+        "Will Kamala Harris win the 2028 US Presidential Election?",
+        "Will Andy Beshear win the 2028 US Presidential Election?",
+        "Will Ron DeSantis win the 2028 US Presidential Election?",
+        "Will Donald Trump win the 2028 US Presidential Election?",
+        "Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?",
+        "Will Josh Shapiro win the 2028 US Presidential Election?",
+        "Will Jon Ossoff win the 2028 US Presidential Election?",
+        "Will Marco Rubio win the 2028 US Presidential Election?",
+        "Will Pete Buttigieg win the 2028 US Presidential Election?",
+        "Will Gavin Newsom win the 2028 US Presidential Election?",
+        "Will Elon Musk win the 2028 US Presidential Election?",
+        "Will JD Vance win the 2028 US Presidential Election?"
+      ],
+      "fetch_seconds": 20.2,
+      "n_sports_category": 0,
+      "kw_nba": 0,
+      "kw_nfl": 0,
+      "kw_premier league": 0,
+      "kw_soccer": 0,
+      "kw_football": 0,
+      "kw_mlb": 0,
+      "kw_nhl": 0,
+      "kw_tennis": 0,
+      "kw_ufc": 0,
+      "kw_boxing": 0
+    },
+    "smarkets": {
+      "n_markets": 64845,
+      "categories_top10": [
+        [
+          "football",
+          58391
+        ],
+        [
+          "basketball",
+          2146
+        ],
+        [
+          "cricket",
+          1172
+        ],
+        [
+          "baseball",
+          1115
+        ],
+        [
+          "ice_hockey",
+          872
+        ],
+        [
+          "tennis",
+          388
+        ],
+        [
+          "rugby_union",
+          145
+        ],
+        [
+          "horse_racing",
+          131
+        ],
+        [
+          "league_of_legends",
+          109
+        ],
+        [
+          "rugby_league",
+          64
+        ]
+      ],
+      "tags_top10": [
+        [
+          "football",
+          58391
+        ],
+        [
+          "bet_builder",
+          57936
+        ],
+        [
+          "popular",
+          30635
+        ],
+        [
+          "half",
+          14359
+        ],
+        [
+          "totals",
+          10115
+        ],
+        [
+          "teams",
+          9917
+        ],
+        [
+          "handicap",
+          8612
+        ],
+        [
+          "goals",
+          6069
+        ],
+        [
+          "winner",
+          5779
+        ],
+        [
+          "corners",
+          4509
+        ]
+      ],
+      "sample_titles": [
+        "Next Labour leader",
+        "Next Labour leader",
+        "Keir Starmer Exit Date",
+        "Keir Starmer Exit Date",
+        "Next Fianna F\u00e1il Leader After Miche\u00e1l Martin",
+        "Nicola Sturgeon to be First Minister at next Holyrood election",
+        "2027 French Presidential Election",
+        "Northern Ireland Assembly Elections",
+        "Donald Trump to serve as president for 9+ years by end of 2030",
+        "Most Seats",
+        "Next General Election Conservative Leader",
+        "Next General Election Conservative Leader",
+        "Next General Election Conservative Leader",
+        "2028 Presidential Election Winner",
+        "Next Prime Minister"
+      ],
+      "fetch_seconds": 73.95,
+      "n_sports_category": 0,
+      "kw_nba": 0,
+      "kw_nfl": 0,
+      "kw_premier league": 0,
+      "kw_soccer": 0,
+      "kw_football": 0,
+      "kw_mlb": 0,
+      "kw_nhl": 0,
+      "kw_tennis": 0,
+      "kw_ufc": 0,
+      "kw_boxing": 0
+    },
+    "metaculus": {
+      "error": "Metaculus API token required. Pass { apiToken: \"...\" } when constructing MetaculusExchange. [Metaculus]",
+      "traceback": [
+        "           ^^^^^^^^^^^^^^^^^^^^^^",
+        "  File \"/Users/elliotsturzaker/dev/event-impact-mvp/.venv/lib/python3.12/site-packages/pmxt/client.py\", line 357, in _handle_response",
+        "    raise from_server_error(error)",
+        "pmxt.errors.AuthenticationError: Metaculus API token required. Pass { apiToken: \"...\" } when constructing MetaculusExchange. [Metaculus]"
+      ]
+    }
+  }
+}

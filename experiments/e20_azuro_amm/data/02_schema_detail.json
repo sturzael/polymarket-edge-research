@@ -1,0 +1,383 @@
+{
+  "ConditionLog": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "conditionId",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "status",
+      "type": "ConditionLogStatus"
+    },
+    {
+      "name": "isLive",
+      "type": "Boolean"
+    }
+  ],
+  "Selection": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "bet",
+      "type": "Bet"
+    },
+    {
+      "name": "rawOdds",
+      "type": "BigInt"
+    },
+    {
+      "name": "odds",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "_oddsDecimals",
+      "type": "Int"
+    },
+    {
+      "name": "result",
+      "type": "SelectionResult"
+    },
+    {
+      "name": "_outcomeId",
+      "type": "BigInt"
+    },
+    {
+      "name": "outcome",
+      "type": "Outcome"
+    },
+    {
+      "name": "margin",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "rawMargin",
+      "type": "BigInt"
+    }
+  ],
+  "LiveSelection": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "bet",
+      "type": "LiveBet"
+    },
+    {
+      "name": "rawOdds",
+      "type": "BigInt"
+    },
+    {
+      "name": "odds",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "_oddsDecimals",
+      "type": "Int"
+    },
+    {
+      "name": "result",
+      "type": "SelectionResult"
+    },
+    {
+      "name": "_outcomeId",
+      "type": "BigInt"
+    },
+    {
+      "name": "outcome",
+      "type": "LiveOutcome"
+    },
+    {
+      "name": "margin",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "rawMargin",
+      "type": "BigInt"
+    }
+  ],
+  "LiveCondition": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "title",
+      "type": "String"
+    },
+    {
+      "name": "core",
+      "type": "CoreContract"
+    },
+    {
+      "name": "coreAddress",
+      "type": "String"
+    },
+    {
+      "name": "conditionId",
+      "type": "BigInt"
+    },
+    {
+      "name": "gameId",
+      "type": "BigInt"
+    },
+    {
+      "name": "outcomes",
+      "type": "LiveOutcome"
+    },
+    {
+      "name": "outcomesIds",
+      "type": "BigInt"
+    },
+    {
+      "name": "wonOutcomes",
+      "type": "LiveOutcome"
+    },
+    {
+      "name": "wonOutcomeIds",
+      "type": "BigInt"
+    },
+    {
+      "name": "status",
+      "type": "ConditionStatus"
+    },
+    {
+      "name": "hidden",
+      "type": "Boolean"
+    },
+    {
+      "name": "turnover",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdTxHash",
+      "type": "String"
+    },
+    {
+      "name": "resolvedBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "resolvedBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "resolvedTxHash",
+      "type": "String"
+    },
+    {
+      "name": "_updatedAt",
+      "type": "BigInt"
+    },
+    {
+      "name": "_winningOutcomesCount",
+      "type": "Int"
+    }
+  ],
+  "V3Condition": null,
+  "V3Outcome": null,
+  "V3Selection": null,
+  "V3Bet": null,
+  "ConditionStatus": null,
+  "OutcomeResult": null,
+  "GameStatus": null,
+  "Participant": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "game",
+      "type": "Game"
+    },
+    {
+      "name": "name",
+      "type": "String"
+    },
+    {
+      "name": "image",
+      "type": "String"
+    },
+    {
+      "name": "sortOrder",
+      "type": "Int"
+    }
+  ],
+  "Freebet": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "owner",
+      "type": "String"
+    },
+    {
+      "name": "freebetContractAddress",
+      "type": "String"
+    },
+    {
+      "name": "freebetContractName",
+      "type": "String"
+    },
+    {
+      "name": "freebetContractAffiliate",
+      "type": "String"
+    },
+    {
+      "name": "freebet",
+      "type": "FreebetContract"
+    },
+    {
+      "name": "azuroBetId",
+      "type": "BigInt"
+    },
+    {
+      "name": "core",
+      "type": "CoreContract"
+    },
+    {
+      "name": "freebetId",
+      "type": "BigInt"
+    },
+    {
+      "name": "status",
+      "type": "FreebetStatus"
+    },
+    {
+      "name": "expiresAt",
+      "type": "BigInt"
+    },
+    {
+      "name": "amount",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "rawAmount",
+      "type": "BigInt"
+    },
+    {
+      "name": "tokenDecimals",
+      "type": "Int"
+    },
+    {
+      "name": "durationTime",
+      "type": "BigInt"
+    },
+    {
+      "name": "rawMinOdds",
+      "type": "BigInt"
+    },
+    {
+      "name": "minOdds",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "createdBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdTxHash",
+      "type": "String"
+    },
+    {
+      "name": "isResolved",
+      "type": "Boolean"
+    },
+    {
+      "name": "burned",
+      "type": "Boolean"
+    },
+    {
+      "name": "_updatedAt",
+      "type": "BigInt"
+    }
+  ],
+  "Cashout": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "name": "owner",
+      "type": "String"
+    },
+    {
+      "name": "betContractAddress",
+      "type": "String"
+    },
+    {
+      "name": "cashoutContractAddress",
+      "type": "String"
+    },
+    {
+      "name": "betId",
+      "type": "BigInt"
+    },
+    {
+      "name": "core",
+      "type": "CoreContract"
+    },
+    {
+      "name": "rawPayout",
+      "type": "BigInt"
+    },
+    {
+      "name": "payout",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "rawOdds",
+      "type": "BigInt"
+    },
+    {
+      "name": "odds",
+      "type": "BigDecimal"
+    },
+    {
+      "name": "_oddsDecimals",
+      "type": "Int"
+    },
+    {
+      "name": "_tokenDecimals",
+      "type": "Int"
+    },
+    {
+      "name": "createdBlockNumber",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdBlockTimestamp",
+      "type": "BigInt"
+    },
+    {
+      "name": "createdTxHash",
+      "type": "String"
+    },
+    {
+      "name": "_updatedAt",
+      "type": "BigInt"
+    }
+  ]
+}

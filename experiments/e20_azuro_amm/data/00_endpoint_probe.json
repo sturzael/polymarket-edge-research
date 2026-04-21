@@ -1,0 +1,122 @@
+{
+  "polygon-v3": {
+    "status": 200,
+    "response": {
+      "data": {
+        "_meta": {
+          "block": {
+            "number": 85769738,
+            "hash": "0x44d79eb6875a2027f0026cfaf91edbc7cbd9bb0150885df4d3b7cf46d561f815"
+          },
+          "deployment": "QmfJDsYEQttbNyENm5D7Rqeg5JD4oG12e72P1pEicrDLJZ",
+          "hasIndexingErrors": false
+        }
+      }
+    }
+  },
+  "gnosis-v3": {
+    "status": 200,
+    "response": {
+      "data": {
+        "_meta": {
+          "block": {
+            "number": 45762933,
+            "hash": "0x7dae0e62c58ae7845f36d29c53965d105d156f46f7edac35ce96c4870252ef5a"
+          },
+          "deployment": "QmWsLwBMvivDxrW4yiJyqNkEoWFep8o8JS3PhX1QqYymz9",
+          "hasIndexingErrors": false
+        }
+      }
+    }
+  },
+  "polygon-v2": {
+    "status": 200,
+    "response": {
+      "errors": [
+        {
+          "message": "deployment `azuro-protocol/azuro-api-polygon-v2` does not exist"
+        }
+      ]
+    }
+  },
+  "gnosis-v2": {
+    "status": 200,
+    "response": {
+      "errors": [
+        {
+          "message": "deployment `azuro-protocol/azuro-api-gnosis-v2` does not exist"
+        }
+      ]
+    }
+  },
+  "polygon-ocf-v3": {
+    "status": 200,
+    "response": {
+      "data": {
+        "_meta": {
+          "block": {
+            "number": 85769740,
+            "hash": "0x3b41cf7d4f61437f2e9b1f7e41002fe7bc4c8ec0a9804cbcd80e45a9a8236eec"
+          },
+          "deployment": "QmfJDsYEQttbNyENm5D7Rqeg5JD4oG12e72P1pEicrDLJZ",
+          "hasIndexingErrors": false
+        }
+      }
+    }
+  },
+  "gnosis-ocf-v3": {
+    "status": 200,
+    "response": {
+      "data": {
+        "_meta": {
+          "block": {
+            "number": 45762934,
+            "hash": "0x85d61ec73c641c728bcdcc7df08e5052d7880ff5a56b4414b9d4716ebb7ac179"
+          },
+          "deployment": "QmWsLwBMvivDxrW4yiJyqNkEoWFep8o8JS3PhX1QqYymz9",
+          "hasIndexingErrors": false
+        }
+      }
+    }
+  },
+  "arbitrum-v3": {
+    "status": 200,
+    "response": {
+      "errors": [
+        {
+          "message": "deployment `azuro-protocol/azuro-api-arbitrum-one-v3` does not exist"
+        }
+      ]
+    }
+  },
+  "base-v3": {
+    "status": 200,
+    "response": {
+      "data": {
+        "_meta": {
+          "block": {
+            "number": 44935088,
+            "hash": "0x8720767d3f2594b5b50bffb56ef1edbb68ef7f812ea2a404693d722ee3936f9e"
+          },
+          "deployment": "QmRC3ui1UiBZf6kX1iALAdvNbafhw6tT44nrLpKHEd32ky",
+          "hasIndexingErrors": false
+        }
+      }
+    }
+  },
+  "chiliz-v3": {
+    "status": 200,
+    "response": {
+      "data": {
+        "_meta": {
+          "block": {
+            "number": 33303503,
+            "hash": "0x4801179ab11ed7cabf48a7c7b8a88d0489c86a22015b0b5cbe00d4366d4be9b8"
+          },
+          "deployment": "QmQKTtHbdUAR5662JcdMdAEaHR4c1aRQo4jT5WUS4LBW5H",
+          "hasIndexingErrors": false
+        }
+      }
+    }
+  }
+}

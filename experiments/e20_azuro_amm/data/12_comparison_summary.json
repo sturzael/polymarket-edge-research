@@ -1,0 +1,321 @@
+{
+  "agent": "e20 \u2014 Azuro AMM sports",
+  "date": "2026-04-20",
+  "research_question": "Is Polymarket's sports FLB (0.55-0.60 \u2192 88% yes_rate, +30pp, z=5.1) unique to Polymarket or general to prediction markets / AMMs?",
+  "venue_profile": {
+    "name": "Azuro Protocol V3",
+    "mechanism": "AMM-like liquidity pools quoting decimal odds; 'data providers' seed initial odds from off-chain books; LPs take the other side of bets; pool rebalance moves prices as bets arrive",
+    "chains": [
+      "Polygon",
+      "Gnosis",
+      "Base",
+      "Chiliz"
+    ],
+    "pricing_structure": "decimal odds with 3-8% house overround",
+    "analyzed_chain": "Polygon V3 only (Gnosis/Base/Chiliz confirmed live, not yet processed)",
+    "date_range_analyzed": "2023-02-01 \u2192 2025-05-08",
+    "sports_covered": 19,
+    "resolved_conditions": 878962,
+    "clean_outcome_rows": 1863812,
+    "market_horizon": "mostly T<3d \u2014 only 9.7% of conditions have any bets 24h before game; only 0.1% have any bets 7d before"
+  },
+  "methodology": {
+    "tier": "TIER 1 \u2014 full analysis",
+    "price_anchor": "close-time (currentOdds on resolved condition = last AMM quote)",
+    "anchor_vs_polymarket_t7d": "T-0 analogue not T-7d \u2014 Polymarket comparisons of Azuro T-7d are infeasible since Azuro markets don't exist that far out",
+    "bucket_width": 0.05,
+    "margin_correction": "normalized: p_i = (1/odds_i) / \u03a3(1/odds_j) to strip house margin",
+    "exclusions": [
+      "multi-winner conditions (35% of 3-outcome)",
+      "overround \u2264 1.0 or > 1.30"
+    ]
+  },
+  "headline_azuro_close": [
+    {
+      "bucket": "0.00-0.05",
+      "n": 13723,
+      "mid": 0.025,
+      "yes": 441,
+      "yes_rate": 0.0321,
+      "deviation": 0.0071,
+      "z": 5.35
+    },
+    {
+      "bucket": "0.05-0.10",
+      "n": 65112,
+      "mid": 0.075,
+      "yes": 4099,
+      "yes_rate": 0.063,
+      "deviation": -0.012,
+      "z": -11.67
+    },
+    {
+      "bucket": "0.10-0.15",
+      "n": 60500,
+      "mid": 0.125,
+      "yes": 6776,
+      "yes_rate": 0.112,
+      "deviation": -0.013,
+      "z": -9.67
+    },
+    {
+      "bucket": "0.15-0.20",
+      "n": 68712,
+      "mid": 0.175,
+      "yes": 11341,
+      "yes_rate": 0.1651,
+      "deviation": -0.0099,
+      "z": -6.86
+    },
+    {
+      "bucket": "0.20-0.25",
+      "n": 75071,
+      "mid": 0.225,
+      "yes": 16309,
+      "yes_rate": 0.2172,
+      "deviation": -0.0078,
+      "z": -5.09
+    },
+    {
+      "bucket": "0.25-0.30",
+      "n": 77243,
+      "mid": 0.275,
+      "yes": 20580,
+      "yes_rate": 0.2664,
+      "deviation": -0.0086,
+      "z": -5.33
+    },
+    {
+      "bucket": "0.30-0.35",
+      "n": 91050,
+      "mid": 0.325,
+      "yes": 29042,
+      "yes_rate": 0.319,
+      "deviation": -0.006,
+      "z": -3.89
+    },
+    {
+      "bucket": "0.35-0.40",
+      "n": 116647,
+      "mid": 0.375,
+      "yes": 43374,
+      "yes_rate": 0.3718,
+      "deviation": -0.0032,
+      "z": -2.23
+    },
+    {
+      "bucket": "0.40-0.45",
+      "n": 174003,
+      "mid": 0.425,
+      "yes": 73833,
+      "yes_rate": 0.4243,
+      "deviation": -0.0007,
+      "z": -0.57
+    },
+    {
+      "bucket": "0.45-0.50",
+      "n": 319267,
+      "mid": 0.475,
+      "yes": 151341,
+      "yes_rate": 0.474,
+      "deviation": -0.001,
+      "z": -1.1
+    },
+    {
+      "bucket": "0.50-0.55",
+      "n": 389799,
+      "mid": 0.525,
+      "yes": 203244,
+      "yes_rate": 0.5214,
+      "deviation": -0.0036,
+      "z": -4.49
+    },
+    {
+      "bucket": "0.55-0.60",
+      "n": 151962,
+      "mid": 0.575,
+      "yes": 87926,
+      "yes_rate": 0.5786,
+      "deviation": 0.0036,
+      "z": 2.84
+    },
+    {
+      "bucket": "0.60-0.65",
+      "n": 90654,
+      "mid": 0.625,
+      "yes": 57258,
+      "yes_rate": 0.6316,
+      "deviation": 0.0066,
+      "z": 4.11
+    },
+    {
+      "bucket": "0.65-0.70",
+      "n": 56999,
+      "mid": 0.675,
+      "yes": 39041,
+      "yes_rate": 0.6849,
+      "deviation": 0.0099,
+      "z": 5.07
+    },
+    {
+      "bucket": "0.70-0.75",
+      "n": 35226,
+      "mid": 0.725,
+      "yes": 26237,
+      "yes_rate": 0.7448,
+      "deviation": 0.0198,
+      "z": 8.33
+    },
+    {
+      "bucket": "0.75-0.80",
+      "n": 28544,
+      "mid": 0.775,
+      "yes": 22627,
+      "yes_rate": 0.7927,
+      "deviation": 0.0177,
+      "z": 7.16
+    },
+    {
+      "bucket": "0.80-0.85",
+      "n": 22994,
+      "mid": 0.825,
+      "yes": 19468,
+      "yes_rate": 0.8467,
+      "deviation": 0.0217,
+      "z": 8.64
+    },
+    {
+      "bucket": "0.85-0.90",
+      "n": 17060,
+      "mid": 0.875,
+      "yes": 15438,
+      "yes_rate": 0.9049,
+      "deviation": 0.0299,
+      "z": 11.82
+    },
+    {
+      "bucket": "0.90-0.95",
+      "n": 9239,
+      "mid": 0.925,
+      "yes": 8812,
+      "yes_rate": 0.9538,
+      "deviation": 0.0288,
+      "z": 10.5
+    },
+    {
+      "bucket": "0.95-1.00",
+      "n": 7,
+      "mid": 0.975,
+      "yes": 7,
+      "yes_rate": 1.0,
+      "deviation": 0.025,
+      "z": 0.42
+    }
+  ],
+  "polymarket_e16_t7d_sports": [
+    {
+      "bucket": "0.25-0.30",
+      "n": 36,
+      "mid": 0.275,
+      "yes_rate": 0.056,
+      "deviation": -0.219,
+      "z": -5.7
+    },
+    {
+      "bucket": "0.30-0.35",
+      "n": 41,
+      "mid": 0.325,
+      "yes_rate": 0.171,
+      "deviation": -0.154,
+      "z": -2.6
+    },
+    {
+      "bucket": "0.35-0.40",
+      "n": 38,
+      "mid": 0.375,
+      "yes_rate": 0.211,
+      "deviation": -0.164,
+      "z": -2.5
+    },
+    {
+      "bucket": "0.40-0.45",
+      "n": 43,
+      "mid": 0.425,
+      "yes_rate": 0.302,
+      "deviation": -0.123,
+      "z": -1.8
+    },
+    {
+      "bucket": "0.45-0.50",
+      "n": 36,
+      "mid": 0.475,
+      "yes_rate": 0.361,
+      "deviation": -0.114,
+      "z": -1.4
+    },
+    {
+      "bucket": "0.50-0.55",
+      "n": 36,
+      "mid": 0.525,
+      "yes_rate": 0.694,
+      "deviation": 0.169,
+      "z": 2.2
+    },
+    {
+      "bucket": "0.55-0.60",
+      "n": 32,
+      "mid": 0.575,
+      "yes_rate": 0.875,
+      "deviation": 0.3,
+      "z": 5.1
+    },
+    {
+      "bucket": "0.60-0.65",
+      "n": 43,
+      "mid": 0.625,
+      "yes_rate": 0.767,
+      "deviation": 0.142,
+      "z": 2.2
+    },
+    {
+      "bucket": "0.65-0.70",
+      "n": 26,
+      "mid": 0.675,
+      "yes_rate": 0.885,
+      "deviation": 0.21,
+      "z": 3.3
+    },
+    {
+      "bucket": "0.70-0.75",
+      "n": 32,
+      "mid": 0.725,
+      "yes_rate": 0.875,
+      "deviation": 0.15,
+      "z": 2.6
+    }
+  ],
+  "apples_to_apples_anomaly_bucket": {
+    "bucket": "0.55-0.60",
+    "polymarket_sports_t7d": {
+      "n": 32,
+      "yes_rate": 0.875,
+      "deviation_pp": 30.0,
+      "z": 5.1
+    },
+    "azuro_close": {
+      "n": 151962,
+      "yes_rate": 0.579,
+      "deviation_pp": 0.4,
+      "z": 2.8
+    },
+    "ratio": "Polymarket's peak FLB is ~75x larger than Azuro's in the same bucket"
+  },
+  "headline_finding": "Azuro's AMM sports book is well-calibrated. It exhibits textbook classic favorite-longshot bias in the exact direction Thaler described (longshots overpriced, favorites underpriced), but ~10x smaller magnitude than Polymarket sports at T-7d. The 30pp anomaly in Polymarket's 0.55-0.60 bucket does NOT replicate on Azuro.",
+  "implication_for_amm_hypothesis": "REJECTED: AMM pricing is not uniquely vulnerable to large FLB. Azuro's AMM is actually BETTER calibrated than Polymarket's order book. The hypothesis 'AMMs lack market-maker corrections and therefore show uncorrected FLB' is not supported \u2014 likely because Azuro's 'data providers' seed initial odds from sharp off-chain bookmakers, and the LPs fade retail mispricing as bets arrive.",
+  "implication_for_polymarket_anomaly": "The Polymarket 0.55-0.60 anomaly is NOT a general prediction-market property. It's specific to some combination of (a) Polymarket's retail-heavy T-7d sample, (b) Polymarket's sports-category composition (exotic/novelty markets dominate), and (c) the cross-half-point bandwagon effect. It does not replicate on a comparable on-chain sports book.",
+  "caveats": [
+    "Close-time anchor is structurally T-0, not T-7d. Polymarket prices converge as T-0 approaches, so Azuro's T-0 should if anything UNDER-estimate FLB vs Polymarket's T-7d. We still find much less \u2014 suggesting the Polymarket finding isn't a horizon effect.",
+    "Azuro sports are head-to-head game-day markets. Polymarket 'sports_*' category includes non-head-to-head exotic markets. Sample composition differs.",
+    "Did not process Gnosis / Base / Chiliz \u2014 Polygon alone is 1.86M rows and the effect is stable."
+  ]
+}

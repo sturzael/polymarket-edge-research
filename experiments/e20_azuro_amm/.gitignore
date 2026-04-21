@@ -1,0 +1,4 @@
+data/04_conditions_*.jsonl
+data/07_close_rows.csv
+data/11_*.csv
+__pycache__/

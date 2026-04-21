@@ -485,3 +485,11 @@ Full revised plan at `docs/PLAN_E12_PAPER_TRADE.md`.
 
 Full retrospective: `experiments/e10_geo_informed_trading/FINDINGS.md`.
 
+---
+
+## Session 2026-04-21 — post-closure pivot brainstorm (no code changed)
+
+Project remained closed. One-session brainstorm evaluating where the e1–e15 stack could be pointed next. No direction committed. Captured candidates (research-showcase, edge-hunting, labor-yield, productize), honest yield estimates, and the meta-lesson that the e10 falsification pattern applies to any news-leak-to-market thesis including AI-category markets.
+
+Full brainstorm: `docs/PIVOT_BRAINSTORM.md`.
+

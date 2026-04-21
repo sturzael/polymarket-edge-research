@@ -1,0 +1,15 @@
+{
+  "_comment": "Edit phase to flip between observe and live. Read fresh on every poll — no restart needed.",
+  "phase": "observe",
+  "ntfy_topic": "REPLACE_ME_WITH_UNGUESSABLE_TOPIC",
+  "ntfy_priority": "default",
+  "bucket_low": 0.55,
+  "bucket_high": 0.60,
+  "sports_allowlist": ["sports_mlb", "sports_nba", "sports_nfl", "sports_nhl"],
+  "max_lifespan_days": 14,
+  "min_window_volume_usd": 5000,
+  "anchor_offset_days": 7,
+  "anchor_window_hours": 12,
+  "poll_interval_seconds": 900,
+  "verbose_log": true
+}

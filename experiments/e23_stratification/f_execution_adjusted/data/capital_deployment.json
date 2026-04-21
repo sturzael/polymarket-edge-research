@@ -1,0 +1,159 @@
+{
+  "assumptions": {
+    "bets_per_month_low": 15,
+    "bets_per_month_high": 20,
+    "bets_per_month_mid": 17.5,
+    "concurrent_positions": 4.08,
+    "sizing_policy": "pos_size = clip($200, capital / (concurrent \u00d7 2), $2000)",
+    "fee_bps_assumed": 3.0,
+    "fee_model": "one_sided (buy + hold to resolution)",
+    "raw_scenario_note": "fill-prob weighted; uses raw +25.8pp edge with execution friction zeroed out",
+    "net_scenario_note": "full friction stack: half-spread + slippage + fees + fill-prob haircut"
+  },
+  "rows": [
+    {
+      "capital_usd": 5000,
+      "position_size_usd": 612.0,
+      "bets_per_year": 210.0,
+      "concurrent_positions": 4.08,
+      "fill_prob": 0.702,
+      "net_edge_pp": 23.61,
+      "expected_edge_per_bet_pp": 16.57,
+      "raw": {
+        "edge_pp_nominal": 25.8,
+        "annual_pnl_usd": 23285.0,
+        "annual_return_pct": 465.7
+      },
+      "net_adjusted": {
+        "edge_pp_effective": 16.57,
+        "annual_pnl_usd": 21307.0,
+        "annual_return_pct": 426.1
+      },
+      "correction_factors": {
+        "optimistic_div2": {
+          "divisor": 2,
+          "annual_pnl_usd": 10653.0,
+          "annual_return_pct": 213.1
+        },
+        "moderate_div3": {
+          "divisor": 3,
+          "annual_pnl_usd": 7102.0,
+          "annual_return_pct": 142.0
+        },
+        "conservative_div5": {
+          "divisor": 5,
+          "annual_pnl_usd": 4261.0,
+          "annual_return_pct": 85.2
+        }
+      }
+    },
+    {
+      "capital_usd": 10000,
+      "position_size_usd": 1224.0,
+      "bets_per_year": 210.0,
+      "concurrent_positions": 4.08,
+      "fill_prob": 0.669,
+      "net_edge_pp": 22.38,
+      "expected_edge_per_bet_pp": 14.97,
+      "raw": {
+        "edge_pp_nominal": 25.8,
+        "annual_pnl_usd": 44375.0,
+        "annual_return_pct": 443.8
+      },
+      "net_adjusted": {
+        "edge_pp_effective": 14.97,
+        "annual_pnl_usd": 38499.0,
+        "annual_return_pct": 385.0
+      },
+      "correction_factors": {
+        "optimistic_div2": {
+          "divisor": 2,
+          "annual_pnl_usd": 19250.0,
+          "annual_return_pct": 192.5
+        },
+        "moderate_div3": {
+          "divisor": 3,
+          "annual_pnl_usd": 12833.0,
+          "annual_return_pct": 128.3
+        },
+        "conservative_div5": {
+          "divisor": 5,
+          "annual_pnl_usd": 7700.0,
+          "annual_return_pct": 77.0
+        }
+      }
+    },
+    {
+      "capital_usd": 25000,
+      "position_size_usd": 2000.0,
+      "bets_per_year": 210.0,
+      "concurrent_positions": 4.08,
+      "fill_prob": 0.63,
+      "net_edge_pp": 20.83,
+      "expected_edge_per_bet_pp": 13.13,
+      "raw": {
+        "edge_pp_nominal": 25.8,
+        "annual_pnl_usd": 68315.0,
+        "annual_return_pct": 273.3
+      },
+      "net_adjusted": {
+        "edge_pp_effective": 13.13,
+        "annual_pnl_usd": 55162.0,
+        "annual_return_pct": 220.6
+      },
+      "correction_factors": {
+        "optimistic_div2": {
+          "divisor": 2,
+          "annual_pnl_usd": 27581.0,
+          "annual_return_pct": 110.3
+        },
+        "moderate_div3": {
+          "divisor": 3,
+          "annual_pnl_usd": 18387.0,
+          "annual_return_pct": 73.5
+        },
+        "conservative_div5": {
+          "divisor": 5,
+          "annual_pnl_usd": 11032.0,
+          "annual_return_pct": 44.1
+        }
+      }
+    },
+    {
+      "capital_usd": 50000,
+      "position_size_usd": 2000.0,
+      "bets_per_year": 210.0,
+      "concurrent_positions": 4.08,
+      "fill_prob": 0.63,
+      "net_edge_pp": 20.83,
+      "expected_edge_per_bet_pp": 13.13,
+      "raw": {
+        "edge_pp_nominal": 25.8,
+        "annual_pnl_usd": 68315.0,
+        "annual_return_pct": 136.6
+      },
+      "net_adjusted": {
+        "edge_pp_effective": 13.13,
+        "annual_pnl_usd": 55162.0,
+        "annual_return_pct": 110.3
+      },
+      "correction_factors": {
+        "optimistic_div2": {
+          "divisor": 2,
+          "annual_pnl_usd": 27581.0,
+          "annual_return_pct": 55.2
+        },
+        "moderate_div3": {
+          "divisor": 3,
+          "annual_pnl_usd": 18387.0,
+          "annual_return_pct": 36.8
+        },
+        "conservative_div5": {
+          "divisor": 5,
+          "annual_pnl_usd": 11032.0,
+          "annual_return_pct": 22.1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-04-20T05:03:30.771326+00:00",
+  "n_pm_h2h_candidates": 118,
+  "n_matched_any": 27,
+  "n_matched_kalshi": 0,
+  "n_matched_smarkets": 27,
+  "pm_vs_kalshi": {
+    "n": 0
+  },
+  "pm_vs_smarkets": {
+    "n": 0
+  }
+}

@@ -57,6 +57,39 @@ experiments/e15_neg_risk_arb/logs/
 # MVP runtime data (if any recreated)
 data/
 
-# Experiment data that SHOULD be tracked (scouting reports)
+# Experiment data that SHOULD be tracked (scouting reports + structured findings)
 !experiments/e18_drift_solana/data/
 !experiments/e18_drift_solana/data/**
+!experiments/e20_azuro_amm/data/
+!experiments/e20_azuro_amm/data/**
+
+# e16 anchor-curve calibrations (small parquets + JSONs)
+!experiments/e16_calibration_study/data/anchor_curve/
+!experiments/e16_calibration_study/data/anchor_curve/**
+
+# e19 Baozi scouting report (probe not run, but keep directory for future)
+!experiments/e19_baozi_parimutuel/data/
+!experiments/e19_baozi_parimutuel/data/**
+
+# e21 Betfair: commit calibration JSONs + survey only, skip raw CSVs + parquets
+!experiments/e21_betfair_baseline/data/
+!experiments/e21_betfair_baseline/data/**
+experiments/e21_betfair_baseline/data/raw/
+experiments/e21_betfair_baseline/data/*.csv
+experiments/e21_betfair_baseline/data/*.parquet
+
+# e22 cross-venue: JSON summaries only, skip parquets
+!experiments/e22_cross_venue_spread/data/
+!experiments/e22_cross_venue_spread/data/**
+experiments/e22_cross_venue_spread/data/*.parquet
+
+# e23 stratification: commit all structured outputs, skip parquets
+!experiments/e23_stratification/**/data/
+!experiments/e23_stratification/**/data/**
+experiments/e23_stratification/**/data/*.parquet
+
+# live_trader runtime state (per-user, not committed)
+experiments/e23_stratification/live_trader/data/flagged_markets.jsonl
+experiments/e23_stratification/live_trader/data/seen_markets.json
+experiments/e23_stratification/live_trader/data/trades.jsonl
+experiments/e23_stratification/live_trader/data/scanner.log
