@@ -374,6 +374,19 @@ class ArbTracker:
 
 async def run(max_assets: int = 1000, refresh_seconds: int = REFRESH_EVENT_UNIVERSE_SECONDS):
     init_db()
+    # Mark any arbs left open by a previous process as orphaned —
+    # in-memory state was lost on restart, so we can't meaningfully close them.
+    # Prevents the `arbs` table accumulating zombies forever.
+    with sqlite3.connect(DB) as c:
+        cur = c.execute(
+            "UPDATE arbs SET ended_at = ?, duration_ms = NULL, "
+            "avg_sum_asks = COALESCE(avg_sum_asks, min_sum_asks) "
+            "WHERE ended_at IS NULL",
+            (datetime.now(timezone.utc).isoformat(),),
+        )
+        c.commit()
+        if cur.rowcount > 0:
+            _log(f"orphan cleanup: marked {cur.rowcount} pre-restart arbs as ended (duration=NULL)")
     _log("fetching event universe...")
     universe = fetch_universe()
     events = universe["events"]

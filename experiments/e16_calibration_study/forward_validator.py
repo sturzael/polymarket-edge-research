@@ -134,10 +134,20 @@ def categorize(slug: str, question: str, event_slug: str) -> str:
 
 
 def parse_ts(raw) -> datetime | None:
+    """Handles all three Polymarket timestamp formats:
+        '2026-04-28T19:00:00Z'       (ISO with Z)
+        '2026-04-28T19:00:00+00:00'  (ISO with offset)
+        '2026-04-20 22:45:00+00'     (gameStartTime: space-separated, +00)
+    """
     if not raw:
         return None
     try:
-        return datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
+        s = str(raw).replace(" ", "T")
+        if s.endswith("Z"):
+            s = s[:-1] + "+00:00"
+        elif s.endswith("+00"):
+            s = s + ":00"
+        return datetime.fromisoformat(s)
     except Exception:
         return None
 
@@ -172,13 +182,15 @@ def cmd_scan() -> int:
         all_active = fetch_active_markets(client)
     _log(f"  {len(all_active):,} active markets total")
 
-    # Filter: sports category + duration 6.5–7.5 days
+    # Filter: sports category + T-7d to EVENT (gameStartTime), not endDate.
+    # MLB markets have endDate = gameStart + 7d (settlement delay); using
+    # endDate would false-positive on every post-game MLB market.
     in_window = []
     for m in all_active:
-        ed = parse_ts(m.get("endDate"))
-        if ed is None:
+        event_ts = parse_ts(m.get("gameStartTime") or m.get("endDate"))
+        if event_ts is None:
             continue
-        days_to_end = (ed - now).total_seconds() / 86400.0
+        days_to_end = (event_ts - now).total_seconds() / 86400.0
         if not (T_TARGET_DAYS - WINDOW_HALF_DAYS <= days_to_end
                 <= T_TARGET_DAYS + WINDOW_HALF_DAYS):
             continue
