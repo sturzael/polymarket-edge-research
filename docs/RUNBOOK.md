@@ -59,6 +59,16 @@ uv run python -m experiments.e15_neg_risk_arb.forward_trader status
 # Run the phantom audit on-demand
 experiments/e15_neg_risk_arb/audit_open_positions.sh && \
     tail -100 experiments/e15_neg_risk_arb/logs/phantom_audit.log
+
+# Observer status (Phase 2 of PLAN_FAST_BOT)
+sqlite3 experiments/e17_realtime_arb_observer/data/observer.db \
+    "SELECT COUNT(*) total_arbs, SUM(phantom) phantom_arbs,
+            ROUND(AVG(duration_ms)) avg_ms_live,
+            MAX(duration_ms) max_ms FROM arbs WHERE ended_at IS NOT NULL;"
+
+# Calibration-fwd status + early analysis
+uv run python -m experiments.e16_calibration_study.forward_validator status
+uv run python -m experiments.e16_calibration_study.forward_validator analyze
 ```
 
 ## Lifecycle commands

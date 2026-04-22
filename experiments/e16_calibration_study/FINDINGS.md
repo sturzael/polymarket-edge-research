@@ -120,17 +120,24 @@ After the initial T-7d result held up, I ran a deeper sports-only pull (500 per 
 
 ⚠️ **Does not claim specific $/month figures.** Position count × edge × win rate depends on real entry execution, market count per week, and how the price evolves between T-7d and resolution. Must be measured live.
 
-### 2g. Concrete next step (shorter now)
+### 2g. Concrete next step — **now running (2026-04-21)**
 
-Because historical liquidity is sufficient, the forward validation no longer needs to measure depth separately — just needs to measure whether the bias persists.
+Because historical liquidity is sufficient, the forward validation no longer needs to measure depth separately — just needs to measure whether the bias persists. The collector is **live as `com.elliot.polymarket-calibration-fwd`**.
 
-1. Every hour for 30 days, poll gamma for active sports markets with 6.5-7.5 days to resolution and log: (condition_id, last-trade price, bid/ask if available, timestamp, event category).
-2. Wait for resolutions.
-3. Bucket snapshots by price, measure yes_rate.
-4. Compare to the historical table above. If yes_rate within each bucket is within ~5pp of the historical result, the bias persists and is tradeable.
-5. Measure realized bid-ask at entry (live snapshots should include `bestBid`/`bestAsk`) to quantify effective net edge.
+Implementation: [`forward_validator.py`](forward_validator.py) + [`forward_validator_cycle.sh`](forward_validator_cycle.sh). Runs hourly. First scan (2026-04-22 00:00 UTC) captured 75 sports markets in the T-7d±12h window (43 soccer, 30 MLB, 2 NFL — April is light for NBA/NFL due to seasonal calendars).
 
-This takes ~2 hours of setup + 30 days of passive observation. After that we have grounded numbers, not projections.
+Data flow:
+1. Every hour: poll gamma for active sports markets with 6.5-7.5 days to resolution → log `(condition_id, last_price, bestBid, bestAsk, mid_price, spread, volume_lifetime, category, timestamp)`.
+2. Same hourly cycle: sweep all prior snapshots, query CLOB for any newly-closed markets → record resolution outcome.
+3. After ~30 days: run `forward_validator analyze` — buckets snapshots by `mid_price`, reports forward yes_rate vs the historical table above.
+
+Decision gate: if forward yes_rate within each bucket matches historical ±5pp, the bias persists → strategy is tradeable. Otherwise it was arbed away between sample and now.
+
+Status:
+```
+uv run python -m experiments.e16_calibration_study.forward_validator status
+uv run python -m experiments.e16_calibration_study.forward_validator analyze
+```
 
 ### 2h. Durable outputs
 
