@@ -24,6 +24,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import re
 import sys
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -36,6 +37,14 @@ GAMMA = "https://gamma-api.polymarket.com"
 CLOB = "https://clob.polymarket.com"
 
 PLACEHOLDER_SLUGS = ("will-option-", "will-other-")
+# Slug patterns that contain a generic placeholder token (e.g. player-0, option-3,
+# candidate-2). Added 2026-04-21 after nba-dpoy phantom: event had 11 "player-N"
+# placeholder children that paper_trader treated as GUARANTEED, leading to a
+# fake +$5,940 paper PnL on an $11.90 entry.
+PLACEHOLDER_REGEX = re.compile(
+    r"(?:^|-)(player|option|candidate|other)-\d+$",
+    re.IGNORECASE,
+)
 COMPLETENESS_RED_FLAGS = (
     "may be added", "added at a later date", "will be added",
     "additional candidates", "other candidates",
@@ -93,7 +102,10 @@ def classify_completeness(event: dict) -> tuple[str, int, bool]:
     n_active = sum(1 for m in markets if m.get("active") and not m.get("closed"))
     n_placeholders = sum(
         1 for m in markets
-        if any((m.get("slug") or "").startswith(p) for p in PLACEHOLDER_SLUGS)
+        if (
+            any((m.get("slug") or "").startswith(p) for p in PLACEHOLDER_SLUGS)
+            or PLACEHOLDER_REGEX.search(m.get("slug") or "")
+        )
     )
     if n_active < 2:
         return "DEGENERATE", n_placeholders, has_red_flag

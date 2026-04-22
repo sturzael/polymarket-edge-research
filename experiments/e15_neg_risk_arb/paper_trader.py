@@ -48,6 +48,13 @@ ALLOWED_COMPLETENESS = ("GUARANTEED",)
 # Uncapped for learning: enter every qualifying opportunity. Real deployment
 # would enforce a lower cap — this is paper-trade research mode.
 MAX_CONCURRENT = 200
+# Phantom filter — reject entries where implied sum_asks is below this floor.
+# Rationale: sum_asks < 0.05 implies ≥95% edge, which is implausible on any
+# real book and historically indicates stale gamma cache or placeholder slugs
+# that slipped past the completeness classifier. nba-dpoy 2026-04-21 example:
+# sum_asks=0.002 produced a $5,940 paper "PnL" from an $11.90 entry that was
+# almost certainly unfillable in real life.
+MIN_PLAUSIBLE_SUM_ASKS = 0.05
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS ticks (
@@ -112,6 +119,9 @@ def qualifies(opp: scanner.Opportunity) -> bool:
     if not (MIN_DAYS_TO_RES <= opp.days_to_resolution <= MAX_DAYS_TO_RES):
         return False
     if opp.min_executable_sets is None or opp.min_executable_sets <= 0:
+        return False
+    # Phantom filter: reject implausibly-low sum_asks
+    if opp.sum_asks < MIN_PLAUSIBLE_SUM_ASKS:
         return False
     return True
 
