@@ -14,7 +14,7 @@
 - Built a **live negative-risk arbitrage scanner** with phantom-depth verification — detected 39 apparent violations in one day, of which ~half were market correctly pricing tail risk, not arbitrage.
 - Retrospective analysis on **954M-row on-chain dataset:** median negative-risk arbitrage window = **1 minute**, 95th percentile = **2.8 minutes**.
 - Documented **20+ undocumented Polymarket API quirks and microstructure facts** (API filter silently ignored, CLOB `/book` sort order, fee formula empirics, resolution-lag measurements).
-- Spawned **two sibling studies:** a pre-registered Trump-tweet replication (KILL) and an AI-markets reconnaissance (in progress). See [Related studies](#related-studies).
+- Spawned **two sibling studies:** a pre-registered Trump-tweet replication (KILL) and an AI-markets reconnaissance (closed after Day 2, no verdict). See [Related studies](#related-studies).
 
 ---
 
@@ -257,7 +257,7 @@ This is the parent repo in a three-repo portfolio on solo-operator trading resea
 |------|----------|---------|
 | **`polymarket-edge-research`** (this repo) | Does retail edge exist on Polymarket at $1k bankroll across 10 candidate strategies? | KILL (all 10 falsified) + durable tooling |
 | [`trump-polymarket-replication`](https://github.com/sturzael/trump-polymarket-replication) | Does a claimed 61.3% Trump-tweet→S&P signal translate to Polymarket? | KILL — 0 of 100 cells cleared the 7-gate test |
-| [`polymarket-ai-edge`](https://github.com/sturzael/polymarket-ai-edge) | Is there retail edge on Polymarket's AI markets? | Pre-registration complete; forward observation not yet begun |
+| [`polymarket-ai-edge`](https://github.com/sturzael/polymarket-ai-edge) | Is there retail edge on Polymarket's AI markets? | Closed after Day 2; forward window never run, no verdict |
 
 All three share methodology DNA: pre-registration before data access, ÷5 heuristic on edge estimates, counter-memo before verdict, git log as audit trail.
 
